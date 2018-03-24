@@ -9,19 +9,19 @@
 % is archived at http://www.jmlr.org/format/natbib.pdf
 
 \usepackage{jmlr2e}
+\usepackage{setspace}
 
 % Definitions of handy macros can go here
-
 \newcommand{\dataset}{{\cal D}}
 \newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
 
 % Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
 
-\jmlrheading{1}{2000}{1-48}{4/00}{10/00}{meila00a}{Marina Meil\u{a} and Michael I. Jordan}
+\jmlrheading{1}{2000}{1-48}{4/00}{10/00}{meila00a}{Christopher Jeschke}
 
 % Short headings should be running head and authors last names
 
-\ShortHeadings{Dissertation Critique}{Meil\u{a} and Jordan}
+\ShortHeadings{Dissertation Critique}{Jeschke}
 \firstpageno{1}
 
 \begin{document}
@@ -29,7 +29,7 @@
 \title{Dissertation Critique: Exploring Machine Learning Techniques Using Patient
       Interactions In Online Health Forums to Classify Drug Safety}
 
-\author{\name Christopher Jeschke \email cjeschke@gmail.com \\
+\author{\name Christopher Jeschke \email cjeschk2@jhu.edu \\
        \addr Engineering for Professionals\\
        Johns Hopkins University\\
        Elkridge, MD 20175, USA}
@@ -38,33 +38,235 @@
 
 \maketitle
 
+
+% Entire paper should be single spaced
+\singlespacing
+
+% Abstract
 \begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
   Patient generated health data represents an area of active research interest
-  for its potential applications in monitoring the public health. The study of
+  for its potential applications in improving the public health. The study of
   Pharmacovigilance is one such area, focused on monitoring drugs once they have been
-  released to market. Dr. Brant Chee's 2011 dissertation specifically explores the
-  application of machine learning techniques to messages from online forums discussing
-  patient interactions with drugs in an attempt to assemble a set of machine learning
-  techniques and processes to detect drugs bound for the United States Food and Drug
-  Administration's watch list. Watch list drugs which are those drugs deamed to
-  pose a significant safety concern for consumers. The dissertation discusses a
-  progression of techniques 
+  released to market. Dr. Brant Chee's 2011 dissertation applying machine learning
+  techniques to patient messages in online health forums explores how watch
+  list drugs from the United States Food and Drug Administration can be detected
+  via these forum messages, ultimately with the intent to alert consumers to drug
+  safety concerns.
 \end{abstract}
 
 \begin{keywords}
   Drug Safety, Pharmacovigilance, NLP
 \end{keywords}
 
-\section{Introduction}
-Probabilistic inference has become a core technology in AI,
-largely due to developments in graph-theoretic methods for the
-representation and manipulation of complex probability
-distributions~\citep{pearl:88}.  Whether in their guise as
-directed graphs (Bayesian networks) or as undirected graphs (Markov
-random fields), \emph{probabilistic graphical models} have a number
-of virtues as representations of uncertainty and as inference engines.
-Graphical models allow a separation between qualitative, structural
-aspects of uncertain knowledge and the quantitative, parametric aspects
+
+\section{Overview}
+%Todo:  Fix Niave Bayes double dot
+Dr. Brant Chee's 2011 dissertation \textit{Exploring Machine Learning Techniques Using
+Patient Interactions in Online Health Forums to Classify Drug Safety} describes
+Chee's research in applying natural language processing (NLP) in conjunction
+with Naive Bayes and Support Vector Machine classifiers to identify candidate
+\textit{watch list} drugs from online patient forums. Watch list drugs are those
+drugs identified by the United States Food and Drug Administration (FDA) as presenting
+a significant health or safety risk to drug consumers, thereby prompting regulatory
+action to better inform the consumer or directly protect the consumer
+by removing the drug from market or reducing its accessibility.
+
+\subsection{Pharmacovigilance, AERS}
+The dissertation begins with an extensive background discussion on adverse drug reactions.
+Adverse drug reactions defined by the FDA and World Health Organization (WHO) as
+"A response to a drug which is noxious and unintended and which occurs at doses
+normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification
+of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as
+"the study of drugs once released to market"\citp{Chee}, and the important regulatory
+agencies practicing it are mentioned - the World Health Organization (WHO) and
+United States Food and FDA. The FDA Adverse Event Reporting system (AERS)
+is discussed as comparison with it is central to the work. AERS was constructed
+to house mandatory drug safety reports from drug manufacturers, distributors and health
+care facilities, as well as voluntary reports submitted by consumers (patients),
+physicians and other healthcare providers. Reports are evaluated by the Center for
+Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER)
+within the FDA for drug safety signals, which may then be elevated for further
+review by clinicians, epidemiologists and other expertise to determine the next steps
+, up to and including the removal of a drug from the market.
+
+Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems}
+in that they are known to have high underreporting rates \citep{Fletcher}, due
+to the likelihood of a patient reporting an event only if they feel their healthcare provider
+has not paid attention to the adverse drug reaction observed \citep{Leamon}. This
+deficiency is presented as motivation for Chee's work exploring additional data sources
+for drug safety.
+
+\subsection{Patient engagement in Social Media}
+Chee discusses that social media provides a venue for patients to share their
+health information in an anonymous setting as patients are not always transparent
+nor truthful with their physicians. The ability for a patient to find those with
+similar backgrounds, conditions and challenges prompts rich social interactions
+in online forums where patients disclose their opinions and observations on
+their current drug regimin effectiveness and any perceived adverse events. Chee
+feels these forums represent a means to crowdsource data for a Pharmacovigilance
+task, and can be used as a data source to for determining if a discussed drug is an
+FDA watch list candidate. These observations also serve as a basis for selecting
+Yahoo! public health message forums as the principal data set used in the
+dissertation's experimental study. As of May 25, 2008 there are 162,754 groups
+to draw from \citep{Chee}.
+
+The Yahoo! corpus contains
+- meta-data about messages that is largely useless (name of group,  inception date, is it moderated,
+language of group, group type).  Chee asserts this is useless as it largely changes over time.
+- machine learning techniques are trained on grammatically correct text
+- Chee developed a variety of lexicon to interpret the messages and provide Statistics
+- tokens not in lexicon are manually inspected as spelling errors, differentiating between
+medical and general terms, names, foreign languages, web terms (HTML artifacts), and numbers
+
+
+
+<discuss more about the data here>
+
+
+\subsection{Sentiment, Named Entities and Classification}
+Of specific interest to the dissertation is applying sentiment analysis and named
+entity recognition to the messages in these forums. Sentinment analysis is presented
+as challenging because the domain dependent nature \citep{Turney, 2002}
+can make it difficult to differentiate between positive and negative sentiment on words and phrases alone.
+Chee's approach is to calculate the probability of a specific word given a positive or negative class: $P(word| negative or positive)$.
+The hand crafted lexicons Linguisitc Inquiry Word Count (LIWC) and SentiWordNet
+are leveraged to generate sentiment scores on words. Support Vector Machines (SVMs)
+trained on words as features can also be used to separate positive phrases of
+text from negative.
+
+Named entity recognition (NER) is necessary for identifying drug names and
+effects, such as headaches or vomiting. The challenge posed by doing so
+on forum data is the relaxed structure and oft-present grammatical errors
+make leveraging existing NLP tools trained on grammatically correct text
+difficult. Chee draws upon the work of Hearst \citep{Hearst} for automatically
+acquiring hyponyms from text. Hyponyms are words having more specific meaning
+than general or subordinate terms, thereby providing strong indication the discovered
+words are drugs or drug effects.
+
+Classification techniques are employed by Chee to solve the problems of NER,
+sentiment analysis and assigning class labels to the message forum text. Specifically,
+Support Vector Machines (SVM) and Naive Bayes classifiares are used.
+
+
+\subsection{huh?}
+
+
+3 pages
+
+
+
+
+\section{Related Literature}
+3
+
+
+\section{Major Contributions}
+- exploration of the Yahoo! Public Health message forums as a potential data source
+for adverse drug event mining
+- exploration of classification techniques to discern FDA watch list drugs
+- development of a generalizable approach to other online social mediums
+3
+
+\section{Techniques and Algorithms}
+
+\subsection{Classification Techniques and Evaluation}
+
+
+
+\subsection{Naive Bayes Classification}
+The dissertation uses Naive Bayes classification to address the NLP problems
+faced by Chee.  Their use was somewhat counterintuitive because Naive Bayes
+Classifiers assume independence of features (words), whereas we know in real world settings
+that if a word like "aspirin" were present, there is a greater probability of the
+the words "headache" or "pain" being present than "lemonade". However, in
+applied settings they still do reasonably well \citep{Manning, 1999}. NB has done well
+in SPAM detection \citep{Sahami} and make sense as a first step for their simplicity (no
+hyperparameters).
+
+- given word grams $w$ in messages about a drug $D$
+- $p(w_{i}|C)$ probability the $i-th$ word is from class C, C is watchlist or
+non-watchlist drugs.
+- $p(D|C) = \prod p(w_{i}|C)$ - probability of a given drug given the class
+- W = watchlist, so $P(D|W) = \prod p(w_{i}|W)$.
+- Bayes rule writes this as
+\[
+  p(W|D) = \frac{p(W)}{p{D}} \prod p(w_{i}|W)
+\]
+\[
+  p(\neg{W}|D) = \frac{p(\neg{W})}{p(D)} \prod p(w_{i}|\neg{W})
+\]
+
+Chee combines these two probability modles with the maximum a posteriori (MAP)
+decision rule to pick the most likely hypothesis.
+<discuss maximum a posteriori method>
+- The method of MAP then estimates $\theta$ as the mode of the posterior
+distribution of this random variable
+
+
+\subsection{Support Vector Machines}
+SVMs map features into a high-dimensional space using a kernel function \citep{Cortes and Vapnik}.
+A hyperplane is constructed that defines the decision boundary between two classes
+in this decision space, with those new observations being classified based on which
+side of the hyperplane they fall on. Chee quotes studies by Forman & Joachims stating
+SVM's strengths in text classification, justifying its use in comparison to Naive
+Bayes.
+- LibSVM was used with a radial basis function (RFB) kernel
+- SVM solves the following optimization problem
+\[
+  min_{u, b, \xi} \frac{1}{2}w^{T}w + C \sum_{i=1}^{l}\xi i \\
+\]
+\[
+  y_{i}(w^{T}\phi(x_{i}) + b) \gte 1 - \xi_{i}
+\]
+\[
+  \xi_{i} \gte 0
+\]
+
+- RBF's are non-linear in nature which gave some accuracy advantages over linear
+- RBF's are trained on two parameters $C$ and $\gamma$
+- Grid search method using cross-validation is employed to look for $C$ and $gamma$
+because it parallelizes well
+- $C$ is the penalty parameter for the error term
+- RBF kernel is defined as $K(x_i, x_j) = exp(-\gamma||x_i - x_j||^{2}), \gamma > 0$
+
+
+
+\subsection{Feature Selection}
+- BNS (Bi-Normal Separation) cited by \citep{Forman}
+outperforms other methods for rating & ranking feature importance for Classification
+
+- IG (Information Gain)
+Best practice suggested words occuring less than 3 times in a data set should be removed
+
+\subsection{Evaluation Metrics Used}
+- watchlist drugs are the positive examples
+- non-watchlist drugs are the negative examples
+- watchlist drugs that are false positive are the interesting ones from Classification
+- had to work with a 90/10 split where 90\% of instances are one class (non-watchlist) and 10\% are another
+(watchlist) it is difficult to outperform a naive classifier that just marks everything as non-watchlist
+- Receiver Operating Characterisitcs (ROC) curves are used with their Area Under the Curve (AUC)
+evaluated.
+- ROC curves are the true positive
+
+
+
+defining the speration
+
+- Yahoo data pre-processing techniques using NLP
+- Selection of General Vocabularies and lexicons of interest
+- measurement of sentiment in drug outcome messages
+- selection of test & training sets
+- classification using various lexicons
+- how KL Divergence is used as part of the experiment
+3
+
+
+\section{Application Areas}
+- drug safety
+1 to 2
+
+
+
 of uncertainty...\\
 
 \section{Paper Criteria}
@@ -82,78 +284,11 @@ The evaluation criteria for the critique are as follows:
 • Application areas (15%)
 • Proper construction and readability of paper (10%)
 
-\section{Overview}
 
-
-
-
-\section{Related Literature}
-
-
-
-\section{Major Contributions}
-
-
-
-\section{Techniques and Algorithms}
-
-
-
-\section{Application Areas}
-
-
-
-
-{\noindent \em Remainder omitted in this sample. See http://www.jmlr.org/papers/ for full paper.}
-
-% Acknowledgements should go at the end, before appendices and references
-
-\acks{We would like to acknowledge support for this project
-from the National Science Foundation (NSF grant IIS-9988642)
-and the Multidisciplinary Research Program of the Department
-of Defense (MURI N00014-00-1-0637). }
-
-% Manual newpage inserted to improve layout of sample file - not
-% needed in general before appendices/bibliography.
 
 \newpage
 
-\appendix
-\section*{Appendix A.}
-\label{app:theorem}
 
-% Note: in this sample, the section number is hard-coded in. Following
-% proper LaTeX conventions, it should properly be coded as a reference:
-
-%In this appendix we prove the following theorem from
-%Section~\ref{sec:textree-generalization}:
-
-In this appendix we prove the following theorem from
-Section~6.2:
-
-\noindent
-{\bf Theorem} {\it Let $u,v,w$ be discrete variables such that $v, w$ do
-not co-occur with $u$ (i.e., $u\neq0\;\Rightarrow \;v=w=0$ in a given
-dataset $\dataset$). Let $N_{v0},N_{w0}$ be the number of data points for
-which $v=0, w=0$ respectively, and let $I_{uv},I_{uw}$ be the
-respective empirical mutual information values based on the sample
-$\dataset$. Then
-\[
-	N_{v0} \;>\; N_{w0}\;\;\Rightarrow\;\;I_{uv} \;\leq\;I_{uw}
-\]
-with equality only if $u$ is identically 0.} \hfill\BlackBox
-
-\noindent
-{\bf Proof}. We use the notation:
-\[
-P_v(i) \;=\;\frac{N_v^i}{N},\;\;\;i \neq 0;\;\;\;
-P_{v0}\;\equiv\;P_v(0)\; = \;1 - \sum_{i\neq 0}P_v(i).
-\]
-These values represent the (empirical) probabilities of $v$
-taking value $i\neq 0$ and 0 respectively.  Entropies will be denoted
-by $H$. We aim to show that $\fracpartial{I_{uv}}{P_{v0}} < 0$....\\
-
-{\noindent \em Remainder omitted in this sample. See http://www.jmlr.org/papers/ for full paper.}
 
 
 \vskip 0.2in
