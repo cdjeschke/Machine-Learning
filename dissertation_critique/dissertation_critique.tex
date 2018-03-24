@@ -1,0 +1,162 @@
+\documentclass[twoside,11pt]{article}
+
+% Any additional packages needed should be included after jmlr2e.
+% Note that jmlr2e.sty includes epsfig, amssymb, natbib and graphicx,
+% and defines many common macros, such as 'proof' and 'example'.
+%
+% It also sets the bibliographystyle to plainnat; for more information on
+% natbib citation styles, see the natbib documentation, a copy of which
+% is archived at http://www.jmlr.org/format/natbib.pdf
+
+\usepackage{jmlr2e}
+
+% Definitions of handy macros can go here
+
+\newcommand{\dataset}{{\cal D}}
+\newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
+
+% Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
+
+\jmlrheading{1}{2000}{1-48}{4/00}{10/00}{meila00a}{Marina Meil\u{a} and Michael I. Jordan}
+
+% Short headings should be running head and authors last names
+
+\ShortHeadings{Dissertation Critique}{Meil\u{a} and Jordan}
+\firstpageno{1}
+
+\begin{document}
+
+\title{Dissertation Critique: Exploring Machine Learning Techniques Using Patient
+      Interactions In Online Health Forums to Classify Drug Safety}
+
+\author{\name Christopher Jeschke \email cjeschke@gmail.com \\
+       \addr Engineering for Professionals\\
+       Johns Hopkins University\\
+       Elkridge, MD 20175, USA}
+
+\editor{n/a}
+
+\maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+  Patient generated health data represents an area of active research interest
+  for its potential applications in monitoring the public health. The study of
+  Pharmacovigilance is one such area, focused on monitoring drugs once they have been
+  released to market. Dr. Brant Chee's 2011 dissertation specifically explores the
+  application of machine learning techniques to messages from online forums discussing
+  patient interactions with drugs in an attempt to assemble a set of machine learning
+  techniques and processes to detect drugs bound for the United States Food and Drug
+  Administration's watch list. Watch list drugs which are those drugs deamed to
+  pose a significant safety concern for consumers. The dissertation discusses a
+  progression of techniques 
+\end{abstract}
+
+\begin{keywords}
+  Drug Safety, Pharmacovigilance, NLP
+\end{keywords}
+
+\section{Introduction}
+Probabilistic inference has become a core technology in AI,
+largely due to developments in graph-theoretic methods for the
+representation and manipulation of complex probability
+distributions~\citep{pearl:88}.  Whether in their guise as
+directed graphs (Bayesian networks) or as undirected graphs (Markov
+random fields), \emph{probabilistic graphical models} have a number
+of virtues as representations of uncertainty and as inference engines.
+Graphical models allow a separation between qualitative, structural
+aspects of uncertain knowledge and the quantitative, parametric aspects
+of uncertainty...\\
+
+\section{Paper Criteria}
+The critique should include a summary of the research reported, a discussion of the major contributions
+claimed, and an assessment of the significance of those contributions and of the research itself. The
+critique should also include a brief literature review of the topic related to the thesis, discussion of relevant
+algorithms, and application areas for the research reported. Where appropriate, the critique should
+include a comparison with other issues discussed in class. Students are encouraged to select a
+dissertation that is related to their course projects.
+The evaluation criteria for the critique are as follows:
+• Overview of the research reported (20%)
+• Review of the related literature (15%)
+• Major contributions of the thesis (20%)
+• Understanding of techniques and algorithms (20%)
+• Application areas (15%)
+• Proper construction and readability of paper (10%)
+
+\section{Overview}
+
+
+
+
+\section{Related Literature}
+
+
+
+\section{Major Contributions}
+
+
+
+\section{Techniques and Algorithms}
+
+
+
+\section{Application Areas}
+
+
+
+
+{\noindent \em Remainder omitted in this sample. See http://www.jmlr.org/papers/ for full paper.}
+
+% Acknowledgements should go at the end, before appendices and references
+
+\acks{We would like to acknowledge support for this project
+from the National Science Foundation (NSF grant IIS-9988642)
+and the Multidisciplinary Research Program of the Department
+of Defense (MURI N00014-00-1-0637). }
+
+% Manual newpage inserted to improve layout of sample file - not
+% needed in general before appendices/bibliography.
+
+\newpage
+
+\appendix
+\section*{Appendix A.}
+\label{app:theorem}
+
+% Note: in this sample, the section number is hard-coded in. Following
+% proper LaTeX conventions, it should properly be coded as a reference:
+
+%In this appendix we prove the following theorem from
+%Section~\ref{sec:textree-generalization}:
+
+In this appendix we prove the following theorem from
+Section~6.2:
+
+\noindent
+{\bf Theorem} {\it Let $u,v,w$ be discrete variables such that $v, w$ do
+not co-occur with $u$ (i.e., $u\neq0\;\Rightarrow \;v=w=0$ in a given
+dataset $\dataset$). Let $N_{v0},N_{w0}$ be the number of data points for
+which $v=0, w=0$ respectively, and let $I_{uv},I_{uw}$ be the
+respective empirical mutual information values based on the sample
+$\dataset$. Then
+\[
+	N_{v0} \;>\; N_{w0}\;\;\Rightarrow\;\;I_{uv} \;\leq\;I_{uw}
+\]
+with equality only if $u$ is identically 0.} \hfill\BlackBox
+
+\noindent
+{\bf Proof}. We use the notation:
+\[
+P_v(i) \;=\;\frac{N_v^i}{N},\;\;\;i \neq 0;\;\;\;
+P_{v0}\;\equiv\;P_v(0)\; = \;1 - \sum_{i\neq 0}P_v(i).
+\]
+These values represent the (empirical) probabilities of $v$
+taking value $i\neq 0$ and 0 respectively.  Entropies will be denoted
+by $H$. We aim to show that $\fracpartial{I_{uv}}{P_{v0}} < 0$....\\
+
+{\noindent \em Remainder omitted in this sample. See http://www.jmlr.org/papers/ for full paper.}
+
+
+\vskip 0.2in
+\bibliography{sample}
+
+\end{document}
