@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex dissertation_critique"] 1522004205 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1522004729
+["bibtex dissertation_critique"] 1522012057 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1522012059
   "/usr/local/texlive/2017/texmf-dist/bibtex/bib/gloss/sample.bib" 1480098433 2721 b88105703bd616b4f9867992219afb8a ""
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "dissertation_critique.aux" 1522004206 2879 e8a5286412d3a7f6fd00a160555e5af0 ""
+  "dissertation_critique.aux" 1522012058 2920 0f9c78208ce9debc56af7858b108519e ""
   (generated)
-  "dissertation_critique.blg"
   "dissertation_critique.bbl"
-["pdflatex"] 1522004206 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1522004729
+  "dissertation_critique.blg"
+["pdflatex"] 1522012058 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1522012059
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -37,10 +37,12 @@
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1480098733 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1480098733 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1480098733 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1480098733 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1480098733 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1480098733 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1480098733 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1480098733 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1480098733 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1480098733 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1480098733 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1480098733 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
@@ -83,13 +85,13 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "dissertation_critique.aux" 1522004206 2879 e8a5286412d3a7f6fd00a160555e5af0 ""
-  "dissertation_critique.bbl" 1522004206 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
-  "dissertation_critique.out" 1522004206 1271 4ce50bcbcaf17a43c155305b7f114b16 ""
-  "dissertation_critique.tex" 1522004729 21389 3cd136fddabd044efaf4c5e881df93af ""
+  "dissertation_critique.aux" 1522012058 2920 0f9c78208ce9debc56af7858b108519e ""
+  "dissertation_critique.bbl" 1522012058 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
+  "dissertation_critique.out" 1522012058 1271 4ce50bcbcaf17a43c155305b7f114b16 ""
+  "dissertation_critique.tex" 1522012056 26096 90d7120c1a9121cad24ba74fd0dd41b0 ""
   "jmlr2e.sty" 1520971958 14082 a1e3bcbdd00aafb7fae9367e056973d1 ""
   (generated)
   "dissertation_critique.out"
   "dissertation_critique.log"
-  "dissertation_critique.pdf"
   "dissertation_critique.aux"
+  "dissertation_critique.pdf"

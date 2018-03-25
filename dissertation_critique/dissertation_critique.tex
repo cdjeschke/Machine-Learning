@@ -147,6 +147,62 @@ The goal
 - created a probability distribution from a frequency distribution over words
 utilizing smoothing (smoothing handles the case of a word in P not in Q creating infinite divergence)
 - compuared KL divergence between watchlist and non-watchlist drug containing messages to the Google Web 1T 5-gram corpus and the Reuters Corpus.
+- google corpus is english word n-grams from 1 to 5 words, from 1 trillion words on public web pages (used only single words in study )
+- Reuters is english language articles from 8/20/97 to 8/19/97 (810,000 articles)
+- Hypothesis is that the KL Divergence between the Yahoo! corpus and Goole is lower because of the colloquial nature (brand names, slang, proper nouns, etc) and Reuters is more formal (good grammar, etc)
+
+Dictionary Named Entity Recognition (NER)
+- dictionary approach is used due to lack of training data & NLP tools if we take a statistical classification approach
+- drug lexicon developed earlier is used with names from FDA & drug taxonomy on Drugs.com.  The taxonomy allows group of name brand and generic drugs by function. Allows grouping drugs to eliminate data proverty.
+- AERS uses MedDRA.  Medical Dictionary for Regulatory Activities (MedDRA). Used to report AEs from clinical trials.
+- Lucene index created over the 10million messags.  AERS and drug lexicons used to generate phrase searches, run against the Lucene index.
+- limitation:  using a lowercase filter with stemming.  Creates a lowercase representation of a term within the index:  Commit and COMMit are "commit". "committing" is mapped to "commit". Implications for precision and recall.
+- lower casing results in greater recall (# of documents found) w/ less precision (# of relevant documents from those found).  Drugs containing common words like "Control" present a problem. We also lack contextual clues or part of speech (POS) tags to further identify if the drugs are present.
+- FUTURE area:  IR (Information Retrieval) system could be augmented to use context such as fuzzy searches requiring "drug" or "taking".  POS tagging could help as well - differentiate between verb commit and noun Commit. For purposes of this dissertation, drug names with common words were replaced by the generic (chemical) name.
+- For each lexicon phrase, searches were constructed and run against the index.
+
+- Concerned about distance between unique drug mentions within messages (more than 1 drug).  If drugs are close together it is harder to segment the message
+to determine sentiment and effect regarding a specific drug.
+
+- pairs of unique drug mentions within the same message were extracted
+and the distance (number of characters) from the first mention are looked at.
+- drawback:  messages containing more than 2 unique drugs.  Eliminating this by looking at messages with 2 mentions (??)
+- frequent co-occurances between different drugs highlights how the drugs are talked about
+- variance in distance illustrates that drugs are talked about in the same way
+- a big difference between median and mean indicates variability in the data
+- Mutual information used to score pairs of unique drugs with the same message to look for highly co-ocurring drugs (this was used as a scoring function instead of cosine similarity)
+
+
+- Sentiment is reflected in 2 features on the word feature vector: number of positive sentiment containing terms & number of negative
+- Does the sentinment actually reflect the authors opinion of the drug?
+- Look @ aggregate sentiment over time.  Changes in sentiment reflect news about the drug.
+- Drugs may have serious side effects, yet people may still have a positive attitude towards it if it helps them in some way.
+- Method uses portions of the lexicon in the LIWC when calculating sentiment scores for messages. References previous work by \citep{Rude, Gortner, Pennebaker, 2004} to demonstrate variations in language usage between depressed and depression vulnerable students.
+- Used the words in LIWC corresponding to:  positive emotion, negative emotion, anxiety, anger and sadness.  Augmented LIWC lexicon to include a wide range of emoticons:  :), :(, :P, ^_^, LOL, ROFL.
+- Messages from Yahoo groups were parsed to extract just the textual information. and remove replies.
+- Negative valence was the ratio of negative emotion words to total words.
+
+
+
+Limits of Classification
+- few watchlist drugs - only 435 drugs w/ more than 500 unique messages mentioning them, only 63 of which are watchlist drugs.
+- reducing to 250 unique messages, we have 575 drugs of which only 77 are watchlist
+- 90\% of instances are non-watchlist
+- Cross-fold validation is utilized to alleviate some of the data sparsity problem
+- This dissertation uses random undersampling (RUS) to balance out the distribution of positive and negative samples. The majority class (negative) is randomly discarded. RUS resulted in the best performance in empirical tests of 2340 data sets. Area to comment on:  Other techniques?
+
+- Decision Making.
+- Scaling of individual dimensions has to be considered. 
+
+
+
+
+
+
+
+
+
+
 
 
 
