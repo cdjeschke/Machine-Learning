@@ -59,56 +59,40 @@
 \end{keywords}
 
 
-\section{Overview}
+\section{Summary of Research}
 %Todo:  Fix Niave Bayes double dot
 Dr. Brant Chee's 2011 dissertation \textit{Exploring Machine Learning Techniques Using
 Patient Interactions in Online Health Forums to Classify Drug Safety} describes
-Chee's research in applying natural language processing (NLP) in conjunction
-with Naive Bayes and Support Vector Machine classifiers to identify candidate
-\textit{watch list} drugs from online patient forums. Watch list drugs are those
-drugs identified by the United States Food and Drug Administration (FDA) as presenting
-a significant health or safety risk to drug consumers, thereby prompting regulatory
-action to better inform the consumer or directly protect the consumer
-by removing the drug from market or reducing its accessibility.
+Chee's research in applying natural language processing (NLP) techniques in conjunction with Naive Bayes and Support Vector Machine classifiers to identify candidate \textit{watch list} drugs from online patient forums. Watch list drugs are those drugs identified by the United States Food and Drug Administration (FDA) as presenting a significant health or safety risk to drug consumers, thereby prompting regulatory action to better inform the consumer or directly protect the consumer by removing the drug from market or reducing its accessibility. Chee's dissertation seeks to answer the specific questions:
+\begin{itemize}
+  \item Can Machine Learning classification methods using text features extracted from online health forums be used to identify FDA watch list drugs?
+  \item Is the sentiment of the forum message useful in identifying these drugs?
+  \item Similarly, are the drug effect entities useful in identifying watchlist drugs?
+\end{itemize}
 
-\subsection{Pharmacovigilance, AERS}
-The dissertation begins with an extensive background discussion on adverse drug reactions.
-Adverse drug reactions defined by the FDA and World Health Organization (WHO) as
-"A response to a drug which is noxious and unintended and which occurs at doses
-normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification
-of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as
-"the study of drugs once released to market"\citp{Chee}, and the important regulatory
-agencies practicing it are mentioned - the World Health Organization (WHO) and
-United States Food and FDA. The FDA Adverse Event Reporting system (AERS)
-is discussed as comparison with it is central to the work. AERS was constructed
-to house mandatory drug safety reports from drug manufacturers, distributors and health
-care facilities, as well as voluntary reports submitted by consumers (patients),
-physicians and other healthcare providers. Reports are evaluated by the Center for
-Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER)
-within the FDA for drug safety signals, which may then be elevated for further
-review by clinicians, epidemiologists and other expertise to determine the next steps
-, up to and including the removal of a drug from the market.
+This research is accomplished through an empirical study using a corpus from the
+Yahoo! public health forums, against which Chee applies various NLP techniques
+to define and distill a feature space for classification using Niave Bayes and
+Support Vector machines for detecting watchlist drugs. Drugs detected are
+evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (AERS) to determine the utility of the approach and its applicability in Pharmacovigilance.
 
-Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems}
-in that they are known to have high underreporting rates \citep{Fletcher}, due
-to the likelihood of a patient reporting an event only if they feel their healthcare provider
-has not paid attention to the adverse drug reaction observed \citep{Leamon}. This
-deficiency is presented as motivation for Chee's work exploring additional data sources
-for drug safety.
+\subsection{Background on Pharmacovigilance, AERS and Social Media}
+The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market"\citp{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and FDA. The FDA Adverse Event Reporting system (AERS) is discussed as comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by consumers (patients), physicians and other healthcare providers. Reports are evaluated by the Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) within the FDA for drug safety signals, which may then be elevated for further review by clinicians, epidemiologists and other expertise to determine the next steps, up to and including the removal of a drug from the market.
+
+Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. This deficiency is presented as motivation for Chee's work exploring social media as a data source. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, which in turn prompt rich social interactions where patient disclose their opinions and observations about their current drug regimin effectiveness and perceived adverse events. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task.
+
+\subsection{Experimental Data}
+The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques should be applied to better prepare it for experimentation.
+
+Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, then developing lexicons to understand their composition. The messages first prepared by
+
 
 \subsection{Patient engagement in Social Media}
-Chee discusses that social media provides a venue for patients to share their
-health information in an anonymous setting as patients are not always transparent
-nor truthful with their physicians. The ability for a patient to find those with
-similar backgrounds, conditions and challenges prompts rich social interactions
-in online forums where patients disclose their opinions and observations on
-their current drug regimin effectiveness and any perceived adverse events. Chee
-feels these forums represent a means to crowdsource data for a Pharmacovigilance
-task, and can be used as a data source to for determining if a discussed drug is an
+
 FDA watch list candidate. These observations also serve as a basis for selecting
 Yahoo! public health message forums as the principal data set used in the
 dissertation's experimental study. As of May 25, 2008 there are 162,754 groups
-to draw from \citep{Chee}.
+to draw from \citep{Chee}. 12.5 million messages were made available for the analysis.
 
 The Yahoo! corpus contains
 - meta-data about messages that is largely useless (name of group,  inception date, is it moderated,
@@ -117,7 +101,7 @@ language of group, group type).  Chee asserts this is useless as it largely chan
 - Chee developed a variety of lexicon to interpret the messages and provide Statistics
 - tokens not in lexicon are manually inspected as spelling errors, differentiating between
 medical and general terms, names, foreign languages, web terms (HTML artifacts), and numbers
-
+- messages were sampled from the
 
 
 <discuss more about the data here>
@@ -148,30 +132,31 @@ sentiment analysis and assigning class labels to the message forum text. Specifi
 Support Vector Machines (SVM) and Naive Bayes classifiares are used.
 
 
-\subsection{huh?}
+\subsection{Support Vector Machines}
+SVMs map features into a high-dimensional space using a kernel function \citep{Cortes and Vapnik}.
+A hyperplane is constructed that defines the decision boundary between two classes
+in this decision space, with those new observations being classified based on which
+side of the hyperplane they fall on. Chee quotes studies by Forman & Joachims stating
+SVM's strengths in text classification, justifying its use in comparison to Naive
+Bayes.
+- LibSVM was used with a radial basis function (RFB) kernel
+- SVM solves the following optimization problem
+\[
+  min_{u, b, \xi} \frac{1}{2}w^{T}w + C \sum_{i=1}^{l}\xi i \\
+\]
+\[
+  y_{i}(w^{T}\phi(x_{i}) + b) \gte 1 - \xi_{i}
+\]
+\[
+  \xi_{i} \gte 0
+\]
 
-
-3 pages
-
-
-
-
-\section{Related Literature}
-3
-
-
-\section{Major Contributions}
-- exploration of the Yahoo! Public Health message forums as a potential data source
-for adverse drug event mining
-- exploration of classification techniques to discern FDA watch list drugs
-- development of a generalizable approach to other online social mediums
-3
-
-\section{Techniques and Algorithms}
-
-\subsection{Classification Techniques and Evaluation}
-
-
+- RBF's are non-linear in nature which gave some accuracy advantages over linear
+- RBF's are trained on two parameters $C$ and $\gamma$
+- Grid search method using cross-validation is employed to look for $C$ and $gamma$
+because it parallelizes well
+- $C$ is the penalty parameter for the error term
+- RBF kernel is defined as $K(x_i, x_j) = exp(-\gamma||x_i - x_j||^{2}), \gamma > 0$
 
 \subsection{Naive Bayes Classification}
 The dissertation uses Naive Bayes classification to address the NLP problems
@@ -203,34 +188,6 @@ decision rule to pick the most likely hypothesis.
 distribution of this random variable
 
 
-\subsection{Support Vector Machines}
-SVMs map features into a high-dimensional space using a kernel function \citep{Cortes and Vapnik}.
-A hyperplane is constructed that defines the decision boundary between two classes
-in this decision space, with those new observations being classified based on which
-side of the hyperplane they fall on. Chee quotes studies by Forman & Joachims stating
-SVM's strengths in text classification, justifying its use in comparison to Naive
-Bayes.
-- LibSVM was used with a radial basis function (RFB) kernel
-- SVM solves the following optimization problem
-\[
-  min_{u, b, \xi} \frac{1}{2}w^{T}w + C \sum_{i=1}^{l}\xi i \\
-\]
-\[
-  y_{i}(w^{T}\phi(x_{i}) + b) \gte 1 - \xi_{i}
-\]
-\[
-  \xi_{i} \gte 0
-\]
-
-- RBF's are non-linear in nature which gave some accuracy advantages over linear
-- RBF's are trained on two parameters $C$ and $\gamma$
-- Grid search method using cross-validation is employed to look for $C$ and $gamma$
-because it parallelizes well
-- $C$ is the penalty parameter for the error term
-- RBF kernel is defined as $K(x_i, x_j) = exp(-\gamma||x_i - x_j||^{2}), \gamma > 0$
-
-
-
 \subsection{Feature Selection}
 - BNS (Bi-Normal Separation) cited by \citep{Forman}
 outperforms other methods for rating & ranking feature importance for Classification
@@ -249,6 +206,11 @@ evaluated.
 - ROC curves are the true positive
 
 
+\subsection{Experimental Process}
+
+
+
+
 
 defining the speration
 
@@ -261,19 +223,57 @@ defining the speration
 3
 
 
+3 pages
+
+
+\section{Discussion of Contributions}
+Chee asserts that his research develops a technique for discerning drug Safety
+events from public data sources, and that he is developing a "crowd sourced"
+means of Pharmacovigilance.  Is this the case? Specific aspects to discuss are:
+
+1) Exploration of classification techniques to discern FDA watch list drugs from
+free text
+2) Exploration of the Yahoo! public Health message forums as  potential
+data ource for adverse drug event mining
+3) Approach generalizes to other social mediums?
+
+
+\section{Research Critique}
+A discussion of the methodology
+- were there any gaps?
+- good parts/bad parts?
+
+
+
+\section{Literature Review}
+What else is out there that is relevant in this space?  Other studies
+that have used public data for medical purposes?
+
+
+
 \section{Application Areas}
-- drug safety
-1 to 2
+The most likely area is drug safety surveillance in uncontrolled settings.
+
+- could we also use this in discovering underlying conditions?
+- drug combinations?
+- confounding fator disccovery??
+Write up 1 to 2 pages here.
 
 
+\section{Concluding Remarks}
+Conclude the critique with a few endcap statements about what I learned from it,
+where it could go, how it could motivate future research, etc.
 
-of uncertainty...\\
 
-\section{Paper Criteria}
+\newpage
+
+\section{Paper Criteria (Grading)}
 The critique should include a summary of the research reported, a discussion of the major contributions
 claimed, and an assessment of the significance of those contributions and of the research itself. The
 critique should also include a brief literature review of the topic related to the thesis, discussion of relevant
-algorithms, and application areas for the research reported. Where appropriate, the critique should
+algorithms, and application areas for the research reported.
+
+Where appropriate, the critique should
 include a comparison with other issues discussed in class. Students are encouraged to select a
 dissertation that is related to their course projects.
 The evaluation criteria for the critique are as follows:
@@ -283,11 +283,6 @@ The evaluation criteria for the critique are as follows:
 • Understanding of techniques and algorithms (20%)
 • Application areas (15%)
 • Proper construction and readability of paper (10%)
-
-
-
-\newpage
-
 
 
 

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex dissertation_critique"] 1521923369 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1521923370
+["bibtex dissertation_critique"] 1521933939 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1521933992
   "/usr/local/texlive/2017/texmf-dist/bibtex/bib/gloss/sample.bib" 1480098433 2721 b88105703bd616b4f9867992219afb8a ""
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "dissertation_critique.aux" 1521923369 2418 e4bd484ea1a4859eb03ba00141d28559 ""
+  "dissertation_critique.aux" 1521933991 2553 df42d3d27735e2c8c0f6329e56e0fec3 ""
   (generated)
   "dissertation_critique.blg"
   "dissertation_critique.bbl"
-["pdflatex"] 1521923369 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1521923370
+["pdflatex"] 1521933991 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1521933992
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -83,13 +83,13 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "dissertation_critique.aux" 1521923369 2418 e4bd484ea1a4859eb03ba00141d28559 ""
-  "dissertation_critique.bbl" 1521923369 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
-  "dissertation_critique.out" 1521923369 992 930d54fb16a0029a04bc6b8590f02b3e ""
-  "dissertation_critique.tex" 1521923367 13013 09085f04ff7a6b0c79990bdf52d61337 ""
+  "dissertation_critique.aux" 1521933991 2553 df42d3d27735e2c8c0f6329e56e0fec3 ""
+  "dissertation_critique.bbl" 1521933939 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
+  "dissertation_critique.out" 1521933991 1092 2ff01f727a15239bf6a9183b9fee787e ""
+  "dissertation_critique.tex" 1521933990 15369 8b6c3a003c72630639936263d072b323 ""
   "jmlr2e.sty" 1520971958 14082 a1e3bcbdd00aafb7fae9367e056973d1 ""
   (generated)
   "dissertation_critique.aux"
-  "dissertation_critique.pdf"
   "dissertation_critique.log"
+  "dissertation_critique.pdf"
   "dissertation_critique.out"
