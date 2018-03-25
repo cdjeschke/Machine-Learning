@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 MAR 2018 19:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 MAR 2018 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -275,26 +275,80 @@ Package natbib Warning: Citation `Fletcher' on page 2 undefined on input line 82
 Package natbib Warning: Citation `Leamon' on page 2 undefined on input line 82.
 
 
-Package natbib Warning: Citation `Chee' on page 2 undefined on input line 95.
+Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 88.
+
+[2]
+./dissertation_critique.tex:94: You can't use `macro parameter character #' in horizontal mode.
+l.94   \item Average #
+                       of tokens per message:  172.21
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./dissertation_critique.tex:95: You can't use `macro parameter character #' in horizontal mode.
+l.95   \item Average #
+                       of drug name tokens: .29
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./dissertation_critique.tex:96: You can't use `macro parameter character #' in horizontal mode.
+l.96   \item Average #
+                       of error type tokens: 7.09
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./dissertation_critique.tex:97: You can't use `macro parameter character #' in horizontal mode.
+l.97   \item Average #
+                       of name tokens: 5.34
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./dissertation_critique.tex:98: You can't use `macro parameter character #' in horizontal mode.
+l.98   \item Average #
+                       of medical tokens: .81
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-
-Package natbib Warning: Citation `Turney' on page 3 undefined on input line 113.
+Package natbib Warning: Citation `Luhn' on page 3 undefined on input line 106.
 
 
-Package natbib Warning: Citation `2002' on page 3 undefined on input line 113.
+Package natbib Warning: Citation `1957' on page 3 undefined on input line 106.
+
+[3]
+
+Package natbib Warning: Citation `Dunning' on page 4 undefined on input line 123.
 
 
-Package natbib Warning: Citation `Hearst' on page 3 undefined on input line 125.
+Package natbib Warning: Citation `1994' on page 4 undefined on input line 123.
 
 
-Package natbib Warning: Citation `Cortes and Vapnik' on page 3 undefined on input line 136.
+Package natbib Warning: Citation `Rehurek and Kolkus' on page 4 undefined on input line 123.
 
-./dissertation_critique.tex:139: Misplaced alignment tab character &.
-l.139 ... fall on. Chee quotes studies by Forman &
+[4]
+
+Package natbib Warning: Citation `Turney' on page 5 undefined on input line 168.
+
+
+Package natbib Warning: Citation `2002' on page 5 undefined on input line 168.
+
+
+Package natbib Warning: Citation `Hearst' on page 5 undefined on input line 180.
+
+
+Package natbib Warning: Citation `Cortes and Vapnik' on page 5 undefined on input line 191.
+
+./dissertation_critique.tex:194: Misplaced alignment tab character &.
+l.194 ... fall on. Chee quotes studies by Forman &
                                                    Joachims stating
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -303,12 +357,9 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-./dissertation_critique.tex:148: Undefined control sequence.
-l.148   y_{i}(w^{T}\phi(x_{i}) + b) \gte
+[5]
+./dissertation_critique.tex:203: Undefined control sequence.
+l.203   y_{i}(w^{T}\phi(x_{i}) + b) \gte
                                          1 - \xi_{i}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -316,8 +367,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./dissertation_critique.tex:151: Undefined control sequence.
-l.151   \xi_{i} \gte
+./dissertation_critique.tex:206: Undefined control sequence.
+l.206   \xi_{i} \gte
                      0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -326,19 +377,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `Manning' on page 4 undefined on input line 167.
+Package natbib Warning: Citation `Manning' on page 6 undefined on input line 222.
 
 
-Package natbib Warning: Citation `1999' on page 4 undefined on input line 167.
+Package natbib Warning: Citation `1999' on page 6 undefined on input line 222.
 
 
-Package natbib Warning: Citation `Sahami' on page 4 undefined on input line 168.
+Package natbib Warning: Citation `Sahami' on page 6 undefined on input line 223.
 
 
-Package natbib Warning: Citation `Forman' on page 4 undefined on input line 192.
+Package natbib Warning: Citation `Forman' on page 6 undefined on input line 247.
 
-./dissertation_critique.tex:193: Misplaced alignment tab character &.
-l.193 outperforms other methods for rating &
+./dissertation_critique.tex:248: Misplaced alignment tab character &.
+l.248 outperforms other methods for rating &
                                              ranking feature importance for ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -347,18 +398,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[4]
-./dissertation_critique.tex:220: Misplaced alignment tab character &.
-l.220 - selection of test &
-                            training sets
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[5]
+[6] [7]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
@@ -385,29 +425,29 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
+[8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 292.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 292.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 328.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
 Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
-(rerunfilecheck)             Checksum: 2FF01F727A15239BF6A9183B9FEE787E;1092.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 292.
+(rerunfilecheck)             Checksum: 4CE50BCBCAF17A43C155305B7F114B16;1271.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 5913 strings out of 492995
- 86000 string characters out of 6132704
+ 5925 strings out of 492995
+ 86163 string characters out of 6132704
  171767 words of memory out of 5000000
- 9386 multiletter control sequences out of 15000+600000
- 11920 words of font info for 45 fonts, out of 8000000 for 9000
+ 9394 multiletter control sequences out of 15000+600000
+ 12221 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,30p,1407b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on dissertation_critique.pdf (6 pages, 172512 bytes).
+Output written on dissertation_critique.pdf (8 pages, 184014 bytes).
 PDF statistics:
- 154 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 149 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -84,27 +84,82 @@ Chee identifies a major limitation in AERS and other \textit{spontaneous reporti
 \subsection{Experimental Data}
 The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques should be applied to better prepare it for experimentation.
 
-Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, then developing lexicons to understand their composition. The messages first prepared by
+\subsubsection{Tokenization Study of Data}
+Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, stripping them of html tags, numerical and punctuation only tokens (\$, \%, :), :(, etc), then tokenizing them on white spaces with trailing punctuation. The tokens are then evaluated in several rounds of classifiction using lexicons obtained or constructed by Chee to aid in understanding message composition. Lexicons for English and foreign language were drawn from the OpenOffice project \citep{OpenOffice}. Drug names were taken from the Drugs@FDA website. A medical and disease terminology lexicon was constructed from terms on MedicineNet, Wikiepedia, and the MedDRA lexicon from FDA AERS. The names lexicon was constructed using names extracted from email addresses in message headers in the corpus, popular baby names from the United States (US) Social Security Administration, and popular common names from the US 1990 Census.
+
+The classification process was iterative. If a token did not initially classify as English, web (a lexicon of web slang), medical, or drug name it was manually inspected and classified into \textit{error types}:  Foreign Language, Names (augmenting name lexicon), Spelling Errors, Compound Words, Slang, Abbreviations, Web, Unknown Words, Numbers and Garbage. Chee's analysis produced some interesting average metrics for the messages:
+
+% replace with a table
+\begin{itemize}
+  \item Average # of tokens per message:  172.21
+  \item Average # of drug name tokens: .29
+  \item Average # of error type tokens: 7.09
+  \item Average # of name tokens: 5.34
+  \item Average # of medical tokens: .81
+\end{itemize}
+
+Of the error tokens, over 54\% of them were found to be foreign language tokens - primarily Indonesian and Spanish - motivating Chee to incorporate Foreign Language lexicons from OpenOffice to speed up classification. A primary concern for Chee was the presence of spelling errors, but the classification results show only a $.8\%$ error rate, which Chee uses to rationalize sticking with dictionary based approaches for word classification for their high precision. Finally, it is acknowledged that Named Entity Recognition (NER) is challenging in this context. FDA approved drugs represent a closed class of nominals, but foreign drugs, herbs and other chemicals are not available in a comprehensive list. Dictionary approaches to classifying drug outcomes are challenged by the use of slang terms.
+
+\subsubsection{A Vocabulary for Experimentation}
+Chee describes performance concerns training SVMs for classification using all the words in the message, given the $O(kn)$ training time for $n$ training instances using $k$ features (words). Additionally, multiple words together in order can convey a different meaning than separate single words, such as "vitamin a" compared to "vitamin" and "a".
+
+These constraints motivate the use of word-grams - unigrams, bigrams and trigrams specifically - as a way to capture more accurate meaning. Chee references \citep{Luhn, 1957}'s work proposing the most informative words in a message would be the mid-frequently occuring ones, electing to take the top $k - n$ most frequently occuring terms in a message as the most important terms, where $k$ is the top number of terms, minus $n$ accounting for simple function words like \textit{a}, \textit{or} and \textit{the}.
+
+Specialized lexicons are developed as a means to ensure the classifiers that will be trained do not overfit to only those drugs in the drug lexicon, preventing the identification of previously unseen (unlabeled) watchlist drugs. The lexicons selected to use in the classification are:
+\begin{itemize}
+  \item drugs - a drug list from drugs.com
+  \item medical - medical terminology extracted from MedicineNet
+  \item sentiment - a sentiment lexicon from the combination of SentiWordNet and Linguistic Inquiry and Word Count (LIWC)
+  \item medra - the MedDRA terms for drug adverse events/outcomes from FDA AERS
+  \item disease - a disease list from Wikipedia
+\end{itemize}
+
+These five lexicons allow for twentynine different datasets of features to be constructed from the Yahoo! corpus messages for the watchlist drug classification experiments. The feature vector used in classification is then the intersection of those terms found in \textit{all} of the lexicons used in that particular test. For example, if the sentinment and drug lexicons are used together, the feature vector has only those terms that occur in both lexicons.
 
 
-\subsection{Patient engagement in Social Media}
+\subsection{Language Identification for Messages}
+The previous study identified a significant number of foreign language messages in the corpus. While these text processing techniques are language agnostic, removing the foreign language messages will reduce the feature vector length for training, as well as acknowledge the audience for this study is English speaking.
 
-FDA watch list candidate. These observations also serve as a basis for selecting
-Yahoo! public health message forums as the principal data set used in the
-dissertation's experimental study. As of May 25, 2008 there are 162,754 groups
-to draw from \citep{Chee}. 12.5 million messages were made available for the analysis.
+Messages containing non-romanized text are removed first using Unicode language detection. Since non-English languages in romanized text are harder to discern, Chee compares and contrasts character n-gram approaches by \citep{Dunning, 1994} with dictionary approaches from \citep{Rehurek and Kolkus} for foreign language classification. Dictionaries are opted for given the simple, binary nature of the problem: Is a message English or not? Dictionaries for foreign language words are taken from the OpenOffice project and used in conjunction with the medical, drug, disease and name lexicons mentioned earlier are used to evaluate a linear inequality for each message to determine if it will be kept or not.
 
-The Yahoo! corpus contains
-- meta-data about messages that is largely useless (name of group,  inception date, is it moderated,
-language of group, group type).  Chee asserts this is useless as it largely changes over time.
-- machine learning techniques are trained on grammatically correct text
-- Chee developed a variety of lexicon to interpret the messages and provide Statistics
-- tokens not in lexicon are manually inspected as spelling errors, differentiating between
-medical and general terms, names, foreign languages, web terms (HTML artifacts), and numbers
-- messages were sampled from the
+First the messages are stripped of tokens containing web addresses, punctuation only (emoticons), as well as short words, email addresses or tokens that are already on an ignore list. Remaining tokens in each message are counted up using the following algorithm:
+\begin{itemize}
+  \item if (word in ignore) OR (word length < 2) OR (word contains "@") ++ignore
+  \item else if (word in English) ++english
+  \item else if (word in Drug) ++drug
+  \item else if (word in medical) ++medical
+  \item else if (word in name) ++name
+  \item else if (word in foreign) ++foreign
+  \item else unknown++
+\end{itemize}
+Once the counts are obtained, the following linear inequality is evaluated:
+\[
+  4 * foreign + unknown + ignore > english + drugs + medical
+\]
+The weighting of the foreign words is selected to ensure messages contain less than 25\% foreign words to be considered english. Foreign messages are removed and English messages retained.  This resulted in a reduction from 12,520,438 messages to 10,178,710 messages, and a reduction in the number of unique terms per message from 2.5 to 2.
+
+\subsection{Experimental Design}
+The goal
+
+- feature vector 1 is entirely words or phrases, including N-grams where word ordering matters, lexicons used
+- second vector is words from vector 1, then speciality features:  counts of instances of a speciality lexicon.  Number of diseases mentions,  drug mentions, positive sentiment words, negative sentiment Words
+-utilized Kullback-Leibler divergence (KL divergence) to quantify the difference in word frequency distributions between watchlist and non-watchlist drug containing messages
+- created a probability distribution from a frequency distribution over words
+utilizing smoothing (smoothing handles the case of a word in P not in Q creating infinite divergence)
+- compuared KL divergence between watchlist and non-watchlist drug containing messages to the Google Web 1T 5-gram corpus and the Reuters Corpus.
 
 
-<discuss more about the data here>
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Sentiment, Named Entities and Classification}
@@ -205,25 +260,6 @@ Best practice suggested words occuring less than 3 times in a data set should be
 evaluated.
 - ROC curves are the true positive
 
-
-\subsection{Experimental Process}
-
-
-
-
-
-defining the speration
-
-- Yahoo data pre-processing techniques using NLP
-- Selection of General Vocabularies and lexicons of interest
-- measurement of sentiment in drug outcome messages
-- selection of test & training sets
-- classification using various lexicons
-- how KL Divergence is used as part of the experiment
-3
-
-
-3 pages
 
 
 \section{Discussion of Contributions}
