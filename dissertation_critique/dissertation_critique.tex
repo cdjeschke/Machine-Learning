@@ -210,125 +210,232 @@ Two types of feature vector are decided upon and then leveraged in the  experime
 
 The richness of the training data is of foremost concern to Chee. There are only 435 drugs having 500 or more unique messages, and only 575 drugs having more than 250 messages, with 63 and 77 watchlist drugs mentioned in each respectively. Therefore approximately 90\% of message instances reference non-watchlist drugs, creating a data scarcity problem when attempting to classify watchlist drugs. Chee decides upon a minimum cutoff of 250 messages per drug for that drug's messages to be included in training and testing. An  experiment is constructed to evaluate techniques to address the scarcity, including scaling features, selecting different ratios of negative to positive training examples such as 1 to 1 and 2 to 1, and experimenting with different split ratios in cross-validation - 90/10 and 80/20. These experiments are dubbed inconclusive and not elaborated on further in the dissertation.
 
-\subsubsection{Classification Experiments and Results}
-- test and training sets are sampled with the same distribution as the original data
-- 90/10 split, 90\% to train and 10\% to sample.  Each split is sampled to preserve the original distribution of positive and negative instances.
-
-- cost weighting and no-cost weighting experiments are run.  cost weighting adjsuts the costs of the positive and negative examples so they are approximately equal.  A greater penalty is imposed for incorrectly classifying a positive example than a negative one.
-
-
-
-
-
-
-
-
-- Decision Making.
-- Scaling of individual dimensions has to be considered. Avoid attributes having greater numeric ranges dominating those with lower.  Term-frequency inverse document frequency (tf-idf) can be used to weight a word according to its importance upon the number of appearances.
-
-- 90/10 split for training presents a porblem because if only 10\% of the instances were used for testing, this leaves 58 testing instances or 16 instances with a balanced test set.
-
-- Chose to use drugs with more than 250 messages, leading to an overall example set of 575 drugs, of which 77 are watchlist drugs. Separating examples into two different data sets - one with 500+ and one with 250-500 leads to questions of generalizability.  Will a classifier trained on more data (500 messages/drug) work on instances with sparser data (250 messages/drug) or vice versa?  Would the results be fair?  Both types are mixed and a subset of the total is used for testing while the rest is used for training
-  - 50\% 500+
-  - 50\% 250-500
-
-An initial experiment was run to answer some data set construction questions.
-- should we use a 1:1 ratio for testing, or 2:1
-- chose an 80/20 split since if a 90/10 was used with 1:1 we would have only 15 positive instances
-- word features used were comprised of the combined special lexicons
-- Used SVMs with RBF and grid searh with 10-fold cross-validation for building models
-- test data  was run, ROC curves generated and AUC Numbers
-- These tests were inconclusive
-
-For the classification experiments training sets are sampled with the same distribution as the original data.  Data is divided into a 90/10 split with 90\% samples being used to train and 10\% used for testing, and are sampled such that the splits represent the original distribution of positive and negative instances.
-- several experiments are run.  First a general classification experiment with now cost weighting.  Next a cost weighting experiment where the costs of positive and negative examples are adjusted to make the distributions equal.  In the case of cost weighting experiment, a greater pentalty is imposed for incorrectly classifying a positive example then a negative one.
-
-- types of experiments performed:
-\\begin{itemize}
-  \item Un-normalized Naive Bayes (UNB)
-  \item Un-normalized Naive Bayes w/ cost weighting (UNBC)
-  \item Normalized Naive Bayes (NNB)
-  \item Normalized Naive Bayes with cost weighting (NNBC)
-  \item Unnormalized SVM (SVM)
-  \item Unnormalized SVM with cost weighting (SVMC)
-  \item Normalized SVM (SVM)
-  \item Normalized SVM with cost weighting (NSVMC)
+\subsubsection{Classifier and Lexicon Selection}
+The next goal of the dissertation's experimentation is to discover the best performing combinations of classifier, lexicons and feature selection as a means to inform the construction of a \textit{meta classifier} to be used in watchlist drug prediction. The inconclusive nature of the data set sizing experiments prompts settling on the following methodology for classifier
+training and evaluation:
+\begin{itemize}
+  \item test and training sets are sampled with the same distribution as the original data. No use of 1 to 1, 2 to 1 or similar negative to positive sample ratios.
+  \item Data is divided into a 90/10 split, where 90\% of the samples are used to train and 10\% used to validate
+  \item The splits themselves are sampled per the original distribution.
 \end{itemize}
 
-Grid search was performed for each fold on SVM experiments to tune the hyperparameters.
+The classifier evaluation experiments evaluate combinations of classifier type (Support Vector Machines or Naive Bayes), the optional use of normalization and cost-weighting, and various combinations of the lexicons described earlier. Cost-weighting applies a greater penalty to incorrectly classifying a positive example then a negative one during training, as a means to offset the low prevalence (~13\%) of watchinglist drugs in the training data. The experimental results and analysis make heavy use of acronyms to understand the combinations evaluated:
 
-Speciality Lexicon selections
-- initial experiment of the 5 combinations (medical, disease, drug, sentiment, reaction) was used to identify the best combination of lexicon that provides top performance. 240 experiments with various parameters were run.  Accuracy, F1 score and AUC were chosen as evaluation metrics.
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    Acronym & Description\\
+    \hline\hline
+    UNB & Un-normalized Naive Bayes\\
+    \hline
+    UNBC & Un-normalized Naive Bayes with Cost Weighting\\
+    \hline
+    NNB & Normalized Naive Bayes\\
+    \hline
+    NNBC & Normalized Naive Bayes with Cost Weighting\\
+    \hline
+    SVM & Un-normalized SVM\\
+    \hline
+    SVMC & Un-normalized SMV with Cost Weighting\\
+    \hline
+    NSVM & Normalized SVM\\
+    \hline
+    dis & disease lexicon\\
+    \hline
+    react & reactions lexicon\\
+    \hline
+    drugs & drugs lexicon\\
+    \hline
+    sent & sentiment lexicon\\
+    \hline
+    med & medications lexicon\\
+    \hline
+  \end{tabular}
+\end{center}
+For example, \textit{drugs\_dis\_sent\_react\_NSVMC} would equate to an experiment using the Normalized SVM with Cost Weighting, incorporating the drugs, disease, sentiment and reaction lexicons.
 
-BNS lexicon experiments.
-- Use test subset of data to chose the most salient word gram features using Bi-Normal Separation which preferences wordgras that are differentially expressed between watchlist & non-watchlist messages.  The top 15,000 , 10,000 and 5,000 word grams were chosen from the test subset. Utilizing word grams from the entire message would inflate the classification scores since often times classifiers do not have complete knowledge about the entire lexicon apriori.
+A series of 240 experiments were run using the combinations above to ascertain the best combination of lexicons to use when evaluated according to accuracy, F1 score, and area under the ROC curve (AUC). Accuracy is reviewed by Chee first, and the top 3 classifier configurations for each accuracy test are presented for context:
 
-Watchlist predictions
-- previous sections results are used to choose the highest performing classifiers for Accuracy, F1 and AUC scores. Using the feature set and classification algorithms, numerous cross validation runs across all of the data are performed multiple times.  The output from these classification runs provides insight into future watchlist drug predictions.
+\begin{center}
+  \begin{tabular}{||c c c c c||}
+    \hline
+    Experiment Type & Configuration & Accuracy & Lower Bound & Upper Bound \\
+    \hline\hline
+    CV & \verb|dis_react_NSVM| & 0.903288201 & 0.793206235 & 0.957882075 \\
+    \hline
+    CV & \verb|drugs_dis_sent_react_NSVM| & 0.901353965 & 0.790801818 & 0.956684149 \\
+    \hline
+    CV & \verb|drugs_sent_react_NSVM| & 0.901353965 & 0.790801818 & 0.956684149 \\
+    \hline
+    Test & \verb|drugs_dis_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
+    \hline
+    Test & \verb|drugs_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
+    \hline
+    Test & \verb|dis_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
+    \hline
+    Test(CW) & \verb|drugs_dis_NSVMC| & 0.879310345 & 0.771204077 & 0.940291098 \\
+    \hline
+    Test(CW) & \verb|drugs_sent_SVMC| & 0.862068966 & 0.750738501 & 0.928415984 \\
+    \hline
+    Test(CW) & \verb|drugs_sent_NSVMC| & 0.862068966 & 0.750738501 & 0.928415984 \\
+    \hline
+  \end{tabular}
+\end{center}
 
-- multiple top performing classifiers from each category are combined in an ensemble like approach to produce a meta-classifier where the false positives from each category are combined using a linear combination resulting in a score
+The accuracy of a naive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, when considering 95\% confidence interval defined by the lower and upper bounds there is uncertainty that any classifier is more accurate than the naive baseline. The cost weighting shows no accuracy benefits either.
 
-- hypothesis is that drugs consistently marked as false positives are candidates for watchlist drugs in the future.
+Discussed next are the F1 and area under the ROC curve (AUC) scores. Analysis of the F1 score also prompts inspection regarding the recall and pecision tradoffs therein, as the F1 score represents a harmonic mean of the two:
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    Experiment Type & Configuration & F1 Score\\
+    \hline\hline
+    CV & \verb|drugs_dis_react_NSVM| & 0.476190476 \\
+    \hline
+    CV & \verb|drugs_dis_react_UNB| & 0.472527473 \\
+    \hline
+    CV & \verb|drugs_UNB| & 0.4698795518 \\
+    \hline
+    Test & \verb|drugs_UNB| & 0.470588235 \\
+    \hline
+    Test & \verb|drugs_dis_UNB| & 0.444444444 \\
+    \hline
+    Test & \verb|drugs_dis_sent_react_UNB| & 0.363636364 \\
+    \hline
+    Test(CW) & \verb|drugs_dis_SVMC| & 0.444444444 \\
+    \hline
+    Test(CW) & \verb|drugs_UNBC| & 0.444444444 \\
+    \hline
+    Test(CW) & \verb|drugs_react_SVMC| & 0.384615385 \\
+    \hline
+  \end{tabular}
+\end{center}
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline Experiment Type & Configuration & AUC \\
+    \hline\hline
+    CV & \verb|drugs_UNB| & 0.7592 \\
+    \hline
+    CV & \verb|drugs_dis_UNB| & 0.7564 \\
+    \hline
+    CV & \verb|med_drugs_NNB| & 0.7545 \\
+    \hline
+    Test & \verb|dis_UNB| & 0.7514 \\
+    \hline
+    Test & \verb|drugs_dis_UNB| & 0.6850 \\
+    \hline
+    Test & \verb|dis_sent_react_UNB| & 0.6675 \\
+    \hline
+    Test (CW) & \verb|drugs_UNBC| & 0.7825 \\
+    \hline
+    Test (CW) & \verb|drugs_dis_UNBC| & 0.7075 \\
+    \hline
+    Test (CW) & \verb|drugs_dis_SVMC| & 0.6900 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\includegraphics[width=7cm, height=5cm]{Figure-5-F1.png}
+The F1 scores are lower where cost-weighting is applied, comparable to accuracy. The image above shows how recall (Y axis) and precision (X) access vary across classifier configurations in the test instance, and a comparable image was seen with cost-weighting: low numbers of high recall or precision outliers, and most of the mass concentrated at low recall and precision. AUC does contain higher scores for cost weighted classifers compared to those non-weighted.
+
+As the goal of this experiment was to identify the value of the lexicons, their prevelance in the top 10 best performing weighted and non-weighted classifiers for each metric is reviewed:
+%two tables side by side
+\begin{center}
+  % caption for non-weighted classifiers
+  \begin{tabular}{c c}
+    \hline
+    Drugs & 33\\
+    \hline
+    Disease & 32\\
+    \hline
+    Sentiment & 28\\
+    \hline
+    Reactions & 27\\
+    \hline
+    Medical & 7\\
+    \hline
+  \end{tabular}
+  \quad
+  % caption for weighted classifiers
+  \begin{tabular}{c c}
+    \caption{Weighted Classifers}
+    \hline
+    Drugs & 20\\
+    \hline
+    Disease & 18\\
+    \hline
+    Sentiment & 15\\
+    \hline
+    Reactions & 10\\
+    \hline
+    Medical & 5\\
+    \hline
+  \end{tabular}
+\end{center}
+
+The ranking favors the drugs, disease and sentiment lexicons, which are then selected for use in the prediction problem. Unfortunately this leads to overfitting concerns because a classifier will learn on the drug names and diseases associated with watchlist drugs. Chee notes disappointment that the reactions lexicon does not rank higher, indicating it may not really capture how people speak about adverse events.
 
 
-- Given a 90/10 split where 10\% of drugs are used to evaluate a classifer, 10 runs should ensure each drug is tested at least once and 50 runs statistically speaking should allow each drug to be classified 5 times against 5 different classifiers.  For these experiments, each set of features was used to build a hundred classifiers, test and training sets.
+\section{Discussion of Contributions}
+Chee asserts that his research develops a technique for discerning drug Safety
+events from public data sources, and that he is developing a "crowd sourced"
+means of Pharmacovigilance.  Is this the case? Specific aspects to discuss are:
+
+1) Exploration of classification techniques to discern FDA watch list drugs from
+free text
+2) Exploration of the Yahoo! public Health message forums as  potential
+data ource for adverse drug event mining
+3) Approach generalizes to other social mediums?
 
 
-- Outputs from classifers are utilized because different types of classifers were found to perform the best and their output cannot be directly compared.
-
-
-- a weighted ratio is creatd to score the false positives
-\[
-  \frac{Number of False Positives}{Number of Occurences(tests)} * Number of False Positives * Number of Classifier Types
-\]
-Produces a weighted averaged over the number of false positives.  The number of different classifiers is also important, which classified it as a watchlist drug giving credence to other classifications.
-
-Two runs were made with drugs withdrawn from the market.  First widthdrawn drugs were labeled as non-watchlist to determine if the classifiers would accurately identify the withdrawn drugs.  Second run removed the watchlist drugs and classifies them after the classifier has been built for each fold of the cross-validation run.  This second method should more accurately identify the withdrawn drugs with greater confidence because their data is not mixed with the other non-watchlist drugs possibly, reducing the accuracy of the classifiers.
-
-
-
-
-
-
+\section{Research Critique}
+A discussion of the methodology
+- were there any gaps?
+- good parts/bad parts?
 
 
 
+\section{Literature Review}
+What else is out there that is relevant in this space?  Other studies
+that have used public data for medical purposes?
+
+
+
+\section{Application Areas}
+The most likely area is drug safety surveillance in uncontrolled settings.
+
+- could we also use this in discovering underlying conditions?
+- drug combinations?
+- confounding fator disccovery??
+Write up 1 to 2 pages here.
+
+
+\section{Concluding Remarks}
+Conclude the critique with a few endcap statements about what I learned from it,
+where it could go, how it could motivate future research, etc.
+
+
+\section{Paper Criteria (Grading)}
+The critique should include a summary of the research reported, a discussion of the major contributions
+claimed, and an assessment of the significance of those contributions and of the research itself. The
+critique should also include a brief literature review of the topic related to the thesis, discussion of relevant
+algorithms, and application areas for the research reported.
+
+Where appropriate, the critique should
+include a comparison with other issues discussed in class. Students are encouraged to select a
+dissertation that is related to their course projects.
+The evaluation criteria for the critique are as follows:
+• Overview of the research reported (20%)
+• Review of the related literature (15%)
+• Major contributions of the thesis (20%)
+• Understanding of techniques and algorithms (20%)
+• Application areas (15%)
+• Proper construction and readability of paper (10%)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\newpage
 
 \subsection{Sentiment, Named Entities and Classification}
 Of specific interest to the dissertation is applying sentiment analysis and named
@@ -430,63 +537,11 @@ evaluated.
 
 
 
-\section{Discussion of Contributions}
-Chee asserts that his research develops a technique for discerning drug Safety
-events from public data sources, and that he is developing a "crowd sourced"
-means of Pharmacovigilance.  Is this the case? Specific aspects to discuss are:
-
-1) Exploration of classification techniques to discern FDA watch list drugs from
-free text
-2) Exploration of the Yahoo! public Health message forums as  potential
-data ource for adverse drug event mining
-3) Approach generalizes to other social mediums?
-
-
-\section{Research Critique}
-A discussion of the methodology
-- were there any gaps?
-- good parts/bad parts?
 
 
 
-\section{Literature Review}
-What else is out there that is relevant in this space?  Other studies
-that have used public data for medical purposes?
 
 
-
-\section{Application Areas}
-The most likely area is drug safety surveillance in uncontrolled settings.
-
-- could we also use this in discovering underlying conditions?
-- drug combinations?
-- confounding fator disccovery??
-Write up 1 to 2 pages here.
-
-
-\section{Concluding Remarks}
-Conclude the critique with a few endcap statements about what I learned from it,
-where it could go, how it could motivate future research, etc.
-
-
-\newpage
-
-\section{Paper Criteria (Grading)}
-The critique should include a summary of the research reported, a discussion of the major contributions
-claimed, and an assessment of the significance of those contributions and of the research itself. The
-critique should also include a brief literature review of the topic related to the thesis, discussion of relevant
-algorithms, and application areas for the research reported.
-
-Where appropriate, the critique should
-include a comparison with other issues discussed in class. Students are encouraged to select a
-dissertation that is related to their course projects.
-The evaluation criteria for the critique are as follows:
-• Overview of the research reported (20%)
-• Review of the related literature (15%)
-• Major contributions of the thesis (20%)
-• Understanding of techniques and algorithms (20%)
-• Application areas (15%)
-• Proper construction and readability of paper (10%)
 
 
 

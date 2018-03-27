@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 MAR 2018 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 MAR 2018 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -390,151 +390,99 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [7 <./images/Figure-3-Tysabri.png> <./images/Figure-4-Vioxx.png>] [8]
+Overfull \hbox (44.8971pt too wide) in paragraph at lines 260--283
+ [] 
+ []
 
-./dissertation_critique.tex:248: LaTeX Error: Lonely \item--perhaps a missing list environment.
+[9] <images/Figure-5-F1.png, id=163, 531.9875pt x 297.11pt>
+File: images/Figure-5-F1.png Graphic file (type png)
+ <use images/Figure-5-F1.png>
+Package pdftex.def Info: images/Figure-5-F1.png used on input line 338.
+(pdftex.def)             Requested size: 199.162pt x 142.27116pt.
+
+
+./dissertation_critique.tex:361: LaTeX Error: \caption outside float.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248   \item U
-               n-normalized Naive Bayes (UNB)
-Try typing  <return>  to proceed.
+l.361     \caption
+                  {Weighted Classifers}
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+./dissertation_critique.tex:362: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.362     \hline
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
-./dissertation_critique.tex:249: LaTeX Error: Lonely \item--perhaps a missing list environment.
+./dissertation_critique.tex:362: You can't use `\hrule' here except with leaders.
+\hline ->\noalign {\ifnum 0=`}\fi \hrule 
+                                         \@height \arrayrulewidth \futurelet...
+l.362     \hline
+                
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.249   \item U
-               n-normalized Naive Bayes w/ cost weighting (UNBC)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+./dissertation_critique.tex:362: Missing number, treated as zero.
+<to be read again> 
+                   \futurelet 
+l.362     \hline
+                
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
+./dissertation_critique.tex:362: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \futurelet 
+l.362     \hline
+                
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-./dissertation_critique.tex:250: LaTeX Error: Lonely \item--perhaps a missing list environment.
+[10 <./images/Figure-5-F1.png>]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+ [11] [12]
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.250   \item N
-               ormalized Naive Bayes (NNB)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./dissertation_critique.tex:251: LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.251   \item N
-               ormalized Naive Bayes with cost weighting (NNBC)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./dissertation_critique.tex:252: LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.252   \item U
-               nnormalized SVM (SVM)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./dissertation_critique.tex:253: LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.253   \item U
-               nnormalized SVM with cost weighting (SVMC)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./dissertation_critique.tex:254: LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.254   \item N
-               ormalized SVM (SVM)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Package natbib Warning: Citation `Turney' on page 13 undefined on input line 443.
 
 
-./dissertation_critique.tex:255: LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.255   \item N
-               ormalized SVM with cost weighting (NSVMC)
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Package natbib Warning: Citation `2002' on page 13 undefined on input line 443.
 
 
-./dissertation_critique.tex:256: LaTeX Error: \begin{document} ended by \end{itemize}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.256 \end{itemize}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./dissertation_critique.tex:256: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.256 \end{itemize}
-                   
-Things are pretty mixed up, but I think the worst is over.
-
-./dissertation_critique.tex:264: Misplaced alignment tab character &.
-l.264 ...ferentially expressed between watchlist &
-                                                   non-watchlist messages.  ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[9]
-
-Package natbib Warning: Citation `Turney' on page 10 undefined on input line 336.
+Package natbib Warning: Citation `Hearst' on page 13 undefined on input line 455.
 
 
-Package natbib Warning: Citation `2002' on page 10 undefined on input line 336.
+Package natbib Warning: Citation `Cortes and Vapnik' on page 13 undefined on input line 466.
 
-
-Package natbib Warning: Citation `Hearst' on page 10 undefined on input line 348.
-
-
-Underfull \vbox (badness 1242) has occurred while \output is active []
-
- [10]
-
-Package natbib Warning: Citation `Cortes and Vapnik' on page 11 undefined on input line 359.
-
-./dissertation_critique.tex:362: Misplaced alignment tab character &.
-l.362 ... fall on. Chee quotes studies by Forman &
+./dissertation_critique.tex:469: Misplaced alignment tab character &.
+l.469 ... fall on. Chee quotes studies by Forman &
                                                    Joachims stating
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -543,8 +491,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./dissertation_critique.tex:371: Undefined control sequence.
-l.371   y_{i}(w^{T}\phi(x_{i}) + b) \gte
+./dissertation_critique.tex:478: Undefined control sequence.
+l.478   y_{i}(w^{T}\phi(x_{i}) + b) \gte
                                          1 - \xi_{i}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -552,8 +500,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./dissertation_critique.tex:374: Undefined control sequence.
-l.374   \xi_{i} \gte
+./dissertation_critique.tex:481: Undefined control sequence.
+l.481   \xi_{i} \gte
                      0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -562,20 +510,20 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `Manning' on page 11 undefined on input line 390.
+Package natbib Warning: Citation `Manning' on page 13 undefined on input line 497.
 
 
-Package natbib Warning: Citation `1999' on page 11 undefined on input line 390.
+Package natbib Warning: Citation `1999' on page 13 undefined on input line 497.
 
 
-Package natbib Warning: Citation `Sahami' on page 11 undefined on input line 391.
+Package natbib Warning: Citation `Sahami' on page 13 undefined on input line 498.
 
-[11]
+[13]
 
-Package natbib Warning: Citation `Forman' on page 12 undefined on input line 415.
+Package natbib Warning: Citation `Forman' on page 14 undefined on input line 522.
 
-./dissertation_critique.tex:416: Misplaced alignment tab character &.
-l.416 outperforms other methods for rating &
+./dissertation_critique.tex:523: Misplaced alignment tab character &.
+l.523 outperforms other methods for rating &
                                              ranking feature importance for ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -584,26 +532,7 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[12]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
- (./dissertation_critique.bbl
+(./dissertation_critique.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
@@ -611,33 +540,34 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 551.
+[14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 551.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 496.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 551.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 551.
 Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
-(rerunfilecheck)             Checksum: D8C026240D23ACDAC482805CC0C1753E;1864.
+(rerunfilecheck)             Checksum: 4CCA3E76031A6E5AA48BF424B6D622B9;1858.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 551.
  ) 
 Here is how much of TeX's memory you used:
- 5970 strings out of 492995
- 87079 string characters out of 6132704
- 171839 words of memory out of 5000000
- 9420 multiletter control sequences out of 15000+600000
- 12221 words of font info for 46 fonts, out of 8000000 for 9000
+ 5978 strings out of 492995
+ 87245 string characters out of 6132704
+ 177839 words of memory out of 5000000
+ 9425 multiletter control sequences out of 15000+600000
+ 12389 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,30p,1407b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on dissertation_critique.pdf (13 pages, 289490 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmtt8.pfb>
+Output written on dissertation_critique.pdf (14 pages, 309266 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 
