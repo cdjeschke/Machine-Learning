@@ -1,65 +1,39 @@
 This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation_critique.aux
-The style file: plainnat.bst
-White space in argument---line 31 of file dissertation_critique.aux
- : \citation{Rehurek
- :                   and Kolkus}
-I'm skipping whatever remains of this command
-White space in argument---line 38 of file dissertation_critique.aux
- : \citation{Cortes
- :                  and Vapnik}
-I'm skipping whatever remains of this command
-Database file #1: sample.bib
-Warning--I didn't find a database entry for "FDA"
-Warning--I didn't find a database entry for "Fletcher"
-Warning--I didn't find a database entry for "Leamon"
-Warning--I didn't find a database entry for "OpenOffice"
-Warning--I didn't find a database entry for "Luhn"
-Warning--I didn't find a database entry for "1957"
-Warning--I didn't find a database entry for "Dunning"
-Warning--I didn't find a database entry for "1994"
-Warning--I didn't find a database entry for "Rude"
-Warning--I didn't find a database entry for "Gortner"
-Warning--I didn't find a database entry for "Pennebaker"
-Warning--I didn't find a database entry for "2004"
-Warning--I didn't find a database entry for "Turney"
-Warning--I didn't find a database entry for "2002"
-Warning--I didn't find a database entry for "Hearst"
-Warning--I didn't find a database entry for "Manning"
-Warning--I didn't find a database entry for "1999"
-Warning--I didn't find a database entry for "Sahami"
-Warning--I didn't find a database entry for "Forman"
+I found no \citation commands---while reading file dissertation_critique.aux
+I found no \bibdata command---while reading file dissertation_critique.aux
+I found no \bibstyle command---while reading file dissertation_critique.aux
 You've used 0 entries,
-            2773 wiz_defined-function locations,
-            625 strings with 5060 characters,
-and the built_in function-call counts, 33 in all, are:
+            0 wiz_defined-function locations,
+            83 strings with 516 characters,
+and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0
 < -- 0
 + -- 0
 - -- 0
-* -- 2
-:= -- 10
+* -- 0
+:= -- 0
 add.period$ -- 0
 call.type$ -- 0
 change.case$ -- 0
 chr.to.int$ -- 0
 cite$ -- 0
 duplicate$ -- 0
-empty$ -- 1
+empty$ -- 0
 format.name$ -- 0
-if$ -- 1
-int.to.chr$ -- 1
-int.to.str$ -- 1
+if$ -- 0
+int.to.chr$ -- 0
+int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 8
+newline$ -- 0
 num.names$ -- 0
 pop$ -- 0
-preamble$ -- 1
+preamble$ -- 0
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 0
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -70,5 +44,5 @@ type$ -- 0
 warning$ -- 0
 while$ -- 0
 width$ -- 0
-write$ -- 7
-(There were 2 error messages)
+write$ -- 0
+(There were 3 error messages)

@@ -80,10 +80,10 @@ INPUT dissertation_critique.out
 INPUT dissertation_critique.out
 INPUT dissertation_critique.out
 INPUT dissertation_critique.out
-OUTPUT dissertation_critique.pdf
 INPUT ./dissertation_critique.out
 INPUT ./dissertation_critique.out
 OUTPUT dissertation_critique.out
+OUTPUT dissertation_critique.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
@@ -122,6 +122,12 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT images/Figure-1-Zipfian.png
+INPUT ./images/Figure-1-Zipfian.png
+INPUT ./images/Figure-1-Zipfian.png
+INPUT images/Figure-2-AERS_Drugs.png
+INPUT ./images/Figure-2-AERS_Drugs.png
+INPUT ./images/Figure-2-AERS_Drugs.png
 INPUT dissertation_critique.bbl
 INPUT dissertation_critique.bbl
 INPUT dissertation_critique.aux

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  25 MAR 2018 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  26 MAR 2018 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -183,20 +183,20 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 ) (./dissertation_critique.aux)
 \openout1 = `dissertation_critique.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
  (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
@@ -223,7 +223,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 31.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -231,36 +231,36 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count107
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
  (./dissertation_critique.out) (./dissertation_critique.out)
 \@outlinefile=\write3
 \openout3 = `dissertation_critique.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
-LaTeX Font Info:    Try loading font information for U+msa on input line 79.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 83.
+LaTeX Font Info:    Try loading font information for U+msa on input line 83.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 79.
+LaTeX Font Info:    Try loading font information for U+msb on input line 83.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
-Package natbib Warning: Citation `FDA' on page 2 undefined on input line 80.
+Package natbib Warning: Citation `FDA' on page 2 undefined on input line 84.
 
-./dissertation_critique.tex:80: Undefined control sequence.
-l.80 ...udy of drugs once released to market"\citp
+./dissertation_critique.tex:84: Undefined control sequence.
+l.84 ...udy of drugs once released to market"\citp
                                                   {Chee}, and the important ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -269,75 +269,75 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `Fletcher' on page 2 undefined on input line 82.
+Package natbib Warning: Citation `Fletcher' on page 2 undefined on input line 86.
 
 
-Package natbib Warning: Citation `Leamon' on page 2 undefined on input line 82.
+Package natbib Warning: Citation `Leamon' on page 2 undefined on input line 86.
 
 
-Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 88.
+Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 92.
 
 [2]
-./dissertation_critique.tex:94: You can't use `macro parameter character #' in horizontal mode.
-l.94   \item Average #
+./dissertation_critique.tex:98: You can't use `macro parameter character #' in horizontal mode.
+l.98   \item Average #
                        of tokens per message:  172.21
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:95: You can't use `macro parameter character #' in horizontal mode.
-l.95   \item Average #
+./dissertation_critique.tex:99: You can't use `macro parameter character #' in horizontal mode.
+l.99   \item Average #
                        of drug name tokens: .29
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:96: You can't use `macro parameter character #' in horizontal mode.
-l.96   \item Average #
-                       of error type tokens: 7.09
+./dissertation_critique.tex:100: You can't use `macro parameter character #' in horizontal mode.
+l.100   \item Average #
+                        of error type tokens: 7.09
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:97: You can't use `macro parameter character #' in horizontal mode.
-l.97   \item Average #
-                       of name tokens: 5.34
+./dissertation_critique.tex:101: You can't use `macro parameter character #' in horizontal mode.
+l.101   \item Average #
+                        of name tokens: 5.34
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:98: You can't use `macro parameter character #' in horizontal mode.
-l.98   \item Average #
-                       of medical tokens: .81
+./dissertation_critique.tex:102: You can't use `macro parameter character #' in horizontal mode.
+l.102   \item Average #
+                        of medical tokens: .81
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-Package natbib Warning: Citation `Luhn' on page 3 undefined on input line 106.
+Package natbib Warning: Citation `Luhn' on page 3 undefined on input line 110.
 
 
-Package natbib Warning: Citation `1957' on page 3 undefined on input line 106.
+Package natbib Warning: Citation `1957' on page 3 undefined on input line 110.
 
 [3]
 
-Package natbib Warning: Citation `Dunning' on page 4 undefined on input line 123.
+Package natbib Warning: Citation `Dunning' on page 4 undefined on input line 127.
 
 
-Package natbib Warning: Citation `1994' on page 4 undefined on input line 123.
+Package natbib Warning: Citation `1994' on page 4 undefined on input line 127.
 
 
-Package natbib Warning: Citation `Rehurek and Kolkus' on page 4 undefined on input line 123.
+Package natbib Warning: Citation `Rehurek and Kolkus' on page 4 undefined on input line 127.
 
 [4]
-./dissertation_critique.tex:155: Misplaced alignment tab character &.
-l.155 ...ch is used due to lack of training data &
-                                                   NLP tools if we take a st...
+./dissertation_critique.tex:164: Misplaced alignment tab character &.
+l.164 Clearly Watchlist &
+                          Nonwatchlist diverge, and show a different degree ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -345,35 +345,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./dissertation_critique.tex:156: Misplaced alignment tab character &.
-l.156 ...ped earlier is used with names from FDA &
-                                                   drug taxonomy on Drugs.co...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./dissertation_critique.tex:160: You can't use `macro parameter character #' in horizontal mode.
-l.160 - lower casing results in greater recall (#
-                                                  of documents found) w/ les...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./dissertation_critique.tex:160: You can't use `macro parameter character #' in horizontal mode.
-l.160 ... of documents found) w/ less precision (#
-                                                   of relevant documents fro...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-[5]
-./dissertation_critique.tex:176: Misplaced alignment tab character &.
-l.176 ... of positive sentiment containing terms &
+[5] <images/Figure-1-Zipfian.png, id=47, 431.6125pt x 327.2225pt>
+File: images/Figure-1-Zipfian.png Graphic file (type png)
+ <use images/Figure-1-Zipfian.png>
+Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 188.
+(pdftex.def)             Requested size: 199.16982pt x 142.26074pt.
+ <images/Figure-2-AERS_Drugs.png, id=49, 418.56375pt x 264.99pt>
+File: images/Figure-2-AERS_Drugs.png Graphic file (type png)
+ <use images/Figure-2-AERS_Drugs.png>
+Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 189.
+(pdftex.def)             Requested size: 199.16472pt x 142.26357pt.
+ [6 <./images/Figure-1-Zipfian.png> <./images/Figure-2-AERS_Drugs.png>]
+./dissertation_critique.tex:215: Misplaced alignment tab character &.
+l.215 ... of positive sentiment containing terms &
                                                    number of negative
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -383,57 +367,57 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Package natbib Warning: Citation `Rude' on page 6 undefined on input line 180.
+Package natbib Warning: Citation `Rude' on page 7 undefined on input line 219.
 
 
-Package natbib Warning: Citation `Gortner' on page 6 undefined on input line 180.
+Package natbib Warning: Citation `Gortner' on page 7 undefined on input line 219.
 
 
-Package natbib Warning: Citation `Pennebaker' on page 6 undefined on input line 180.
+Package natbib Warning: Citation `Pennebaker' on page 7 undefined on input line 219.
 
 
-Package natbib Warning: Citation `2004' on page 6 undefined on input line 180.
+Package natbib Warning: Citation `2004' on page 7 undefined on input line 219.
 
-./dissertation_critique.tex:181: Missing $ inserted.
+./dissertation_critique.tex:220: Missing $ inserted.
 <inserted text> 
                 $
-l.181 ...a wide range of emoticons:  :), :(, :P, ^
+l.220 ...a wide range of emoticons:  :), :(, :P, ^
                                                   _^, LOL, ROFL.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./dissertation_critique.tex:181: Missing { inserted.
+./dissertation_critique.tex:220: Missing { inserted.
 <to be read again> 
                    _
-l.181 ... wide range of emoticons:  :), :(, :P, ^_
+l.220 ... wide range of emoticons:  :), :(, :P, ^_
                                                   ^, LOL, ROFL.
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./dissertation_critique.tex:181: Missing { inserted.
+./dissertation_critique.tex:220: Missing { inserted.
 <to be read again> 
                    ^
-l.181 ...wide range of emoticons:  :), :(, :P, ^_^
+l.220 ...wide range of emoticons:  :), :(, :P, ^_^
                                                   , LOL, ROFL.
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
 so that I will find a matching right brace soon.
 (If you're confused by all this, try typing `I}' now.)
 
-./dissertation_critique.tex:184: Missing $ inserted.
+./dissertation_critique.tex:223: Missing $ inserted.
 <inserted text> 
                 $
-l.184 
+l.223 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./dissertation_critique.tex:184: Missing } inserted.
+./dissertation_critique.tex:223: Missing } inserted.
 <inserted text> 
                 }
-l.184 
+l.223 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -441,10 +425,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./dissertation_critique.tex:184: Missing } inserted.
+./dissertation_critique.tex:223: Missing } inserted.
 <inserted text> 
                 }
-l.184 
+l.223 
       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -453,25 +437,156 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (270.76923pt too wide) in paragraph at lines 176--184
+Overfull \hbox (270.76923pt too wide) in paragraph at lines 215--223
 \OT1/cmr/m/n/10.95 emoti-cons: :), :(, :P, $[]$ 
  []
 
 
-Package natbib Warning: Citation `Turney' on page 6 undefined on input line 224.
+Underfull \vbox (badness 2980) has occurred while \output is active []
+
+ [7]
+
+./dissertation_critique.tex:255: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.255   \item U
+               n-normalized Naive Bayes (UNB)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Package natbib Warning: Citation `2002' on page 6 undefined on input line 224.
+./dissertation_critique.tex:256: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256   \item U
+               n-normalized Naive Bayes w/ cost weighting (UNBC)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Package natbib Warning: Citation `Hearst' on page 6 undefined on input line 236.
+./dissertation_critique.tex:257: LaTeX Error: Lonely \item--perhaps a missing list environment.
 
-[6]
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257   \item N
+               ormalized Naive Bayes (NNB)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-Package natbib Warning: Citation `Cortes and Vapnik' on page 7 undefined on input line 247.
 
-./dissertation_critique.tex:250: Misplaced alignment tab character &.
-l.250 ... fall on. Chee quotes studies by Forman &
+./dissertation_critique.tex:258: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.258   \item N
+               ormalized Naive Bayes with cost weighting (NNBC)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./dissertation_critique.tex:259: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.259   \item U
+               nnormalized SVM (SVM)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./dissertation_critique.tex:260: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.260   \item U
+               nnormalized SVM with cost weighting (SVMC)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./dissertation_critique.tex:261: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.261   \item N
+               ormalized SVM (SVM)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./dissertation_critique.tex:262: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262   \item N
+               ormalized SVM with cost weighting (NSVMC)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./dissertation_critique.tex:263: LaTeX Error: \begin{document} ended by \end{itemize}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.263 \end{itemize}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./dissertation_critique.tex:263: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.263 \end{itemize}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+[8]
+./dissertation_critique.tex:271: Misplaced alignment tab character &.
+l.271 ...ferentially expressed between watchlist &
+                                                   non-watchlist messages.  ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+Package natbib Warning: Citation `Turney' on page 9 undefined on input line 343.
+
+
+Package natbib Warning: Citation `2002' on page 9 undefined on input line 343.
+
+[9]
+
+Package natbib Warning: Citation `Hearst' on page 10 undefined on input line 355.
+
+
+Package natbib Warning: Citation `Cortes and Vapnik' on page 10 undefined on input line 366.
+
+./dissertation_critique.tex:369: Misplaced alignment tab character &.
+l.369 ... fall on. Chee quotes studies by Forman &
                                                    Joachims stating
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -480,8 +595,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./dissertation_critique.tex:259: Undefined control sequence.
-l.259   y_{i}(w^{T}\phi(x_{i}) + b) \gte
+./dissertation_critique.tex:378: Undefined control sequence.
+l.378   y_{i}(w^{T}\phi(x_{i}) + b) \gte
                                          1 - \xi_{i}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -489,8 +604,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./dissertation_critique.tex:262: Undefined control sequence.
-l.262   \xi_{i} \gte
+./dissertation_critique.tex:381: Undefined control sequence.
+l.381   \xi_{i} \gte
                      0
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -499,20 +614,20 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Package natbib Warning: Citation `Manning' on page 7 undefined on input line 278.
+Package natbib Warning: Citation `Manning' on page 10 undefined on input line 397.
 
 
-Package natbib Warning: Citation `1999' on page 7 undefined on input line 278.
+Package natbib Warning: Citation `1999' on page 10 undefined on input line 397.
 
 
-Package natbib Warning: Citation `Sahami' on page 7 undefined on input line 279.
+Package natbib Warning: Citation `Sahami' on page 10 undefined on input line 398.
 
-[7]
+[10]
 
-Package natbib Warning: Citation `Forman' on page 8 undefined on input line 303.
+Package natbib Warning: Citation `Forman' on page 11 undefined on input line 422.
 
-./dissertation_critique.tex:304: Misplaced alignment tab character &.
-l.304 outperforms other methods for rating &
+./dissertation_critique.tex:423: Misplaced alignment tab character &.
+l.423 outperforms other methods for rating &
                                              ranking feature importance for ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -522,9 +637,9 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \vbox (badness 2088) has occurred while \output is active []
+Underfull \vbox (badness 1454) has occurred while \output is active []
 
- [8] [9]
+ [11] [12]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
@@ -543,38 +658,44 @@ Missing character: There is no ¢ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
- (./dissertation_critique.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
-
-)
+ (./dissertation_critique.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
-[10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 503.
+[13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 503.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 384.
-Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
-(rerunfilecheck)             Checksum: 4CE50BCBCAF17A43C155305B7F114B16;1271.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 503.
+
+
+Package rerunfilecheck Warning: File `dissertation_critique.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `dissertation_critique.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  12E6D6382188A3B06E752A9FEC532546;1660.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 503.
  ) 
 Here is how much of TeX's memory you used:
- 5931 strings out of 492995
- 86209 string characters out of 6132704
- 172767 words of memory out of 5000000
- 9398 multiletter control sequences out of 15000+600000
+ 5934 strings out of 492995
+ 86381 string characters out of 6132704
+ 171675 words of memory out of 5000000
+ 9389 multiletter control sequences out of 15000+600000
  12221 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,30p,1407b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on dissertation_critique.pdf (10 pages, 209381 bytes).
+Output written on dissertation_critique.pdf (13 pages, 257737 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
