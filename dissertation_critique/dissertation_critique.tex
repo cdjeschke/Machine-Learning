@@ -192,10 +192,29 @@ A series of phrase searches were issued against the index to determine prevalenc
 The first plot demonstrates a zipfian distribution for drug name mentions in the messags, with more than 96\% of messages mentioning at most 5 drugs, adding confidence to the hypothesis that messages can be associated with at most a handful of drugs. Chee elects to eliminate messages having more than 5 unique drugs as these frequently constitute lists of drugs posted or SPAM messages. The second plot shows that adverse events are mentioned far more often than drug names, suggesting that a preceeding post containing a drug name eliminates referencing it in subsequent posts - much like replies on a forum. Investigating this is an area for future research. Note that the numbers on the X-axis for the 2nd plot refer to the number of terms (1, 2, ...) that comprise the drug name or adverse event - a fact not really relevant for this analysis.
 
 \subsubsection{Handling Multiple Drug Names}
-If multiple drugs are mentioned in a single message, it becomes difficult to discern which drug the message should apply to. Another study is conducted to evaluate the typical distance (number of characters) between the top 25 co-occuring drugs in messages to determine if the messages could be segmented into relevant portions for each block. The analysis shows a Zipfian distribution in the character separation, indicating that most drugs are talked about together within a single sentence, or in adjacent sentences, leading Chee to conclude separation is not possible and that any adverse events mentioned in a message should just be attributed to all drugs mentioned within the message.
+If multiple drugs are mentioned in a single message, it becomes difficult to discern which drug the message should apply to. Another study is conducted to evaluate the typical distance (number of characters) between the top 25 co-occuring drugs in messages to determine if the messages could be segmented into relevant portions for each drug. The analysis shows a Zipfian distribution in the character separation, indicating that most drugs are talked about together within a single sentence, or in adjacent sentences, leading Chee to conclude separation is not possible and that any adverse events mentioned in a message should just be attributed to all drugs mentioned within the message.
 
 \subsubsection{Sentiment Feature}
-A final experiment preceeding the main classification work is done to validate an approach for determining the sentiment of a message. Chee hypothesizes that the sentinment scores for a drug across
+A final experiment preceeding the main classification work is done to validate how message sentiment will be determined. Chee hypothesizes that the positive or negative valence in a message represents drug satisfaction, making it an interesting feature to incorporate into the classification experiments. A lexicon using the positive emotion, negative emotion, anxiety, anger and sadness terms from LIWC is constructed, augmented to include several emoticons (:), :(, ..) and acronyms (LOl, ROFL, ..). Two case studies are then executed using messages sampled from specific groups in the corpus, and the change in drug sentiment is analyzed over the drug's pre-recall, recall, and post-recall timesframes. This sentiment is compared with a \textif{control} sentiment derived from those messages in the samples not containing the drug to look for a statistically significant difference.
+
+\includegraphics[width=7cm, height=5cm]{Figure-3-Tysabri.png}
+\includegraphics[width=7cm, height=5cm]{Figure-4-Vioxx.png}
+
+The left-most plot shows the sentiment change for Tysabri pre-recall, recall (withdrawal) and post-recall (resume) over the control. It shows a reasonably intuitive change in negative valence to Tysabri having been introduced (more positive), withdrawn (negative), reintroduced (hopeful therefore positive), then stabalizing. The right plot shows sentiment change for a pair of commonly used pain relievers - Vioxx and Celebrex - over the course of several public anouncements and a withdrawal of Viox (sections 1 through 3), then Celebrex (4 and 5). ANOVA is applied to both case studies to determine statistical significance for each drug in each segment against the control. Both were found to be statistically significant with p \< .001.
+
+
+\subsubsection{Feature Selection, Training and Test Data Size}
+The introduction to the main body of classification experiments is preceeded by a brief discussion on the features vectors used, as well as how training, test and validation sets are constructed to support the use of 10-fold Cross Validation for classifier evaluation.
+
+Two types of feature vector are decided upon and then leveraged in the  experiments. The first feature vector type is generated over general vocabulary terms in the messages, selected based on frequency cutoffs. This vector is then augmented with counts from the various specialized lexicons mentioned earlier: medical, diseases, drugs, sentiment and reactions (MedRA). The second feature vector uses only the specialized lexicon.
+
+The richness of the training data is of foremost concern to Chee. There are only 435 drugs having 500 or more unique messages, and only 575 drugs having more than 250 messages, with 63 and 77 watchlist drugs mentioned in each respectively. Therefore approximately 90\% of message instances reference non-watchlist drugs, creating a data scarcity problem when attempting to classify watchlist drugs. Chee decides upon a minimum cutoff of 250 messages per drug for that drug's messages to be included in training and testing. An  experiment is constructed to evaluate techniques to address the scarcity, including scaling features, selecting different ratios of negative to positive training examples such as 1 to 1 and 2 to 1, and experimenting with different split ratios in cross-validation - 90/10 and 80/20. These experiments are dubbed inconclusive and not elaborated on further in the dissertation.
+
+\subsubsection{Classification Experiments and Results}
+- test and training sets are sampled with the same distribution as the original data
+- 90/10 split, 90\% to train and 10\% to sample.  Each split is sampled to preserve the original distribution of positive and negative instances.
+
+- cost weighting and no-cost weighting experiments are run.  cost weighting adjsuts the costs of the positive and negative examples so they are approximately equal.  A greater penalty is imposed for incorrectly classifying a positive example than a negative one.
 
 
 
@@ -203,32 +222,6 @@ A final experiment preceeding the main classification work is done to validate a
 
 
 
-
-- feature vector 1 is entirely words or phrases, including N-grams where word ordering matters, lexicons used
-- second vector is words from vector 1, then speciality features:  counts of instances of a speciality lexicon.  Number of diseases mentions,  drug mentions, positive sentiment words, negative sentiment Words
-
-
-
-
-
-
-- Sentiment is reflected in 2 features on the word feature vector: number of positive sentiment containing terms & number of negative
-- Does the sentinment actually reflect the authors opinion of the drug?
-- Look @ aggregate sentiment over time.  Changes in sentiment reflect news about the drug.
-- Drugs may have serious side effects, yet people may still have a positive attitude towards it if it helps them in some way.
-- Method uses portions of the lexicon in the LIWC when calculating sentiment scores for messages. References previous work by \citep{Rude, Gortner, Pennebaker, 2004} to demonstrate variations in language usage between depressed and depression vulnerable students.
-- Used the words in LIWC corresponding to:  positive emotion, negative emotion, anxiety, anger and sadness.  Augmented LIWC lexicon to include a wide range of emoticons:  :), :(, :P, ^_^, LOL, ROFL.
-- Messages from Yahoo groups were parsed to extract just the textual information. and remove replies.
-- Negative valence was the ratio of negative emotion words to total words.
-
-
-
-Limits of Classification
-- few watchlist drugs - only 435 drugs w/ more than 500 unique messages mentioning them, only 63 of which are watchlist drugs.
-- reducing to 250 unique messages, we have 575 drugs of which only 77 are watchlist
-- 90\% of instances are non-watchlist
-- Cross-fold validation is utilized to alleviate some of the data sparsity problem
-- This dissertation uses random undersampling (RUS) to balance out the distribution of positive and negative samples. The majority class (negative) is randomly discarded. RUS resulted in the best performance in empirical tests of 2340 data sets. Area to comment on:  Other techniques?
 
 - Decision Making.
 - Scaling of individual dimensions has to be considered. Avoid attributes having greater numeric ranges dominating those with lower.  Term-frequency inverse document frequency (tf-idf) can be used to weight a word according to its importance upon the number of appearances.

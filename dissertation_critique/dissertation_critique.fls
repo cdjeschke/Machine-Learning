@@ -80,10 +80,10 @@ INPUT dissertation_critique.out
 INPUT dissertation_critique.out
 INPUT dissertation_critique.out
 INPUT dissertation_critique.out
+OUTPUT dissertation_critique.pdf
 INPUT ./dissertation_critique.out
 INPUT ./dissertation_critique.out
 OUTPUT dissertation_critique.out
-OUTPUT dissertation_critique.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
@@ -128,6 +128,12 @@ INPUT ./images/Figure-1-Zipfian.png
 INPUT images/Figure-2-AERS_Drugs.png
 INPUT ./images/Figure-2-AERS_Drugs.png
 INPUT ./images/Figure-2-AERS_Drugs.png
+INPUT images/Figure-3-Tysabri.png
+INPUT ./images/Figure-3-Tysabri.png
+INPUT ./images/Figure-3-Tysabri.png
+INPUT images/Figure-4-Vioxx.png
+INPUT ./images/Figure-4-Vioxx.png
+INPUT ./images/Figure-4-Vioxx.png
 INPUT dissertation_critique.bbl
 INPUT dissertation_critique.bbl
 INPUT dissertation_critique.aux
@@ -138,12 +144,10 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb
