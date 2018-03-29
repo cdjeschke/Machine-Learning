@@ -11,14 +11,16 @@
 \BOOKMARK [3][-]{subsubsection.1.4.4}{Sentiment Feature}{subsection.1.4}% 11
 \BOOKMARK [3][-]{subsubsection.1.4.5}{Feature Selection, Training and Test Data Size}{subsection.1.4}% 12
 \BOOKMARK [3][-]{subsubsection.1.4.6}{Classifier and Lexicon Selection}{subsection.1.4}% 13
-\BOOKMARK [1][-]{section.2}{Discussion of Contributions}{}% 14
-\BOOKMARK [1][-]{section.3}{Research Critique}{}% 15
-\BOOKMARK [1][-]{section.4}{Literature Review}{}% 16
-\BOOKMARK [1][-]{section.5}{Application Areas}{}% 17
-\BOOKMARK [1][-]{section.6}{Concluding Remarks}{}% 18
-\BOOKMARK [1][-]{section.7}{Paper Criteria \(Grading\)}{}% 19
-\BOOKMARK [2][-]{subsection.7.1}{Sentiment, Named Entities and Classification}{section.7}% 20
-\BOOKMARK [2][-]{subsection.7.2}{Support Vector Machines}{section.7}% 21
-\BOOKMARK [2][-]{subsection.7.3}{Naive Bayes Classification}{section.7}% 22
-\BOOKMARK [2][-]{subsection.7.4}{Feature Selection}{section.7}% 23
-\BOOKMARK [2][-]{subsection.7.5}{Evaluation Metrics Used}{section.7}% 24
+\BOOKMARK [3][-]{subsubsection.1.4.7}{Evaluating the BNS Lexicon}{subsection.1.4}% 14
+\BOOKMARK [3][-]{subsubsection.1.4.8}{Prediction Watchlist Drugs}{subsection.1.4}% 15
+\BOOKMARK [1][-]{section.2}{Discussion of Contributions}{}% 16
+\BOOKMARK [1][-]{section.3}{Research Critique}{}% 17
+\BOOKMARK [1][-]{section.4}{Literature Review}{}% 18
+\BOOKMARK [1][-]{section.5}{Application Areas}{}% 19
+\BOOKMARK [1][-]{section.6}{Concluding Remarks}{}% 20
+\BOOKMARK [1][-]{section.7}{Paper Criteria \(Grading\)}{}% 21
+\BOOKMARK [2][-]{subsection.7.1}{Sentiment, Named Entities and Classification}{section.7}% 22
+\BOOKMARK [2][-]{subsection.7.2}{Support Vector Machines}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.3}{Naive Bayes Classification}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.4}{Feature Selection}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.5}{Evaluation Metrics Used}{section.7}% 26

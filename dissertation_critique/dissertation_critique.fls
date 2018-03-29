@@ -122,6 +122,7 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT images/Figure-1-Zipfian.png
 INPUT ./images/Figure-1-Zipfian.png
 INPUT ./images/Figure-1-Zipfian.png
@@ -134,7 +135,6 @@ INPUT ./images/Figure-3-Tysabri.png
 INPUT images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT images/Figure-5-F1.png
 INPUT ./images/Figure-5-F1.png
 INPUT ./images/Figure-5-F1.png

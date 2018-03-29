@@ -93,14 +93,21 @@ Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 m
 
 The classification process was iterative. If a token did not initially classify as English, web (a lexicon of web slang), medical, or drug name it was manually inspected and classified into \textit{error types}:  Foreign Language, Names (augmenting name lexicon), Spelling Errors, Compound Words, Slang, Abbreviations, Web, Unknown Words, Numbers and Garbage. Chee's analysis produced some interesting average metrics for the messages:
 
-% replace with a table
-\begin{itemize}
-  \item Average # of tokens per message:  172.21
-  \item Average # of drug name tokens: .29
-  \item Average # of error type tokens: 7.09
-  \item Average # of name tokens: 5.34
-  \item Average # of medical tokens: .81
-\end{itemize}
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \verb|Average # of Tokens per Messsage:| & 172.21\\
+    \hline
+    \verb|Average # of Drug Name Tokens:| & .29\\
+    \hline
+    \verb|Average # of Error Type Tokens:| & 7.09\\
+    \hline
+    \verb|Average # of Name Toknes:| & 5.34\\
+    \hline
+    \verb|Average # of Medical Tokens:| & .81\\
+    \hline
+  \end{tabular}
+\end{center}
 
 Of the error tokens, over 54\% of them were found to be foreign language tokens - primarily Indonesian and Spanish - motivating Chee to incorporate Foreign Language lexicons from OpenOffice to speed up classification. A primary concern for Chee was the presence of spelling errors, but the classification results show only a $.8\%$ error rate, which Chee uses to rationalize sticking with dictionary based approaches for word classification for their high precision. Finally, it is acknowledged that Named Entity Recognition (NER) is challenging in this context. FDA approved drugs represent a closed class of nominals, but foreign drugs, herbs and other chemicals are not available in a comprehensive list. Dictionary approaches to classifying drug outcomes are challenged by the use of slang terms.
 
@@ -374,6 +381,127 @@ As the goal of this experiment was to identify the value of the lexicons, their 
 \end{center}
 
 The ranking favors the drugs, disease and sentiment lexicons, which are then selected for use in the prediction problem. Unfortunately this leads to overfitting concerns because a classifier will learn on the drug names and diseases associated with watchlist drugs. Chee notes disappointment that the reactions lexicon does not rank higher, indicating it may not really capture how people speak about adverse events.
+
+\subsubsection{Evaluating the BNS Lexicon}
+Another area of experimental exploration is how the initial word n-gram features are selected to populate the feature vectors. As previously discussed, the top $n-k$ technique is preferred to prompt selection of those word n-grams that are not necessarily the most frequent, but in theory the most informative.
+
+Bi-Normal Separation (BNS) is an alternative technique explored by Chee for discovering those word n-grams. BNS identifies those n-grams that are differentially expressed between two classes: watchlist and non-watchlist messages. BNS lexicons are constructed using the test subset of data for the top 15,000, 10,000 and 5,000 word n-grams, then used in combination with the drugs, diseases and sentiment lexicons, as well as a set of "special features" consisting of numerical counts of:
+\begin{itemize}
+  \item disease mentions
+  \item drug mentions
+  \item medical terminology
+  \item sentiment containing terms
+  \item AERS terminology
+\end{itemize}
+
+Experiments were run again using Naive Bayes and SVM classifiers, with optional normalization, optional cost-weighting, and the optional inclusion of the numerical features. The top classifier configuration for each combination of BNS n-grams and numerical features is shown below with its accuracy and confidence bounds:
+\begin{center}
+  \begin{tabular}{||c c c c c c||}
+    \hline
+    Configuration & Numericals & BSN & Accuracy & Lower Bound & Upper Bound \\
+    \hline\hline
+    \verb|bns_drug_dis_sent_NNB| & Yes & All(5k,10k,15k) & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+    \verb|bns_drugs_dis_sent_NNB| & No & All & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+    \verb|bns_drugs_dis_sent_NNB| & Yes & (10k, 15k) & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+    \verb|bns_drugs_dis_sent_NNB| & No & (10k, 15k) & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+    \verb|bns_drugs_dis_sent_NNB| & Yes & 15k & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+    \verb|bns_drugs_dis_sent_NNB| & No & 15k & 0.8762 & 0.7602 & 0.9405\\
+    \hline
+  \end{tabular}
+\end{center}
+
+There was no clear advantage to a specific number of BNS features, nor the inclusion of the additional numerical features.  Furthermore, the F1 and AUC scores for this test showed no advantage to a specific BNS or numerical feature combination, though un-normalized Naive Bayes did perform better in F1 and AUC than normalized Naive Bayes as seen above. Regardless, none of the tests showed better accuracy, F1 or AUC than the previous tests using specialized lexicons only. Chee hypothesizes this is in part due to the limited number of messages in the test set BNS could select n-grams from.
+
+\subsubsection{Prediction Watchlist Drugs}
+The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores. The following were selected:
+\begin{itemize}
+  \item Normalized SVM using disease, reaction (AERS) lexicons, having 90.33\% Accuracy
+  \item Normalized SVM using drugs, disease and reaction lexicons, having an F1 score of 0.4762
+  \item Un-normalized Naive Bayes classifier with an AUC score of 0.7592
+\end{itemize}
+Two meta-classification experiments are constructed to examine the False Positives produced as an indicator for a possible \textit{future} watchlist drugs if used in an applied setting. The first experiment uses the classifier configurations stated above, but the training data is modified to denote drugs \textit{withdrawn} from the market as non-watchlist. It is important to distinguish that a withdrawn drug would have at one point been a watchlist drug, as drugs are placed on the watchlist - even if briefly - before being removed from the market. By looking for these withdrawn drugs marked non-watchlist in the set of False Positives from the training results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination:
+\[
+  \frac{\#\ of\ False\ Positives}{\#\ of\ Occurrences} * (\#\ of\ False\ Positives) * (\#\ of\ Classifer\ Types)
+\]
+Each occurence equates to an instance of the withdrawn drug actually being classified in the training. The table below shows the top 5 scores, as well as  those withdrawn drugs identified as false positives.
+\begin{center}
+  \begin{tabular}{||c c c c c||}
+    \hline
+    Drug & # Positives & # Occurrences & # Classifiers & Score \\
+    \hline\hline
+    \textit{clozapine}, Clozaril, FazaClo & 31 & 64 & 3 & 45.047\\
+    \hline
+    \textit{fludarabine}, Fludara, Oforta & 29 & 61 & 3 & 41.361\\
+    \hline
+    \textit{methylphenidtate}, Concerta, Daytrana & & & & \\
+    Metadate CD, Metadate ER, Methylin & 25 & 50 & 3 & 37.500 \\
+    Ritalin, Ritalin LA, Ritalin-SR & & & & \\
+    \hline
+    \textit{morphine}, Astramorph PF & & & & \\
+    Avinza, Duramorph, Infumorph & & & & \\
+    Kadian, MS Contin, MSIR & 15 & 38 & 3 & 15.474 \\
+    Morphine IR, Oramorph SR, RMS, Roxanol & & & & \\
+    \hline
+    \textit{meloxicam}, Mobic & 15 & 50 & 3 & 13.500 \\
+    \hline\hline
+    \textit{thalidomide}, Thalomid & 10 & 36 & 1 & 2.778\\
+    \textit{temazepam}, Restoril & 11 & 50 & 1 & 2.420\\
+    \textit{hydromorphone}, Diluadid, Dilaudid-HP & & & & \\
+    Exalgo, Palladone & 9 & 42 & 1 & 1.929\\
+    \textit{trovafloxacin}, Trovan & 9 & 46 & 1 & 1.761\\
+    \textit{rofecoxib}, Vioxx & 9 & 50 & 1 & 1.620\\
+    \textit{sibutramine}, Meridia & 5 & 27 & 1 & 0.926\\
+    \textit{cerivastatin}, Baycol & 1 & 33 & 1 & 0.030\\
+    \hline
+  \end{tabular}
+\end{center}
+Additionally, the generic Sibutramine (Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
+
+The second experiment entails removing the withdrawn drugs entirely from training, classifying them after a classifier is built for each fold during cross-validation. This approach is presumed to identify the withdrawn drugs with greater confidence as they are not present in the training data:
+
+\begin{center}
+  \begin{tabular}{||c c c c c||}
+    \hline
+    Drug & # Positives & # Occurrences & # Classifiers & Score \\
+    \hline\hline
+    \textit{methlyphenidate}, Concerta &   &   &  &  \\
+    Daytran, metadate(CD, ER) & 30 & 34 & 3 & 79.412\\
+    Methylin(ER), Ritalin(LA,SR) &  &  &  & \\
+    \hline
+    \textit{morphine}, Astramorph(PF) & & & & \\
+    Avinza, Duramorph, Infumorph & & & &\\
+    Kadian, MS Contin, MSIR & 13 & 38 & 3 & 13.342\\
+    Oramorph SR, RMS, Roxanol & & & &\\
+    \hline
+    \textit{questiapine}, Seroquel, Seroquel XR & 14 & 31 & 2 & 12.645\\
+    \hline
+    \textit{indomethacin}, Indocin & & & & \\
+    Indocin IV, Indocin SR & 19 & 37 & 1 & 8.500\\
+    \hline
+    \textit{sibutramine}, Meridia & 17 & 34 & 1 & 8.500\\
+    \hline\hline
+
+
+  \end{tabular}
+\end{center}
+
+
+
+
+
+The second experiment wholey removes the withdrawn drugs from the training set in each cross validation run, using them only in the test set applied to each classifier built from each fold. This approaches
+
+ in cross validation, then introduce
+
+
+
+
+
 
 
 \section{Discussion of Contributions}
