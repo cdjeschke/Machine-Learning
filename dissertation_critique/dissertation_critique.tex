@@ -460,7 +460,7 @@ Each occurence equates to an instance of the withdrawn drug actually being class
     \hline
   \end{tabular}
 \end{center}
-Additionally, the generic Sibutramine (Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
+The generic Sibutramine (Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
 
 The second experiment entails removing the withdrawn drugs entirely from training, classifying them after a classifier is built for each fold during cross-validation. This approach is presumed to identify the withdrawn drugs with greater confidence as they are not present in the training data:
 
@@ -480,24 +480,19 @@ The second experiment entails removing the withdrawn drugs entirely from trainin
     \hline
     \textit{questiapine}, Seroquel, Seroquel XR & 14 & 31 & 2 & 12.645\\
     \hline
-    \textit{indomethacin}, Indocin & & & & \\
-    Indocin IV, Indocin SR & 19 & 37 & 1 & 8.500\\
+    \textit{indomethacin}, Indocin (IV,SR) & 19 & 37 & 1 & 9.757 \\
     \hline
     \textit{sibutramine}, Meridia & 17 & 34 & 1 & 8.500\\
     \hline\hline
-
-
+    \textit{trovafloxacin}, Trovan & 33 & 100 & 1 & 10.89\\
+    \textit{hydromorphone}, Dilaudid(HP), Exalgo, Palladone & 33 & 100 & 1 & 10.89\\
+    \textit{rofecoxib}, Vioxx & 32 & 100 & 1 & 10.24
+    \textit{thalidomide}, Thalomid & 10 & 36 & 1 & 2.778\\
+    \textit{temazepam}, Restoril & 8 & 28 & 1 & 2.286\\
+    \textit{cerivastatin}, Baycol & 2 & 100 & 1 & 0.04\\
   \end{tabular}
 \end{center}
-
-
-
-
-
-The second experiment wholey removes the withdrawn drugs from the training set in each cross validation run, using them only in the test set applied to each classifier built from each fold. This approaches
-
- in cross validation, then introduce
-
+Interestingly sibutramine does score significantly higher in this experiment, as do several of the withdrawn drugs (hydromorphone, rofecoxib, trovafloxacin), though Baycol scores much lower.  Additionally, physiciatric drugs (Ritalin) and opiates (morphine) show up near the top in both experiments, presumably because they are more dangerous and more often associated with adverse reactions.
 
 
 
