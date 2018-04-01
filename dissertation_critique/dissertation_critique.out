@@ -14,13 +14,18 @@
 \BOOKMARK [3][-]{subsubsection.1.4.7}{Evaluating the BNS Lexicon}{subsection.1.4}% 14
 \BOOKMARK [3][-]{subsubsection.1.4.8}{Prediction Watchlist Drugs}{subsection.1.4}% 15
 \BOOKMARK [1][-]{section.2}{Discussion of Contributions}{}% 16
-\BOOKMARK [1][-]{section.3}{Research Critique}{}% 17
-\BOOKMARK [1][-]{section.4}{Literature Review}{}% 18
-\BOOKMARK [1][-]{section.5}{Application Areas}{}% 19
-\BOOKMARK [1][-]{section.6}{Concluding Remarks}{}% 20
-\BOOKMARK [1][-]{section.7}{Paper Criteria \(Grading\)}{}% 21
-\BOOKMARK [2][-]{subsection.7.1}{Sentiment, Named Entities and Classification}{section.7}% 22
-\BOOKMARK [2][-]{subsection.7.2}{Support Vector Machines}{section.7}% 23
-\BOOKMARK [2][-]{subsection.7.3}{Naive Bayes Classification}{section.7}% 24
-\BOOKMARK [2][-]{subsection.7.4}{Feature Selection}{section.7}% 25
-\BOOKMARK [2][-]{subsection.7.5}{Evaluation Metrics Used}{section.7}% 26
+\BOOKMARK [2][-]{subsection.2.1}{Exploration and Annotation of Health Forum Data}{section.2}% 17
+\BOOKMARK [2][-]{subsection.2.2}{Techniques for Differentiating Language}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.3}{Feature Generation using Speciality Lexicons}{section.2}% 19
+\BOOKMARK [2][-]{subsection.2.4}{Quality of Watchlist Predictions}{section.2}% 20
+\BOOKMARK [1][-]{section.3}{Techniques and Algorithms}{}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Support Vector Machines}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Naive Bayes Classification}{section.3}% 23
+\BOOKMARK [1][-]{section.4}{Literature Review}{}% 24
+\BOOKMARK [1][-]{section.5}{Application Areas}{}% 25
+\BOOKMARK [1][-]{section.6}{Concluding Remarks}{}% 26
+\BOOKMARK [1][-]{section.7}{Paper Criteria \(Grading\)}{}% 27
+\BOOKMARK [2][-]{subsection.7.1}{Sentiment, Named Entities and Classification}{section.7}% 28
+\BOOKMARK [2][-]{subsection.7.2}{Feature Selection}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.3}{Evaluation Metrics Used}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.4}{Citations}{section.7}% 31
