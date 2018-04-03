@@ -505,15 +505,14 @@ The major contribution of the dissertation is a collection of techniques for lev
 \end{itemize}
 
 \subsection{Exploration and Annotation of Health Forum Data}
-Chee does conduct what is an effective Exploratory Data Analysis (EDA) of the Yahoo! corpus, which is worthwhile to note as a very informative practice for applied machine learning projects.
+Chee's initial exploration of the Yahoo! corpus is informative in its own right, as it exposes the challenges in annotating messages from the general public for use in a scientific study. Scientific documentation - such as medical literature - is usually grammatically correct and highly precise in its use of scientific terminology such as drug names, diseases, side effects. Chee must confront a number of problems, including:
+\begin{itemize}
+  \item Differentiating between the message content and other artifacts, such as HTML tags, garbage strings, web URLs, and people's names
+  \item Colloquial language, abbreviations and slang expressing sentiment, side effects and other medical terminology
+  \item Misspellings to critical message content such as medical terminology and drug Names
+\end{itemize}
 
-Interesting to note is that despite Chee's efforts to ensure
-
-Drug names were limited to US only prescription, OTC and some therapeutic biologicals (but not all).  Foreign names for drugs or drugs not approved for market in the US were also not included.
-
-
-is a best practice favored in applied machine learning projects.
-
+The majority of message tokens contributing to these problems were placed in a general category of \textit{error}, accounting for 4.1\% of each message's tokens on average. This prompts a more in depth exploration into the nature of the errors, discovering that foreign languages appeared to be the largest contributor. However, the methods here did not go much further than identifying that problem tokens were present and attempting to classify them. If the nature of the problem token was known enough to classify them manually, why not replace them with a proper (grammatically correct) token of equivalent meaning, thereby preserving the value of the message? Mondern word processors frequently correcty for mispellings, and slang terminology such as "sux" could easily be replaced by a real world equivalent. Furthermore, these token type statistics were generated against only a 500 message sample of the corpus. It seems this kind of automated analysis could have been extended to encompas all messages in the corpus in order to confirm or deny these patterns.
 
 
 
@@ -554,10 +553,40 @@ Finally, one would expect meta-data in the Yahoo! corpus messages might help dis
 
 While language classification is cited as a contribution of the dissertaton, the utility and accuracy of this approach is questionable.
 
-\subsection{Feature Generation using Speciality Lexicons}
+
+\subsection{Named Entity Recognition: Drugs and Drug Effects}
+Chee again favors dictionary methods for identifying drugs and drug effects within messages. The drug effects lexicon is composed from the FDA Adverse Event Reporting System (AERS), which uses the Medical Dictionary for Regulatory Activities (MedDRA) when coding reactions in the reports \citep{FAERS}. MedDRA has an onotological structure characterized by a top-most level of "System Organ Classes" (SOCs), two intermediate levels of high-level terms (term groups and terms themselves) falling within a SOC, followed in the the lowest levels by a preferred term (PT) and its synonyms, lowest level terms (LLT). It is the LLT or PT that may be recorded in a AERS report. Preferred terms are typically clinically correct, with the LLT being a more relaxed, colloquial phrase:
+\begin{itemize}
+  \item Nausea,  Feeling queasy
+  \item Influenza,  Flu
+\end{itemize}
+
+The number of AERS (MedDRA) term instances found across the lucene indexed corpus of ~10M messages was 13,794,445. The experimental results published by Chee (Figure 13 in the dissertation) do show at least 1 AERS hit per message, indicating this approach worked and may be viable for recognizing adverse reactions in online, english text.
+
+The results for drug identification were less promising.  The drug lexicon was composed from the FDA and a drugs taxonomy on Drugs.com. Chee outright states limitations in this approach as it does not account for all therapeutic biologicals, foreign names of drugs, nor the names of drugs not approved for US use. The volume of drug mentions was considerably less than the total number of messages, at 2,228,588. Several challenges make it difficult to discern the presence of a drug in a message:
+\begin{itemize}
+  \item limitations of the lexicon
+  \item some drugs having brand names that are common words (e.g. Commit, used for curbing smoking habits)
+  \item slang or colloquial terms
+\end{itemize}
+
+Without a broader lexicon, it is difficult to claim this method is successful at identifying drugs in messages. Low volume of drug identification in messages is one of the chief limitations of the work, in that very few watchlist drugs (77) were found, restricting the volume of training data.
+
+Finally, the dictionary based approach looks only for the presence of a token in a message. It does not leverage the value that Part-of-Speech (POS) tagging could provide by differentiating between nouns (drugs), verbs, adverbs and other word categories.
 
 
+\subsection{Feature Generation using BNS, Speciality Lexicons}
+The Bi-Normal Separation (BNS) lexicon experimentation was intended to determine if word features (n-grams) expressed differently between watchlist and non-watchlist messages could serve as useful features in differentiating between the two classes. A study by Forman \citep{Forman} showed strong preference to BNS for feature in text classification for its ability to deduce word features occuring with greater prevalence in one class vs. another. Unfortunately the BNS experiments actually showed worse results compared to the use of the specialized lexicons by themselves. There were some methodological issues in the testing worth discussing:
+\begin{itemize}
+  \item the BNS lexicons were constructed using the test subset of the data, representing only 10\% of the Messages
+  \item each BNS lexicon (5k, 10k, 15k) was tested in conjunction with the other speciality lexicons
+\end{itemize}
 
+The former was intentional to avoid biasing the classifier to just the Yahoo! corpus, but at the same time may have contributed to the poor performance of the classification experiments relative to non-BNS tests due to the reduced sample size. The inclusion of the speciality lexicons appears to have been done because this test followed the initial testing on the speciality lexicons only. At no point do we get to see the BNS selected n-grams in isolation.
+
+The sentiment lexicon was another disappointment. While isolated evaluation with certain drugs (Tysabri, Vioxx) showed some changes in sentiment relative to a drug's watchlist status, sentiment did aid in greatly distinguishing messages as pertaining to watchlist or non-watchlist drugs. Chee hypothesizes this is because drug sentiment could be positive for drugs treating difficult illness despite significant side effects.
+
+The drug and disease lexicons provide the best classifier performance. This is concerning because it could cause a classifier to overfit to drug names, hindering its ability to predict new watchlist drugs. Overall, the disertation seems to have been unsuccessful in finding a clear set of word features to separate watchlist from non-watchlist drugs.
 
 
 
@@ -588,6 +617,13 @@ Discuss:
    - SVMs
    - Naive Bayes
   - Cost Weighting and Normalization
+
+\subsection{KL Divergence}
+
+
+
+
+\subsection{Bi-Normal Separation}
 
 
 \subsection{Support Vector Machines}
@@ -688,31 +724,6 @@ The evaluation criteria for the critique are as follows:
 
 \newpage
 
-\subsection{Sentiment, Named Entities and Classification}
-Of specific interest to the dissertation is applying sentiment analysis and named
-entity recognition to the messages in these forums. Sentinment analysis is presented
-as challenging because the domain dependent nature \citep{Turney, 2002}
-can make it difficult to differentiate between positive and negative sentiment on words and phrases alone.
-Chee's approach is to calculate the probability of a specific word given a positive or negative class: $P(word| negative or positive)$.
-The hand crafted lexicons Linguisitc Inquiry Word Count (LIWC) and SentiWordNet
-are leveraged to generate sentiment scores on words. Support Vector Machines (SVMs)
-trained on words as features can also be used to separate positive phrases of
-text from negative.
-
-Named entity recognition (NER) is necessary for identifying drug names and
-effects, such as headaches or vomiting. The challenge posed by doing so
-on forum data is the relaxed structure and oft-present grammatical errors
-make leveraging existing NLP tools trained on grammatically correct text
-difficult. Chee draws upon the work of Hearst \citep{Hearst} for automatically
-acquiring hyponyms from text. Hyponyms are words having more specific meaning
-than general or subordinate terms, thereby providing strong indication the discovered
-words are drugs or drug effects.
-
-Classification techniques are employed by Chee to solve the problems of NER,
-sentiment analysis and assigning class labels to the message forum text. Specifically,
-Support Vector Machines (SVM) and Naive Bayes classifiares are used.
-
-
 
 
 \subsection{Feature Selection}
@@ -749,6 +760,16 @@ Research Lab - New Mexico State University.
 Dunning, T. (1994). Statistical Identification of Language. Computing Research Laboratory,
 New Mexico State University.
 
+HTML language specification: https://www.w3.org/TR/html4/
+
+MedDRA heirarchy:  https://www.meddra.org/how-to-use/basics/hierarchy
+
+FAERS: https://www.fda.gov/drugs/guidancecomplianceregulatoryinformation/surveillance/adversedrugeffects/ucm2007060.htm
+
+BNS:
+G. Forman. An extensive empirical study of feature selection
+metrics for text classification. J. Mach. Learn. Res., 3:1289–
+1305, 2003
 
 
 \vskip 0.2in

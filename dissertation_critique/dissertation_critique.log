@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 APR 2018 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 APR 2018 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -309,12 +309,12 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[5] <images/Figure-1-Zipfian.png, id=164, 431.6125pt x 327.2225pt>
+[5] <images/Figure-1-Zipfian.png, id=172, 431.6125pt x 327.2225pt>
 File: images/Figure-1-Zipfian.png Graphic file (type png)
  <use images/Figure-1-Zipfian.png>
 Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 195.
 (pdftex.def)             Requested size: 199.16982pt x 142.26074pt.
- <images/Figure-2-AERS_Drugs.png, id=166, 418.56375pt x 264.99pt>
+ <images/Figure-2-AERS_Drugs.png, id=174, 418.56375pt x 264.99pt>
 File: images/Figure-2-AERS_Drugs.png Graphic file (type png)
  <use images/Figure-2-AERS_Drugs.png>
 Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 196.
@@ -329,12 +329,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<images/Figure-3-Tysabri.png, id=174, 503.8825pt x 303.1325pt>
+<images/Figure-3-Tysabri.png, id=182, 503.8825pt x 303.1325pt>
 File: images/Figure-3-Tysabri.png Graphic file (type png)
  <use images/Figure-3-Tysabri.png>
 Package pdftex.def Info: images/Figure-3-Tysabri.png used on input line 207.
 (pdftex.def)             Requested size: 199.16595pt x 142.26414pt.
- <images/Figure-4-Vioxx.png, id=175, 462.72874pt x 288.07625pt>
+ <images/Figure-4-Vioxx.png, id=183, 462.72874pt x 288.07625pt>
 File: images/Figure-4-Vioxx.png Graphic file (type png)
  <use images/Figure-4-Vioxx.png>
 Package pdftex.def Info: images/Figure-4-Vioxx.png used on input line 208.
@@ -354,7 +354,7 @@ Overfull \hbox (44.8971pt too wide) in paragraph at lines 267--290
  [] 
  []
 
-[9] <images/Figure-5-F1.png, id=192, 531.9875pt x 297.11pt>
+[9] <images/Figure-5-F1.png, id=200, 531.9875pt x 297.11pt>
 File: images/Figure-5-F1.png Graphic file (type png)
  <use images/Figure-5-F1.png>
 Package pdftex.def Info: images/Figure-5-F1.png used on input line 345.
@@ -502,256 +502,73 @@ Overfull \hbox (163.6689pt too wide) in paragraph at lines 468--494
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13] [14]
-./dissertation_critique.tex:528: Missing $ inserted.
+./dissertation_critique.tex:527: Missing $ inserted.
 <inserted text> 
                 $
-l.528 
+l.527 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./dissertation_critique.tex:528: Display math should end with $$.
+./dissertation_critique.tex:527: Display math should end with $$.
 <to be read again> 
                    \par 
-l.528 
+l.527 
       
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-./dissertation_critique.tex:529: LaTeX Error: Bad math environment delimiter.
+./dissertation_critique.tex:528: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.529 \]
+l.528 \]
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Package natbib Warning: Citation `UTF-8 article on wikipedia' on page 15 undefined on input line 530.
+Package natbib Warning: Citation `UTF-8 article on wikipedia' on page 15 undefined on input line 529.
 
 
-Package natbib Warning: Citation `Ingle' on page 15 undefined on input line 534.
+Package natbib Warning: Citation `Ingle' on page 15 undefined on input line 533.
 
 
-Package natbib Warning: Citation `1976' on page 15 undefined on input line 534.
-
-
-Package natbib Warning: Citation `Dunning' on page 15 undefined on input line 535.
-
-
-Package natbib Warning: Citation `Dunning' on page 15 undefined on input line 540.
+Package natbib Warning: Citation `1976' on page 15 undefined on input line 533.
 
 [15]
-Overfull \hbox (205.47296pt too wide) detected at line 550
+
+Package natbib Warning: Citation `Dunning' on page 16 undefined on input line 534.
+
+
+Package natbib Warning: Citation `Dunning' on page 16 undefined on input line 539.
+
+
+Overfull \hbox (205.47296pt too wide) detected at line 549
 \OML/cmm/m/it/10.95 if\OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 word\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 inIngorelist\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 OR\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 wordlength < \OT1/cmr/m/n/10.95 2)\OML/cmm/m/it/10.95 OR\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 wordcontains\OT1/cmr/m/n/10.95 "@")\OML/cmm/m/it/10.95 ; ignorecount \OT1/cmr/m/n/10.95 + +\OML/cmm/m/it/10.95 Elseif\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 wordinEnglishlist\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 EnglishCount \OT1/cmr/m/n/10.95 + +\OML/cmm/m/it/10.95 :::::
  []
 
 
-Package natbib Warning: Citation `Wikipedia page for english' on page 16 undefined on input line 551.
+Package natbib Warning: Citation `Wikipedia page for english' on page 16 undefined on input line 550.
 
-./dissertation_critique.tex:574: Missing $ inserted.
+
+Package natbib Warning: Citation `FAERS' on page 16 undefined on input line 558.
+
+[16]
+
+Package natbib Warning: Citation `Forman' on page 17 undefined on input line 579.
+
+[17]
+./dissertation_critique.tex:603: Missing $ inserted.
 <inserted text> 
                 $
-l.574 
+l.603 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./dissertation_critique.tex:574: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.574 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-Overfull \hbox (346.5876pt too wide) detected at line 574
-\OML/cmm/m/it/10.95 AUC \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 X[] > X[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  X[] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 ;  X[] \OT1/cmr/m/n/10.95 = []
- []
-
-./dissertation_critique.tex:575: Missing $ inserted.
-<inserted text> 
-                $
-l.575 ...randomly chosen positive instance, and X_
-                                                  {0} the score of a randoml...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-./dissertation_critique.tex:576: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.576 \]
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./dissertation_critique.tex:578: Missing $ inserted.
-<inserted text> 
-                $
-l.578 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (160.09163pt too wide) in paragraph at lines 575--578
-[]\OT1/cmr/m/n/10.95 is the clas-si-fier score of a ran-domly cho-sen pos-i-tive in-stance, and X$[]\OML/cmm/m/it/10.95 thescoreofarandomlychosennegativeinstance:AUC \OT1/cmr/m/n/10.95 =
- []
-
-
-Overfull \hbox (761.52121pt too wide) in paragraph at lines 575--578
-\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 isperfectclassification; wherepositivesinstancesarealwaysclassifiedhigherthannegative:TP; TN; FP; FNstandfortruepositive; truenegative; falsepositiveandfalsenegativerespectively:Anaiveclassifierassumingallinstanceswerenegative\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 non \OMS/cmsy/m/n/10.95 ^^@
- []
-
-
-Overfull \hbox (3310.68619pt too wide) in paragraph at lines 575--578
-\OML/cmm/m/it/10.95 watchlist\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 wouldhaveAUCandF\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 scoresof\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 andcontributenothingtowardsthegoalofdiscoveringfuturewatchlistdrugs:Additionally; notethateachperformancemetricplacesvalueonthedistinctionbetweenatruepositiveandafalsepositive; yetfalsepositivesarethemeansbywhichthevalueoftheapproachiscommunicated:Whileitiscounterintuitivetosayafalsepositiveresultisdiserable; thedetectionofafuturewatchlistdrugviathistechniquewouldberepresentedasafalsepositive:DrugsdonotbecomewatchlistdrugsuntillabeledsobytheFDA:ItmighthavebeeninterestinghadCheepresentedandexperimentthoseclassifiershavingthehighest[]ratesthoughasobserved; thesefrequentlyhadverylowprecisionwouldlikelyhavecontributedsignificantnumbersoffalsepositivesthatarejustnoise \OMS/cmsy/m/n/10.95 ^^@
- []
-
-
-Underfull \vbox (badness 3907) has occurred while \output is active []
-
- [16]
-
-Package natbib Warning: Citation `FDA Aers' on page 17 undefined on input line 581.
-
-
-Package natbib Warning: Citation `Cortes and Vapnik' on page 17 undefined on input line 594.
-
-./dissertation_critique.tex:597: Misplaced alignment tab character &.
-l.597 ... fall on. Chee quotes studies by Forman &
-                                                   Joachims stating
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./dissertation_critique.tex:606: Undefined control sequence.
-l.606   y_{i}(w^{T}\phi(x_{i}) + b) \gte
-                                         1 - \xi_{i}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./dissertation_critique.tex:609: Undefined control sequence.
-l.609   \xi_{i} \gte
-                     0
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package natbib Warning: Citation `Manning' on page 17 undefined on input line 625.
-
-
-Package natbib Warning: Citation `1999' on page 17 undefined on input line 625.
-
-
-Package natbib Warning: Citation `Sahami' on page 17 undefined on input line 626.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¢ in font cmr10!
- [18] [19]
-
-Package natbib Warning: Citation `Turney' on page 20 undefined on input line 694.
-
-
-Package natbib Warning: Citation `2002' on page 20 undefined on input line 694.
-
-
-Package natbib Warning: Citation `Hearst' on page 20 undefined on input line 706.
-
-
-Package natbib Warning: Citation `Forman' on page 20 undefined on input line 719.
-
-./dissertation_critique.tex:720: Misplaced alignment tab character &.
-l.720 outperforms other methods for rating &
-                                             ranking feature importance for ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-
-Overfull \hbox (84.27005pt too wide) in paragraph at lines 739--740
-\OT1/cmr/m/n/10.95 https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ 
- []
-
-(./dissertation_critique.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 8.
-
-)
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
-[20] [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
- (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 757.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 757.
-Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
-(rerunfilecheck)             Checksum: D47449FF27C53D0F596C87DB1367F8B4;2459.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 757.
- ) 
-Here is how much of TeX's memory you used:
- 6004 strings out of 492995
- 87603 string characters out of 6132704
- 179839 words of memory out of 5000000
- 9437 multiletter control sequences out of 15000+600000
- 12389 words of font info for 47 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 41i,10n,30p,1407b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmtt8.pfb>
-Output written on dissertation_critique.pdf (21 pages, 337201 bytes).
-PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 274 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+./disse

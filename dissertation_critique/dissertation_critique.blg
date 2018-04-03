@@ -14,11 +14,11 @@ White space in argument---line 53 of file dissertation_critique.aux
  : \citation{Wikipedia
  :                     page for english}
 I'm skipping whatever remains of this command
-White space in argument---line 56 of file dissertation_critique.aux
+White space in argument---line 59 of file dissertation_critique.aux
  : \citation{FDA
  :               Aers}
 I'm skipping whatever remains of this command
-White space in argument---line 57 of file dissertation_critique.aux
+White space in argument---line 60 of file dissertation_critique.aux
  : \citation{Cortes
  :                  and Vapnik}
 I'm skipping whatever remains of this command
@@ -33,16 +33,14 @@ Warning--I didn't find a database entry for "Dunning"
 Warning--I didn't find a database entry for "1994"
 Warning--I didn't find a database entry for "Ingle"
 Warning--I didn't find a database entry for "1976"
+Warning--I didn't find a database entry for "FAERS"
+Warning--I didn't find a database entry for "Forman"
 Warning--I didn't find a database entry for "Manning"
 Warning--I didn't find a database entry for "1999"
 Warning--I didn't find a database entry for "Sahami"
-Warning--I didn't find a database entry for "Turney"
-Warning--I didn't find a database entry for "2002"
-Warning--I didn't find a database entry for "Hearst"
-Warning--I didn't find a database entry for "Forman"
 You've used 0 entries,
             2773 wiz_defined-function locations,
-            621 strings with 5028 characters,
+            618 strings with 5010 characters,
 and the built_in function-call counts, 33 in all, are:
 = -- 0
 > -- 0
