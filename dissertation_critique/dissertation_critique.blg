@@ -18,10 +18,6 @@ White space in argument---line 59 of file dissertation_critique.aux
  : \citation{FDA
  :               Aers}
 I'm skipping whatever remains of this command
-White space in argument---line 65 of file dissertation_critique.aux
- : \citation{Cortes
- :                  and Vapnik}
-I'm skipping whatever remains of this command
 Database file #1: sample.bib
 Warning--I didn't find a database entry for "FDA"
 Warning--I didn't find a database entry for "Fletcher"
@@ -35,12 +31,14 @@ Warning--I didn't find a database entry for "Ingle"
 Warning--I didn't find a database entry for "1976"
 Warning--I didn't find a database entry for "FAERS"
 Warning--I didn't find a database entry for "Forman"
-Warning--I didn't find a database entry for "Manning"
-Warning--I didn't find a database entry for "1999"
+Warning--I didn't find a database entry for "Cortes"
+Warning--I didn't find a database entry for "Vapnik"
 Warning--I didn't find a database entry for "Sahami"
+Warning--I didn't find a database entry for "1998"
+Warning--I didn't find a database entry for "("
 You've used 0 entries,
             2773 wiz_defined-function locations,
-            618 strings with 5010 characters,
+            620 strings with 5020 characters,
 and the built_in function-call counts, 33 in all, are:
 = -- 0
 > -- 0
@@ -79,4 +77,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 7
-(There were 5 error messages)
+(There were 4 error messages)

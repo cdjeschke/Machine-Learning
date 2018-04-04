@@ -634,69 +634,93 @@ where $F^{-1}$ is the inverse of the normal cummulative distribution function, $
 
 
 \subsection{Support Vector Machines}
-Support Vector Machines (SVM) are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space.
+Support Vector Machines (SVM) \citep{Cortes, Vapnik} are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space. The boundary lines of this hyperplane are identified as the \textit{support vectors}, being the vectors representing the training samples producing the best class separation.
 
+\includegraphics[width=7cm, height=5cm]{SVM.png}
 
-\citep{Forman} states SVM is good for text classification.
-
-SVMs map features into a high-dimensional space using a kernel function \citep{Cortes and Vapnik}.
-A hyperplane is constructed that defines the decision boundary between two classes
-in this decision space, with those new observations being classified based on which
-side of the hyperplane they fall on. Chee quotes studies by Forman & Joachims stating
-SVM's strengths in text classification, justifying its use in comparison to Naive
-Bayes.
-- LibSVM was used with a radial basis function (RFB) kernel
-- SVM solves the following optimization problem
+The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
 \[
-  min_{u, b, \xi} \frac{1}{2}w^{T}w + C \sum_{i=1}^{l}\xi i \\
+  y_{i}(w \cdot x_{i} + b) \gte 1,  i = 1, ...., l
 \]
+Where l = n, the number of training samples, and each training sample is a tuple (x_{i}, y_{i}), with x_{i} the feature vector, y_{i} = 1 indicates membership of the positive class (watchlist) and y_{i} = -1 indicates membership of the negative class (non-watchlist). The optimal hyperplane is the tuple (w, b) where w is a vector and b a scalar value.  If (w, b) are successfully found we have a \textit{hard margin} SVM classifier.
+
+Rarely are classes so perfectly separable, so Chee opts to use a \textit{soft margin} SVM, allowing for a certain amount of classificaton error $\x_{i} \gte 0$ on each training sample:
 \[
-  y_{i}(w^{T}\phi(x_{i}) + b) \gte 1 - \xi_{i}
+  y_{i}(w \cdot x_{i} + b) \gte 1 - \xi_{i}
 \]
+with the goal being to minimize $C\sum_{i=1}^{l} \xi_{i}$, with $C$ a specified parameter. Furthermore, the issue of seperability can be addressed via the \textit{kernel trick} - a technique of injecting a kernel function $\Phi$ to project $x_{i}$ into a higher dimensional space:
 \[
-  \xi_{i} \gte 0
+  y_{i}(w \cdot \Phi{x_{i}} + b) \gte 1 - \xi-{i}
 \]
 
-- RBF's are non-linear in nature which gave some accuracy advantages over linear
-- RBF's are trained on two parameters $C$ and $\gamma$
-- Grid search method using cross-validation is employed to look for $C$ and $gamma$
-because it parallelizes well
-- $C$ is the penalty parameter for the error term
-- RBF kernel is defined as $K(x_i, x_j) = exp(-\gamma||x_i - x_j||^{2}), \gamma > 0$
+The \textit{Gaussian Radial Basis Function} (RBF) is selected for the kernel, defined as:
+\[
+  \exp(-\gamma||x_{i} - x_{j}||^{2}),\ \gamma > 0
+\]
+
+The parameters $C$ and $\gamma$ must be specified when training the SVM. This dissertation utilizes a \textit{grid search} to find their best combinations when training SVMs.
+
 
 \subsection{Naive Bayes Classification}
-The dissertation uses Naive Bayes classification to address the NLP problems
-faced by Chee.  Their use was somewhat counterintuitive because Naive Bayes
-Classifiers assume independence of features (words), whereas we know in real world settings
-that if a word like "aspirin" were present, there is a greater probability of the
-the words "headache" or "pain" being present than "lemonade". However, in
-applied settings they still do reasonably well \citep{Manning, 1999}. NB has done well
-in SPAM detection \citep{Sahami} and make sense as a first step for their simplicity (no
-hyperparameters).
+Naive Bayes Classification has been popular in SPAM detection \citep{Sahami, 1998} and textual classification in general. The fundamental assumption is that the features (word n-grams) are independently distributed from one another within the classes of interest.
 
-- given word grams $w$ in messages about a drug $D$
-- $p(w_{i}|C)$ probability the $i-th$ word is from class C, C is watchlist or
-non-watchlist drugs.
-- $p(D|C) = \prod p(w_{i}|C)$ - probability of a given drug given the class
-- W = watchlist, so $P(D|W) = \prod p(w_{i}|W)$.
-- Bayes rule writes this as
+This classification technique seeks to answer the question "What is the probability that a given document D belongs to class C?", expressed as the \textit{conditional probability} $p(C | D)$ - the probability of the class $C$ given the document $D$.
+
+\textit{Bayes Theorem} allows the manipulation of conditional probability to express $p(C|D)$ as:
 \[
-  p(W|D) = \frac{p(W)}{p{D}} \prod p(w_{i}|W)
+  p(C|D) = \frac{p(C)p(D|C)}{p(D)}
 \]
+where $p(D|C) = \prod_{i}p(w_{i}|C)$ with $w_{i}$ representing the $i-th$ word in a given document. Consider that we have two classes $C_{nonwatchlist}$ and $C_{watchlist}$. Using Bayes Theorem, we can construct the rules:
 \[
-  p(\neg{W}|D) = \frac{p(\neg{W})}{p(D)} \prod p(w_{i}|\neg{W})
+  p(C_{nonwatchlist} | D) = \frac{p(C_{nonwatchlist})}{p(D)}\prod_{i}p(w_{i} | C_{nonwatchlist})\\
+  p(C_{watchlist} | D) = \frac{p(C_{watchlist})}{p(D)}\prod_{i}p(w_{i}|C_{watchlist})
+\]
+Binary classification in Naive Bayes makes use of a \textit{decision rule}. The \textit{maximum a posteriori} (MAP) rule was selected, which chooses the most probable hypothesis. We are then given a classifer defined as:
+\[
+  \hat{y} = argmax_{k \element {watchlist, nonwatchlist}} p(C_{k}) \prod_{i=1}^{n}p(x_{i}|C_{k})
 \]
 
-Chee combines these two probability modles with the maximum a posteriori (MAP)
-decision rule to pick the most likely hypothesis.
-<discuss maximum a posteriori method>
-- The method of MAP then estimates $\theta$ as the mode of the posterior
-distribution of this random variable
-
+$\hat{y}$ is assigned the class label based on the $k$ chosen per the maximumization defined above.
 
 \section{Literature Review}
-What else is out there that is relevant in this space?  Other studies
-that have used public data for medical purposes?
+
+\subsubsection{Health & Safety Literature}
+Adverse reactions have long held the attention of health regulatory bodies such as the World Health Organization (WHO) and the United States Food and Drug Administration (FDA).  In 1967, the WHO initiated a research project to collect case reports from 10 countries to evaluate an international system for monitoring adverse drug effects \citep(WHO,1971), prompting the WHO Drug Monitoring Centre - now the Uppsala Monitoring Centre (UMC) - to establish an international Pharmacovigilance program. The FDA's Adverse Event Reporting System - AERS, now known as FAERS - has records of adverse event and drug combinations dating back as far as 1969, as part of the FDA's Pharmacovigilance efforts.
+
+
+\subsubsection{Text processing}
+Rude, Gortner and Pennebaker conducted a study of easy writing by currently depressed, formerly depressed and never depressed college students, with the hypothesis that terms indicating self-preoccupation such as "I" will be more prevalent in depressed individuals, as well as emotional terms with negative valence \citep(Rude, 2004). Their study did confirm the hypothesis, in that "I" specifically was used more frequently by currently-depressed students, though other pronouns referencing the self (me, myself, my) were not. The study did leverage the Linguistic Inquiry and Word Count (LWIC) textual analysis program used by Chee in constructing a sentiment lexicon.
+
+
+\subsubsection{Technical Literature}
+Forman's paper on 
+
+Text
+  - N
+
+
+Technical Literature
+   -
+
+
+
+
+- What to read:
+- Edwards and Aronson (2000) - no bibliography
+- CHF patients.com  (Kendall, 1999) - no bibliography
+- (Houston, Cooper, and Ford, 2002) - no bibliography
+- HIPAA/HITECH (not relevant)
+
+
+- (Pang and Lee, 2008) positve & negative sentiment
+
+NER`
+- Nadue & Sekine (2007) - named entity Recognition
+- Rindsfleich, Tanabe and Weinstein (2002) identified drugs and relations in biomedical literature
+- SVMs (Cortes and Vapnik, 1995)
+- BNS (Forman)
+- Naive Bayes (Manning, 1999)
+- McDowell, 2006 - quality of life ,  HRQOL metrics
 
 
 
@@ -738,26 +762,6 @@ The evaluation criteria for the critique are as follows:
 
 
 
-\subsection{Feature Selection}
-- BNS (Bi-Normal Separation) cited by \citep{Forman}
-outperforms other methods for rating & ranking feature importance for Classification
-
-- IG (Information Gain)
-Best practice suggested words occuring less than 3 times in a data set should be removed
-
-\subsection{Evaluation Metrics Used}
-- watchlist drugs are the positive examples
-- non-watchlist drugs are the negative examples
-- watchlist drugs that are false positive are the interesting ones from Classification
-- had to work with a 90/10 split where 90\% of instances are one class (non-watchlist) and 10\% are another
-(watchlist) it is difficult to outperform a naive classifier that just marks everything as non-watchlist
-- Receiver Operating Characterisitcs (ROC) curves are used with their Area Under the Curve (AUC)
-evaluated.
-- ROC curves are the true positive
-
-
-
-
 \subsection{Citations}
 https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/
 
@@ -787,6 +791,14 @@ BNS:
 G. Forman. An extensive empirical study of feature selection
 metrics for text classification. J. Mach. Learn. Res., 3:1289–
 1305, 2003
+
+
+WHO, 1972
+World Health Organization (1972). International drug monitoring: The role of national centres. Report of a WHO meeting, World Health  Organ. Tech. Rep. Ser. 498, 1-25.
+
+Rude, 2004
+Rude, S.S., Gortner, E.-M. and Pennebaker, J.W. (2004). Language use of depressed and depression-vulnerable college students. Cognition and Function, 18(8), 1121-1133.
+
 
 
 \vskip 0.2in
