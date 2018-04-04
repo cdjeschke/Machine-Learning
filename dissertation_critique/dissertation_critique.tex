@@ -613,20 +613,32 @@ The technique in this dissertation is not perfect by any means, but the approach
 \section{Techniques and Algorithms}
 
 Discuss:
-   - KL divergence
    - SVMs
    - Naive Bayes
   - Cost Weighting and Normalization
 
 \subsection{KL Divergence}
-
-
+Kullback-Leibler (KL) divergence quantifies the difference between two probability distributions. Given two distributions P and Q, it is expressed as:
+\[
+  D_{KL}(P||Q) = \sum_{i}P(i)log\frac{P(i)}{Q(i)}
+\]
+Where $P$ and $Q$ are probability distributions for two classes, $i$ is a value within each class, and $P(i)$ and $Q(i)$ are the probability of $i$ in each distribution respectively. Care must be taken that if $i$ is not present in $Q$, infinite divergence would occur, and so a low, default probability for $Q(i)$ may be used.
 
 
 \subsection{Bi-Normal Separation}
+Bi-Normal Seperation (BNS) is introduced as a word feature selection technique for use text classification. An empiral study by \citep{Forman} showed considerable performance advantages when using BNS with SVMs for text classification, as opposed to other selection metrics such as Information Gain (IG), Document Frequency (DFreq) and Odds Ratio (Odds). Testing with BNS had higher F1, precision and recall despite dealing with significant class skew in the training data on the order of 1:31 - 1 positive to 31 negative class examples. BNS is defined as:
+\[
+  F^{-1}(tpr) - F^{-1}(fpr)
+\]
+where $F^{-1}$ is the inverse of the normal cummulative distribution function, $tpr$ and $fpr$ are true and false positive rates respectively. Special exception is given to $F^{-1}(0)$ by defaulting to 0.0005 to avoid undefined values. The occurence of a feature (word) in a document is modeled by a random normal variable exceeding a threshold, with the prevalence rate of the word corresponding to the area under the curve after that threshold. A word expressed differently in the postive and negative classes will have different prevalence and therefore different thresholds, thus this metric measures the distance between the two thresholds.
 
 
 \subsection{Support Vector Machines}
+Support Vector Machines (SVM) are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space.
+
+
+\citep{Forman} states SVM is good for text classification.
+
 SVMs map features into a high-dimensional space using a kernel function \citep{Cortes and Vapnik}.
 A hyperplane is constructed that defines the decision boundary between two classes
 in this decision space, with those new observations being classified based on which
@@ -748,6 +760,11 @@ evaluated.
 
 \subsection{Citations}
 https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/
+
+
+Cortes, C. and Vapnik, V. (1995) Support-vector network. Machine Learning, 20, 273-297.
+
+
 
 
 Ingle, Norman. (1976). A language identification table.
