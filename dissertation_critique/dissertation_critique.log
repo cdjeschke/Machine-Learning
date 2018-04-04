@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 APR 2018 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 APR 2018 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,8 +776,8 @@ Package natbib Warning: Citation `(' on page 21 undefined on input line 688.
 Package natbib Warning: Citation `(' on page 21 undefined on input line 692.
 
 [21]
-./dissertation_critique.tex:715: Misplaced alignment tab character &.
-l.715 - (Pang and Lee, 2008) positve &
+./dissertation_critique.tex:716: Misplaced alignment tab character &.
+l.716 - (Pang and Lee, 2008) positve &
                                        negative sentiment
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -786,8 +786,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./dissertation_critique.tex:718: Misplaced alignment tab character &.
-l.718 - Nadue &
+./dissertation_critique.tex:719: Misplaced alignment tab character &.
+l.719 - Nadue &
                 Sekine (2007) - named entity Recognition
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -815,12 +815,12 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 [22]
-Overfull \hbox (84.27005pt too wide) in paragraph at lines 766--767
+Overfull \hbox (84.27005pt too wide) in paragraph at lines 767--768
 \OT1/cmr/m/n/10.95 https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ 
  []
 
 
-Overfull \hbox (200.5958pt too wide) in paragraph at lines 788--789
+Overfull \hbox (200.5958pt too wide) in paragraph at lines 789--790
 []\OT1/cmr/m/n/10.95 FAERS: https://www.fda.gov/drugs/guidancecomplianceregulatoryinformation/surveillance/adversedrugeffects/ucm2007060.htm 
  []
 
@@ -835,19 +835,19 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 807.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 808.
 [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 807.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 808.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 807.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 807.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 808.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 808.
 Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
 (rerunfilecheck)             Checksum: D69781ED1676D16BDCEAD53B7815516E;2709.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 807.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
  ) 
 Here is how much of TeX's memory you used:
  6016 strings out of 492995
@@ -859,7 +859,7 @@ Here is how much of TeX's memory you used:
  41i,10n,31p,1407b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt8.pfb>
-Output written on dissertation_critique.pdf (23 pages, 361703 bytes).
+Output written on dissertation_critique.pdf (23 pages, 361845 bytes).
 PDF statistics:
  327 PDF objects out of 1000 (max. 8388607)
  274 compressed objects within 3 object streams
