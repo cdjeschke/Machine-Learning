@@ -13,14 +13,16 @@
 
 % Graphics
 \usepackage{graphicx}
-\graphicspath{ {images/}}
+\graphicspath{{images/}}
+
+% algorithms
+\usepackage{algorithmic}
 
 % Definitions of handy macros can go here
 \newcommand{\dataset}{{\cal D}}
 \newcommand{\fracpartial}[2]{\frac{\partial #1}{\partial  #2}}
 
 % Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
-
 \jmlrheading{1}{2000}{1-48}{4/00}{10/00}{meila00a}{Christopher Jeschke}
 
 % Short headings should be running head and authors last names
@@ -50,24 +52,18 @@
 \begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
   Patient generated health data represents an area of active research interest
   for its potential applications in improving the public health. The study of
-  Pharmacovigilance is one such area, focused on monitoring drugs once they have been
-  released to market. Dr. Brant Chee's 2011 dissertation applying machine learning
-  techniques to patient messages in online health forums explores how watch
-  list drugs from the United States Food and Drug Administration can be detected
-  via these forum messages, ultimately with the intent to alert consumers to drug
-  safety concerns.
+  Pharmacovigilance is one such area, focused on monitoring drugs once they have been released to market. Dr. Brant Chee's 2011 dissertation applying machine learning techniques to patient messages in online health forums explores how watch list drugs from the United States Food and Drug Administration's pharmacovigilance program can be detected via these forum messages, ultimately with the intent to alert consumers to drug safety concerns.
 \end{abstract}
 
 \begin{keywords}
   Drug Safety, Pharmacovigilance, NLP
 \end{keywords}
 
-
 \section{Summary of Research}
 %Todo:  Fix Niave Bayes double dot
 Dr. Brant Chee's 2011 dissertation \textit{Exploring Machine Learning Techniques Using
 Patient Interactions in Online Health Forums to Classify Drug Safety} describes
-Chee's research in applying natural language processing (NLP) techniques in conjunction with Naive Bayes and Support Vector Machine classifiers to identify candidate \textit{watch list} drugs from online patient forums. Watch list drugs are those drugs identified by the United States Food and Drug Administration (FDA) as presenting a significant health or safety risk to drug consumers, thereby prompting regulatory action to better inform the consumer or directly protect the consumer by removing the drug from market or reducing its accessibility. Chee's dissertation seeks to answer the specific questions:
+Chee's research in applying natural language processing (NLP) techniques in conjunction with Na\"ive Bayes and Support Vector Machine classifiers to identify candidate \textit{watch list} drugs from online patient forums. Watch list drugs are identified by the United States Food and Drug Administration (FDA) as presenting a significant health or safety risk to drug consumers, prompting regulatory action to better inform the consumer or direct intervention by removing the drug from market. Chee's dissertation seeks to answer the specific questions:
 \begin{itemize}
   \item Can Machine Learning classification methods using text features extracted from online health forums be used to identify FDA watch list drugs?
   \item Is the sentiment of the forum message useful in identifying these drugs?
@@ -75,12 +71,11 @@ Chee's research in applying natural language processing (NLP) techniques in conj
 \end{itemize}
 
 This research is accomplished through an empirical study using a corpus from the
-Yahoo! public health forums, against which Chee applies various NLP techniques
-to define and distill a feature space for classification using Niave Bayes and
+Yahoo! public health forums. Chee applies leverages NLP techniques to define and distill a feature space for classification using Na\"ive Bayes and
 Support Vector machines for detecting watchlist drugs. Drugs detected are
-evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (AERS) to determine the utility of the approach and its applicability in Pharmacovigilance.
+evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (FAERS) to determine the utility of the approach and its applicability in Pharmacovigilance.
 
-\subsection{Background on Pharmacovigilance, AERS and Social Media}
+\subsection{Background: Pharmacovigilance, AERS and Social Media}
 The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market"\citp{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and FDA. The FDA Adverse Event Reporting system (AERS) is discussed as comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by consumers (patients), physicians and other healthcare providers. Reports are evaluated by the Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) within the FDA for drug safety signals, which may then be elevated for further review by clinicians, epidemiologists and other expertise to determine the next steps, up to and including the removal of a drug from the market.
 
 Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. This deficiency is presented as motivation for Chee's work exploring social media as a data source. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, which in turn prompt rich social interactions where patient disclose their opinions and observations about their current drug regimin effectiveness and perceived adverse events. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task.
@@ -134,15 +129,23 @@ The previous study identified a significant number of foreign language messages 
 Messages containing non-romanized text are removed first using Unicode language detection. Since non-English languages in romanized text are harder to discern, Chee compares and contrasts character n-gram approaches by \citep{Dunning, 1994} with dictionary approaches from \citep{Rehurek and Kolkus} for foreign language classification. Dictionaries are opted for given the simple, binary nature of the problem: Is a message English or not? Dictionaries for foreign language words are taken from the OpenOffice project and used in conjunction with the medical, drug, disease and name lexicons mentioned earlier are used to evaluate a linear inequality for each message to determine if it will be kept or not.
 
 First the messages are stripped of tokens containing web addresses, punctuation only (emoticons), as well as short words, email addresses or tokens that are already on an ignore list. Remaining tokens in each message are counted up using the following algorithm:
-\begin{itemize}
-  \item if (word in ignore) OR (word length < 2) OR (word contains "@") ++ignore
-  \item else if (word in English) ++english
-  \item else if (word in Drug) ++drug
-  \item else if (word in medical) ++medical
-  \item else if (word in name) ++name
-  \item else if (word in foreign) ++foreign
-  \item else unknown++
-\end{itemize}
+\begin{algorithmic}
+  \IF{(word in ignore) OR (word length < 2) OR (word contains @)}
+    \STATE ++ignore
+  \ELSIF{word in english}
+    \STATE ++english
+  \ELSIF{word in drug}
+    \STATE ++drug
+  \ELSIF{word in medical}
+    \STATE ++medical
+  \ELSIF{word in name}
+    \STATE ++name
+  \ELSIF{word in foreign}
+    \STATE ++foreign
+  \ELSE
+    \STATE ++unknown
+  \ENDIF
+\end{algorithmic}
 Once the counts are obtained, the following linear inequality is evaluated:
 \[
   4 * foreign + unknown + ignore > english + drugs + medical
@@ -612,10 +615,6 @@ The technique in this dissertation is not perfect by any means, but the approach
 
 \section{Techniques and Algorithms}
 
-Discuss:
-   - SVMs
-   - Naive Bayes
-  - Cost Weighting and Normalization
 
 \subsection{KL Divergence}
 Kullback-Leibler (KL) divergence quantifies the difference between two probability distributions. Given two distributions P and Q, it is expressed as:
@@ -687,56 +686,35 @@ $\hat{y}$ is assigned the class label based on the $k$ chosen per the maximumiza
 \subsubsection{Health & Safety Literature}
 Adverse reactions have long held the attention of health regulatory bodies such as the World Health Organization (WHO) and the United States Food and Drug Administration (FDA).  In 1967, the WHO initiated a research project to collect case reports from 10 countries to evaluate an international system for monitoring adverse drug effects \citep(WHO,1971), prompting the WHO Drug Monitoring Centre - now the Uppsala Monitoring Centre (UMC) - to establish an international Pharmacovigilance program. The FDA's Adverse Event Reporting System - AERS, now known as FAERS - has records of adverse event and drug combinations dating back as far as 1969, as part of the FDA's Pharmacovigilance efforts.
 
-
 \subsubsection{Text processing}
 Rude, Gortner and Pennebaker conducted a study of easy writing by currently depressed, formerly depressed and never depressed college students, with the hypothesis that terms indicating self-preoccupation such as "I" will be more prevalent in depressed individuals, as well as emotional terms with negative valence \citep(Rude, 2004). Their study did confirm the hypothesis, in that "I" specifically was used more frequently by currently-depressed students, though other pronouns referencing the self (me, myself, my) were not. The study did leverage the Linguistic Inquiry and Word Count (LWIC) textual analysis program used by Chee in constructing a sentiment lexicon.
 
-Pang and Lee discuss the tools and implications of treating online opinions as a first class object - something we actively mine for and take value in. 
+Pang and Lee \citep(Pang, 2008) discuss the tools and implications of treating online opinions as a first class object - something we actively mine for and take value in. They conduct an extensive survey of approaches for opinion-oriented search geared towards freeform text in blogs and forums, where opinion and sentiment must be deduced directly from message content, without the assistance of meta-data such as rankings (e.g.  1 to 5 \textit{stars}). Drawing from the rankings relationship  Pang and Lee are able to characterize sentiment as a regression problem as these rankings tend to be oridinal. Extraction of textual features is discussed, comparing the value of term \textit{frequency} verus \textit{presence}, the former usually being term-frequency inverse document frequency (tf-idf) and the later a binary indicator that a word is present or not. Previous studies by Pang indicate the later shows better performance in sentiment classification, differentiating sentiment modeling from topic modeling, likely influencing Chee's approach to sentiment feature modeling. Pang and Lee's treatment of the topic is extensive, covering domain considerations, the unsupervised construction of sentiment lexicons and single/multi-document evaluation.
+
+Named entity recognition (NER) is an area of particular relevance to this work, determining the presence of drug names, diseases, relationships and related terminology in text. Extracting this kind of information from biomedical text
+is addressed by \citep(Rindsfleich et. all, 2009) through the development of EDGAR, a natural language processing system for discovering drug & gene relationships pertaining to cancer as documented in biomedical literature. EDGAR benefits heavily from using the Unified Medical Language System (UMLS) and MetaMap \citep{Metamap} - an already existing tool for identifying medical language in text. EDGAR leverages contextual elements and consistency in phrase structure to identify gene, cell and drug names, then construct relationship predicates between them (e.g. is_resistant(gene, cell, drug)). However, this approach heavily leverages the grammatical consistency of these texts, making it less applicable for recognizing named medical entities in web data.
+
+General entity recognition in web data is examined in \citep{Etzioni, 2005}, where the KnowItAll system is developed and discussed - an unsupervised, domain-independent system for information extraction from the Web. The system uses generalized extraction patterns to generate candidate facts - such as city names - which are then tested for truth using assistance from search engines queries to compute a pointwise mutual information statistic for the fact. Chee emulates some of these techniques through phrase queries to validate drug names found in the Yahoo! corpus.
 
 \subsubsection{Technical Literature}
-Forman's paper on
+Forman's paper on feature selection metrics for text classification \citep{Forman, 2003} introduces the BNS techinque, comparing it to several other metrics:  Chi-Squared, Information Gain, Odds Ratio,  Log Probability Ratio, and Document Frequency. Forman's experimental method uses a data set of computer science paper abstracts categorized into classes intermingled with another text classification data set, producing a variety of test data sets having a skew ranging from 1:1 (1 positive class and 1 negative) to 1:100+ (more than 100 negative instances). Classification experiments using SVMs are run with features selected via the identified metrics. BNS shows a consistently superior F1 measure and accuracy in the tests, with exception given to IG when the number of features selected is restricted to between 20 and 50 and the class skew is low. Incidentally, Forman's analysis uses SVM only, citing the works of \citep(Yan & Liu, 1999), \citep(Joachims, 1998) and \citep(Dumais, et. al) as confirming that SVM is an "outstanding" method for text classification.
 
-Text
-  - N
+SVMs are introduced by \citep{Vapnik}, introducing the fundamental concepts, and hard and soft margin classifiers. Joachim's paper on text categorization with SVMs \citep{Joachim} explains why SVMs are expected to work well for text categorization, highlighting their ability to handle a large feature space of several thousand relevant words where training sample vectors may be sparse. Joachim comparse SVM text classification using polynomial and RBF kernels against Naive Bayes, k-NN, C4.5 and the Rocchio algorithm, showing consistently higher precision/recall break even points for the SVMs across two popular test corpus.
 
-
-Technical Literature
-   -
-
-
-
-
-- What to read:
-- Edwards and Aronson (2000) - no bibliography
-- CHF patients.com  (Kendall, 1999) - no bibliography
-- (Houston, Cooper, and Ford, 2002) - no bibliography
-- HIPAA/HITECH (not relevant)
-
-
-- (Pang and Lee, 2008) positve & negative sentiment
-
-NER`
-- Nadue & Sekine (2007) - named entity Recognition
-- Rindsfleich, Tanabe and Weinstein (2002) identified drugs and relations in biomedical literature
-- SVMs (Cortes and Vapnik, 1995)
-- BNS (Forman)
-- Naive Bayes (Manning, 1999)
-- McDowell, 2006 - quality of life ,  HRQOL metrics
-
+Naive Bayes classification is explored in the context of SPAM classification by \citep{Sahami, ??}, who evaluates Naive Bayes classifiers trained on combinations of message word features, message word features plus specific phrases, and word features with phrases and domain specific features (non-word) features thought to indicate spam. Classification results in the binary SPAM/no-SPAM setting showing 100\% precision when using the final combination tested on a corpus of 1789 labeled messages. Like other studies, Sahami employs feature selection techniques to manage the feature space, ignoring words that appear less than three times and selecting only the top 500 remaining words based on their mutual information scores relavent to the class labels.
 
 
 \section{Application Areas}
-The most likely area is drug safety surveillance in uncontrolled settings.
+Chee's techniques seem reasonably applicable as an augmentation to current Pharmacovigilance programs that currently use structured reporting systems in the context of regulatory reporting requirements. The opportunity to leverage public health forum data in safety signal detection could help in the earlier identification of watch-list candidate drugs for these programs to pay special attention to when monitoring established safety systems. A system of monitoring public forums in this fashion could leverage what is a far greater volume of data, and the tendency for people to disclose medical issues and sentiments more readily within peer groups. Public health forum data is not necessarily the only data set where this technique could be applied either. The techniques developed within this dissertation could be applicable to clinical notes in electronic health records, health surveys or similar unstructured data sources, and are potentially extensible to any medical product where adverse reactions could be associated: devices, biologicals (a separate classification of drug), procedures, or named treatment regimens.
 
-- could we also use this in discovering underlying conditions?
-- drug combinations?
-- confounding fator disccovery??
-Write up 1 to 2 pages here.
+Chee's exploration of the Yahoo! corpus message content is illuminating, identifying the difficulties with language recognition, colloquial phrases, and other message artifacts germane to only messaging. The lexicon techniques developed were simple and functional, but would need further development to generalize well. For example, recognizing slang is a compelling problem in its own right and therefore developing slang lexicons for various languages or domains could provide a valuable toolset for normalizing online messages to more grammatically correct text, against which already existing trained, supervised NLP machine learning techniques could be applied, thereby improving named entity recognition capabilities and perhaps the robustness of the overall technique.
+
+Feature selection within the study is another application area to address. It was suprising sentiment did not have a stronger influence in the classification experiments, but the use of the disease and drug lexicons might have overfit trained classifiers to drug names and surpressed any significant contribution from sentiment. Revisiting sentiment (negative valence) as an initial feature to which additional features might be added/removed would be an interesting extension of the study. The case studies mapping sentiment change in known watchlist drugs were insightful and might point to another way of signaling a future watchlist drug. The failure of BNS word n-gram selection to provide any improvements in performance measures is disappointing given \citep{Forman} but might have been due to the experimental methods - a low number of messages sampled proportional to the overall training set, suggesting that revisiting this approach might help.
+
+Finally, it is worth discussing that this technique is not limited only to problems in the health and medical domains. Consumer product safety in general could benefit from monitoring public forums in this fashion in order to identify products posing significant safety hazards. Thousands of consumer products for child safety - such as car seats and life jackets - are available for purchase by the general public. Regulatory agencies such as the National Highway Traffic Safety Administration (NHTSA) must evaluate products and post recall notifications, but despite best efforts unsafe products will still make it to market. Constructing similar monitoring systems for these agencies using public forums could help identify products in the market with previously unrecognized defects.
 
 
-\section{Concluding Remarks}
-Conclude the critique with a few endcap statements about what I learned from it,
-where it could go, how it could motivate future research, etc.
+
 
 
 \section{Paper Criteria (Grading)}
@@ -794,13 +772,45 @@ metrics for text classification. J. Mach. Learn. Res., 3:1289–
 1305, 2003
 
 
+Rindfleich, T.C., Tanabe, L., and Weinstein, J.N. (2002). EDGAR: Extraction of drugs, genes and relations from the biomedical literature.  In Proc. Pacific Symposium on Biocomputing.
+
+
 WHO, 1972
 World Health Organization (1972). International drug monitoring: The role of national centres. Report of a WHO meeting, World Health  Organ. Tech. Rep. Ser. 498, 1-25.
 
 Rude, 2004
 Rude, S.S., Gortner, E.-M. and Pennebaker, J.W. (2004). Language use of depressed and depression-vulnerable college students. Cognition and Function, 18(8), 1121-1133.
 
+Pang, 2008
+Pang, B. and Lee, L. (2008). Opinion Mining and sentiment analysis.  Foundations and Trends in Information Retrieval, (1-2),1-135.
 
+Etzioni, O., Cafarella, M., Downey, D., Popescu, A. -M., Shaked, T., Soderland, S., Weld, D.S. and Yates, A. (2005). Unsupervised named-entity extraction from the web: An experimental study.  Artificial Intelligence 165: 91-134, Essex: Elsevier Science Publishers.
+
+%joachims
+@InProceedings{10.1007/BFb0026683,
+author="Joachims, Thorsten",
+editor="N{\'e}dellec, Claire
+and Rouveirol, C{\'e}line",
+title="Text categorization with Support Vector Machines: Learning with many relevant features",
+booktitle="Machine Learning: ECML-98",
+year="1998",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="137--142",
+abstract="This paper explores the use of Support Vector Machines (SVMs) for learning text classifiers from examples. It analyzes the particular properties of learning with text data and identifies why SVMs are appropriate for this task. Empirical results support the theoretical findings. SVMs achieve substantial improvements over the currently best performing methods and behave robustly over a variety of different learning tasks. Furthermore they are fully automatic, eliminating the need for manual parameter tuning.",
+isbn="978-3-540-69781-7"
+}
+
+
+%Sahami
+Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998). A Bayesian approach to filtering junk e-mail.   AAAI'98 Workshop on Learning for Text categorization
+
+
+
+
+
+Metamap:
+https://metamap.nlm.nih.gov/
 
 \vskip 0.2in
 \bibliography{sample}

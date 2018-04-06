@@ -61,6 +61,10 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 INPUT dissertation_critique.aux
 INPUT dissertation_critique.aux
 OUTPUT dissertation_critique.aux
