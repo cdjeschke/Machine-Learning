@@ -71,14 +71,13 @@ Chee's research in applying natural language processing (NLP) techniques in conj
 \end{itemize}
 
 This research is accomplished through an empirical study using a corpus from the
-Yahoo! public health forums. Chee applies leverages NLP techniques to define and distill a feature space for classification using Na\"ive Bayes and
-Support Vector machines for detecting watchlist drugs. Drugs detected are
-evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (FAERS) to determine the utility of the approach and its applicability in Pharmacovigilance.
+Yahoo! public health forums. Chee develops NLP techniques to define and distill a feature space for classification using Na\"ive Bayes and
+Support Vector Machine classifiers for detecting watchlist drugs. Drugs detected are evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (FAERS) to determine the utility of the approach and its applicability in Pharmacovigilance. %GOOD
 
 \subsection{Background: Pharmacovigilance, AERS and Social Media}
-The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market"\citp{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and FDA. The FDA Adverse Event Reporting system (AERS) is discussed as comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by consumers (patients), physicians and other healthcare providers. Reports are evaluated by the Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) within the FDA for drug safety signals, which may then be elevated for further review by clinicians, epidemiologists and other expertise to determine the next steps, up to and including the removal of a drug from the market.
+The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market" \citep{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and Drug Administration (FDA). The FDA Adverse Event Reporting system (AERS) is discussed and comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by patients, physicians and other healthcare providers. Reports are evaluated by the Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) within the FDA for drug safety signals. If a signal is found, these departments determine next steps, up to and including the removal of a drug from the market.  %GOOD
 
-Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. This deficiency is presented as motivation for Chee's work exploring social media as a data source. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, which in turn prompt rich social interactions where patient disclose their opinions and observations about their current drug regimin effectiveness and perceived adverse events. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task.
+Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. This deficiency is presented as motivation for Chee's work exploring social media as a data source. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, which in turn prompt rich social interactions where patient disclose their opinions and observations about their current drug regimen effectiveness and perceived adverse effects. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task. %GOOD
 
 \subsection{Experimental Data}
 The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques should be applied to better prepare it for experimentation.
@@ -420,50 +419,44 @@ Experiments were run again using Naive Bayes and SVM classifiers, with optional 
 
 There was no clear advantage to a specific number of BNS features, nor the inclusion of the additional numerical features.  Furthermore, the F1 and AUC scores for this test showed no advantage to a specific BNS or numerical feature combination, though un-normalized Naive Bayes did perform better in F1 and AUC than normalized Naive Bayes as seen above. Regardless, none of the tests showed better accuracy, F1 or AUC than the previous tests using specialized lexicons only. Chee hypothesizes this is in part due to the limited number of messages in the test set BNS could select n-grams from.
 
-\subsubsection{Prediction Watchlist Drugs}
+\subsubsection{Predicting Watchlist Drugs}
 The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores. The following were selected:
 \begin{itemize}
-  \item Normalized SVM using disease, reaction (AERS) lexicons, having 90.33\% Accuracy
-  \item Normalized SVM using drugs, disease and reaction lexicons, having an F1 score of 0.4762
-  \item Un-normalized Naive Bayes classifier with an AUC score of 0.7592
+  \item Normalized SVM using disease, reaction (AERS) lexicons with a 90.33\% Accuracy
+  \item Normalized SVM using drugs, disease and reaction lexicons with an F1 score of 0.4762
+  \item Un-Normalized Na\"ive Bayes with an AUC score of 0.7592
 \end{itemize}
 Two meta-classification experiments are constructed to examine the False Positives produced as an indicator for a possible \textit{future} watchlist drugs if used in an applied setting. The first experiment uses the classifier configurations stated above, but the training data is modified to denote drugs \textit{withdrawn} from the market as non-watchlist. It is important to distinguish that a withdrawn drug would have at one point been a watchlist drug, as drugs are placed on the watchlist - even if briefly - before being removed from the market. By looking for these withdrawn drugs marked non-watchlist in the set of False Positives from the training results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination:
 \[
   \frac{\#\ of\ False\ Positives}{\#\ of\ Occurrences} * (\#\ of\ False\ Positives) * (\#\ of\ Classifer\ Types)
 \]
-Each occurence equates to an instance of the withdrawn drug actually being classified in the training. The table below shows the top 5 scores, as well as  those withdrawn drugs identified as false positives.
+Each occurence equates to an instance of the withdrawn drug actually being classified in the training. The table below shows the top 5 scores by generic drug name, as well as those withdrawn drugs identified as false positives.
 \begin{center}
   \begin{tabular}{||c c c c c||}
     \hline
     Drug & # Positives & # Occurrences & # Classifiers & Score \\
     \hline\hline
-    \textit{clozapine}, Clozaril, FazaClo & 31 & 64 & 3 & 45.047\\
+    \textit{clozapine} & 31 & 64 & 3 & 45.047 \\
     \hline
-    \textit{fludarabine}, Fludara, Oforta & 29 & 61 & 3 & 41.361\\
+    \textit{fludarabine} & 29 & 61 & 3 & 41.361 \\
     \hline
-    \textit{methylphenidtate}, Concerta, Daytrana & & & & \\
-    Metadate CD, Metadate ER, Methylin & 25 & 50 & 3 & 37.500 \\
-    Ritalin, Ritalin LA, Ritalin-SR & & & & \\
+    \textit{methylphenidtate}(Ritalin) & 25 & 50 & 3 & 37.500 \\
     \hline
-    \textit{morphine}, Astramorph PF & & & & \\
-    Avinza, Duramorph, Infumorph & & & & \\
-    Kadian, MS Contin, MSIR & 15 & 38 & 3 & 15.474 \\
-    Morphine IR, Oramorph SR, RMS, Roxanol & & & & \\
+    \textit{morphine} & 15 & 38 & 3 & 15.474 \\
     \hline
-    \textit{meloxicam}, Mobic & 15 & 50 & 3 & 13.500 \\
+    \textit{meloxicam} & 15 & 50 & 3 & 13.500 \\
     \hline\hline
-    \textit{thalidomide}, Thalomid & 10 & 36 & 1 & 2.778\\
-    \textit{temazepam}, Restoril & 11 & 50 & 1 & 2.420\\
-    \textit{hydromorphone}, Diluadid, Dilaudid-HP & & & & \\
-    Exalgo, Palladone & 9 & 42 & 1 & 1.929\\
-    \textit{trovafloxacin}, Trovan & 9 & 46 & 1 & 1.761\\
-    \textit{rofecoxib}, Vioxx & 9 & 50 & 1 & 1.620\\
-    \textit{sibutramine}, Meridia & 5 & 27 & 1 & 0.926\\
-    \textit{cerivastatin}, Baycol & 1 & 33 & 1 & 0.030\\
+    \textit{thalidomide} & 10 & 36 & 1 & 2.778 \\
+    \textit{temazepam} & 11 & 50 & 1 & 2.420 \\
+    \textit{hydromorphone} & 9 & 42 & 1 & 1.929 \\
+    \textit{trovafloxacin} & 9 & 46 & 1 & 1.761 \\
+    \textit{rofecoxib} & 9 & 50 & 1 & 1.620 \\
+    \textit{sibutramine} (Meridia) & 5 & 27 & 1 & 0.926 \\
+    \textit{cerivastatin} (Baycol) & 1 & 33 & 1 & 0.030 \\
     \hline
   \end{tabular}
 \end{center}
-The generic Sibutramine (Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
+The generic Sibutramine (brand name: Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
 
 The second experiment entails removing the withdrawn drugs entirely from training, classifying them after a classifier is built for each fold during cross-validation. This approach is presumed to identify the withdrawn drugs with greater confidence as they are not present in the training data:
 
@@ -472,30 +465,30 @@ The second experiment entails removing the withdrawn drugs entirely from trainin
     \hline
     Drug & # Positives & # Occurrences & # Classifiers & Score \\
     \hline\hline
-    \textit{methlyphenidate}, Concerta &   &   &  &  \\
-    Daytran, metadate(CD, ER) & 30 & 34 & 3 & 79.412\\
-    Methylin(ER), Ritalin(LA,SR) &  &  &  & \\
+    \textit{methlyphenidate} (Ritalin) & 30 & 34 & 3 & 79.412 \\
     \hline
-    \textit{morphine}, Astramorph(PF) & & & & \\
-    Avinza, Duramorph, Infumorph & & & &\\
-    Kadian, MS Contin, MSIR & 13 & 38 & 3 & 13.342\\
-    Oramorph SR, RMS, Roxanol & & & &\\
+    \textit{morphine} & 13 & 38 & 3 & 13.342 \\
     \hline
-    \textit{questiapine}, Seroquel, Seroquel XR & 14 & 31 & 2 & 12.645\\
+    \textit{questiapine} & 14 & 31 & 2 & 12.645 \\
     \hline
-    \textit{indomethacin}, Indocin (IV,SR) & 19 & 37 & 1 & 9.757 \\
+    \textit{indomethacin} & 19 & 37 & 1 & 9.757 \\
     \hline
-    \textit{sibutramine}, Meridia & 17 & 34 & 1 & 8.500\\
+    \textit{sibutramine} (Meridia) & 17 & 34 & 1 & 8.500\\
     \hline\hline
-    \textit{trovafloxacin}, Trovan & 33 & 100 & 1 & 10.89\\
-    \textit{hydromorphone}, Dilaudid(HP), Exalgo, Palladone & 33 & 100 & 1 & 10.89\\
-    \textit{rofecoxib}, Vioxx & 32 & 100 & 1 & 10.24
-    \textit{thalidomide}, Thalomid & 10 & 36 & 1 & 2.778\\
-    \textit{temazepam}, Restoril & 8 & 28 & 1 & 2.286\\
-    \textit{cerivastatin}, Baycol & 2 & 100 & 1 & 0.04\\
+    \textit{trovafloxacin} & 33 & 100 & 1 & 10.89\\
+    \hline
+    \textit{hydromorphone} & 33 & 100 & 1 & 10.89\\
+    \hline
+    \textit{rofecoxib} & 32 & 100 & 1 & 10.24 \\
+    \hline
+    \textit{thalidomide} & 10 & 36 & 1 & 2.778\\
+    \hline
+    \textit{temazepam} & 8 & 28 & 1 & 2.286\\
+    \hline
+    \textit{cerivastatin} (Baycol) & 2 & 100 & 1 & 0.04\\
   \end{tabular}
 \end{center}
-Interestingly sibutramine does score significantly higher in this experiment, as do several of the withdrawn drugs (hydromorphone, rofecoxib, trovafloxacin), though Baycol scores much lower.  Additionally, physiciatric drugs (Ritalin) and opiates (morphine) show up near the top in both experiments, presumably because they are more dangerous and more often associated with adverse reactions.
+Interestingly sibutramine does score significantly higher in this experiment, as do several of the withdrawn drugs (hydromorphone, rofecoxib, trovafloxacin), though Baycol scores much lower. Additionally, physiciatric drugs (Ritalin) and opiates (morphine) show up near the top in both experiments, presumably because they are more dangerous and more often associated with adverse reactions.
 
 
 \section{Discussion of Contributions}
@@ -520,16 +513,7 @@ The majority of message tokens contributing to these problems were placed in a g
 
 
 \subsection{Techniques for Differentiating Language}
-Chee had to conduct an in depth analysis of the composition of health forum data to inform his selection of NLP techniques for feature generation. The initial analysis identified a high prevalance of foreign language terms in the messages. This is concerning, as these terms can inflate the word n-gram feature vector size going into the two classification techniques. The training time for an SVM is:
-\[
-???
-\]
-Naive Bayes is:
-\[
-  O(nd), where d = number of features, n = number of samples
-
-\]
-It is therefore a worthwhile goal to reduce the classification feature space through the elimination of messages written largely in foreign languages. Chee's approach to eliminating languages that do not use roman (latin) text through Unicode language detection takes immediate advantage of common website text representations in UTF-8, which account for 91.2\% of all websites \citep{UTF-8 article on wikipedia}. As each latin script character is represented by a unique unicode code point (bits - appearing as hexadecimal in text), it is easy to distinguish characters falling outside the range of latin script.
+Chee had to conduct an in depth analysis of the composition of health forum data to inform his selection of NLP techniques for feature generation. The initial analysis identified a high prevalance of foreign language terms in the messages. This is concerning, as these terms can inflate the word n-gram feature vector size going into the two classification techniques. It is therefore a worthwhile goal to reduce the classification feature space through the elimination of messages written largely in foreign languages. Chee's approach to eliminating languages that do not use roman (latin) text through Unicode language detection takes immediate advantage of common website text representations in UTF-8, which account for 91.2\% of all websites \citep{UTF-8 article on wikipedia}. As each latin script character is represented by a unique unicode code point (bits - appearing as hexadecimal in text), it is easy to distinguish characters falling outside the range of latin script.
 
 Chee opts for the use of simple, dictionary based methods using lexicons drawn from OpenOffice to classify the individual tokens in a message as english or not for use in an inequality used to score and retain predominantly english messages. Cited is an inability to use other techniques for various reasons:
 \begin{itemize}
@@ -543,14 +527,7 @@ Dunning \citep{Dunning} does give some attention to the common words technique, 
 
 We could also advocate that Dunning's n-gram language classification technique would have been worth applying to develop a binary english-non-english classifier. Dunning develops his classification technique by modeling languages as a Markov Decision Process, wherein the probability of a particular word or phrase is dependent upon those preceeding it and their probabilities assuming a specific language. Dunning successfully differentiates between english and spanish texts of small length: 10, 20, 50, 100 and 200 bytes, having used relatively small training texts between 1000 and 50000 bytes. It seems reasonable that small sampling of longer, english only messages could have been identified as a training set to leverage this technique.
 
-Additionally, recall the inequality $(4 * foreign) + unknown + ignore > english + drugs + medical$ used in message classification. Little beyond the initial token counts by type indicating foreign language prevalance and the resulting ~18.7\% reduction in message count thanks to the technique is provided as evidence of effectiveness. Chee himself noted that tokens can be part of multiple languages, yet the algorithm for counting tokens always favored english, likely skewing the counts:
-\[
-if ((word) in Ingore list) OR (word length < 2) OR (word contains "@"), ignore count ++
-Else if (word in English list)
-English Count++
-.....
-\]
-The vocabulary of the english language has been highly influenced by french and germanic languages \citep{Wikipedia page for english}, accounting for more than 55\%. This approach seems vulnerable to misclassification.
+Additionally, recall the inequality $(4 * foreign) + unknown + ignore > english + drugs + medical$ used in message classification. Little beyond the initial token counts by type indicating foreign language prevalance and the resulting ~18.7\% reduction in message count thanks to the technique is provided as evidence of effectiveness. Chee himself noted that tokens can be part of multiple languages, yet the algorithm for counting tokens always favored english, likely skewing the counts. The vocabulary of the english language has been highly influenced by french and germanic languages \citep{Wikipedia page for english}, accounting for more than 55\%. This approach seems vulnerable to misclassification.
 
 Finally, one would expect meta-data in the Yahoo! corpus messages might help discern the locality of the writer. Consider properties such as the name of the forum a message is under being english or not, or an IP address associated with a user being geo-resolvable to a US location.
 
@@ -602,11 +579,9 @@ Initially one would not be satisified with the minimial difference in accuracy s
   F1 = 2 \cdot \frac{precision * recall}{precision + recall}, \ precision = \frac{TP}{TP+FP},\ recall = \frac{TP}{TP+FN}
 \]
 \[
-  AUC = P(X_{1} > X_{0}),\ X_{1} = \verb|Classifier Score of randomly chosen positive instance|,\ X_{0} = \verb|Classifier Score of randomly chosen negative instance|
-
-  is the classifier score of a randomly chosen positive instance, and X_{0} the score of a randomly chosen negative instance. AUC = 1 is perfect classification, where positives instances are always classified higher than negative.
+  AUC = P(X_{1} > X_{0})
 \]
-TP, TN, FP, FN stand for true positive, true negative, false positive and false negative respectively. A naive classifier assuming all instances were negative (non-watchlist) would have AUC and F1 scores of 0 and contribute nothing towards the goal of discovering future watchlist drugs. Additionally, note that each performance metric places value on the distinction between a true positive and a false positive, yet false positives are the means by which the value of the approach is communicated.  While it is counterintuitive to say a false positive result is diserable, the detection of a future watchlist drug via this technique would be represented as a false positive. Drugs do not become watchlist drugs until labeled so by the FDA. It might have been interesting had Chee presented and experiment those classifiers having the highest \textit{recall} rates though as observed, these frequently had very low precision would likely have contributed significant numbers of false positives that are just noise - drugs not bound for the FDA watchlist.
+TP, TN, FP, FN stand for true positive, true negative, false positive and false negative respectively. For AUC, $X_{0}$ and $X_{1}$ are the classifier scores of randomly chosen positive and negative instances, and therefore an AUC = 1 represents perfect classification. A naive classifier assuming all instances were negative (non-watchlist) would have AUC and F1 scores of 0 and contribute nothing towards the goal of discovering future watchlist drugs. Additionally, note that each performance metric places value on the distinction between a true positive and a false positive, yet false positives are the means by which the value of the approach is communicated.  While it is counterintuitive to say a false positive result is diserable, the detection of a future watchlist drug via this technique would be represented as a false positive. Drugs do not become watchlist drugs until labeled so by the FDA. It might have been interesting had Chee presented and experiment those classifiers having the highest \textit{recall} rates though as observed, these frequently had very low precision would likely have contributed significant numbers of false positives that are just noise - drugs not bound for the FDA watchlist.
 
 Chee's technique was successful in identifying a number of drugs withdrawn from the market despite their having been labeled as non-watchlist:  Palladone,  Trovan, Vioxx, and Baycol. Futhermore, the discovery of \textit{Sibutramine} (Meridia) was compelling because the time frame of the data set used stopped one year before Meridia was placed on a watchlist, demonstrating the ability to detect future watchlist drugs. It is far better to accidentally label a drug as a false positive, watchlist candidate than mistakenly mark it as false negative, failing to call attention to it and allowing considerable, sometimes deadly health consequences to go unnoticed.
 
@@ -641,15 +616,15 @@ The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
 \[
   y_{i}(w \cdot x_{i} + b) \gte 1,  i = 1, ...., l
 \]
-Where l = n, the number of training samples, and each training sample is a tuple (x_{i}, y_{i}), with x_{i} the feature vector, y_{i} = 1 indicates membership of the positive class (watchlist) and y_{i} = -1 indicates membership of the negative class (non-watchlist). The optimal hyperplane is the tuple (w, b) where w is a vector and b a scalar value.  If (w, b) are successfully found we have a \textit{hard margin} SVM classifier.
+Where l = n, the number of training samples, and each training sample is a tuple $(x_{i}, y_{i})$, with $x_{i}$ the feature vector, $y_{i} = 1$ indicates membership of the positive class (watchlist) and $y_{i} = -1$ indicates membership of the negative class (non-watchlist). The optimal hyperplane is the tuple $(w, b)$ where $w$ is a vector and $b$ a scalar value. If $(w, b)$ are successfully found we have a \textit{hard margin} SVM classifier.
 
-Rarely are classes so perfectly separable, so Chee opts to use a \textit{soft margin} SVM, allowing for a certain amount of classificaton error $\x_{i} \gte 0$ on each training sample:
+Rarely are classes so perfectly separable, so Chee opts to use a \textit{soft margin} SVM, allowing for a certain amount of classificaton error $\xi_{i} \geq 0$ on each training sample:
 \[
-  y_{i}(w \cdot x_{i} + b) \gte 1 - \xi_{i}
+  y_{i}(w \cdot x_{i} + b) \geq 1 - \xi_{i}
 \]
 with the goal being to minimize $C\sum_{i=1}^{l} \xi_{i}$, with $C$ a specified parameter. Furthermore, the issue of seperability can be addressed via the \textit{kernel trick} - a technique of injecting a kernel function $\Phi$ to project $x_{i}$ into a higher dimensional space:
 \[
-  y_{i}(w \cdot \Phi{x_{i}} + b) \gte 1 - \xi-{i}
+  y_{i}(w \cdot \Phi{x_{i}} + b) \geq 1 - \xi-{i}
 \]
 
 The \textit{Gaussian Radial Basis Function} (RBF) is selected for the kernel, defined as:
@@ -663,20 +638,22 @@ The parameters $C$ and $\gamma$ must be specified when training the SVM. This di
 \subsection{Naive Bayes Classification}
 Naive Bayes Classification has been popular in SPAM detection \citep{Sahami, 1998} and textual classification in general. The fundamental assumption is that the features (word n-grams) are independently distributed from one another within the classes of interest.
 
-This classification technique seeks to answer the question "What is the probability that a given document D belongs to class C?", expressed as the \textit{conditional probability} $p(C | D)$ - the probability of the class $C$ given the document $D$.
+This classification technique seeks to answer the question "What is the probability that a given document D belongs to class C?", expressed as the \textit{conditional probability} $p(C|D)$ - the probability of the class $C$ given the document $D$.
 
 \textit{Bayes Theorem} allows the manipulation of conditional probability to express $p(C|D)$ as:
 \[
   p(C|D) = \frac{p(C)p(D|C)}{p(D)}
 \]
-where $p(D|C) = \prod_{i}p(w_{i}|C)$ with $w_{i}$ representing the $i-th$ word in a given document. Consider that we have two classes $C_{nonwatchlist}$ and $C_{watchlist}$. Using Bayes Theorem, we can construct the rules:
+where $p(D|C) = \prod_{i}p(w_{i}|C)$ with $w_{i}$ representing the $i-th$ word in a given document. Consider that we have two classes $C_{wl}$ and $C_{nwl}$ for watchlist and non-watchlist respectively. Using Bayes Theorem, we can construct the rules:
 \[
-  p(C_{nonwatchlist} | D) = \frac{p(C_{nonwatchlist})}{p(D)}\prod_{i}p(w_{i} | C_{nonwatchlist})\\
-  p(C_{watchlist} | D) = \frac{p(C_{watchlist})}{p(D)}\prod_{i}p(w_{i}|C_{watchlist})
+  p(C_{nwl} | D) = \frac{p(C_{nwl})}{p(D)}\prod_{i}p(w_{i} | C_{nwl})
+\]
+\[
+  p(C_{wl} | D) = \frac{p(C_{wl})}{p(D)}\prod_{i}p(w_{i}|C_{wl})
 \]
 Binary classification in Naive Bayes makes use of a \textit{decision rule}. The \textit{maximum a posteriori} (MAP) rule was selected, which chooses the most probable hypothesis. We are then given a classifer defined as:
 \[
-  \hat{y} = argmax_{k \element {watchlist, nonwatchlist}} p(C_{k}) \prod_{i=1}^{n}p(x_{i}|C_{k})
+  \hat{y} = argmax_{k \element {wl, nwl}} p(C_{k}) \prod_{i=1}^{n}p(x_{i}|C_{k})
 \]
 
 $\hat{y}$ is assigned the class label based on the $k$ chosen per the maximumization defined above.
@@ -692,7 +669,7 @@ Rude, Gortner and Pennebaker conducted a study of easy writing by currently depr
 Pang and Lee \citep(Pang, 2008) discuss the tools and implications of treating online opinions as a first class object - something we actively mine for and take value in. They conduct an extensive survey of approaches for opinion-oriented search geared towards freeform text in blogs and forums, where opinion and sentiment must be deduced directly from message content, without the assistance of meta-data such as rankings (e.g.  1 to 5 \textit{stars}). Drawing from the rankings relationship  Pang and Lee are able to characterize sentiment as a regression problem as these rankings tend to be oridinal. Extraction of textual features is discussed, comparing the value of term \textit{frequency} verus \textit{presence}, the former usually being term-frequency inverse document frequency (tf-idf) and the later a binary indicator that a word is present or not. Previous studies by Pang indicate the later shows better performance in sentiment classification, differentiating sentiment modeling from topic modeling, likely influencing Chee's approach to sentiment feature modeling. Pang and Lee's treatment of the topic is extensive, covering domain considerations, the unsupervised construction of sentiment lexicons and single/multi-document evaluation.
 
 Named entity recognition (NER) is an area of particular relevance to this work, determining the presence of drug names, diseases, relationships and related terminology in text. Extracting this kind of information from biomedical text
-is addressed by \citep(Rindsfleich et. all, 2009) through the development of EDGAR, a natural language processing system for discovering drug & gene relationships pertaining to cancer as documented in biomedical literature. EDGAR benefits heavily from using the Unified Medical Language System (UMLS) and MetaMap \citep{Metamap} - an already existing tool for identifying medical language in text. EDGAR leverages contextual elements and consistency in phrase structure to identify gene, cell and drug names, then construct relationship predicates between them (e.g. is_resistant(gene, cell, drug)). However, this approach heavily leverages the grammatical consistency of these texts, making it less applicable for recognizing named medical entities in web data.
+is addressed by \citep{Rindsfleich et. all, 2009} through the development of EDGAR, a natural language processing system for discovering drug & gene relationships pertaining to cancer as documented in biomedical literature. EDGAR benefits heavily from using the Unified Medical Language System (UMLS) and MetaMap \citep{Metamap} - an already existing tool for identifying medical language in text. EDGAR leverages contextual elements and consistency in phrase structure to identify gene, cell and drug names, then construct relationship predicates between them (e.g. is\_resistant(gene, cell, drug)). However, this approach heavily leverages the grammatical consistency of these texts, making it less applicable for recognizing named medical entities in web data.
 
 General entity recognition in web data is examined in \citep{Etzioni, 2005}, where the KnowItAll system is developed and discussed - an unsupervised, domain-independent system for information extraction from the Web. The system uses generalized extraction patterns to generate candidate facts - such as city names - which are then tested for truth using assistance from search engines queries to compute a pointwise mutual information statistic for the fact. Chee emulates some of these techniques through phrase queries to validate drug names found in the Yahoo! corpus.
 
@@ -713,31 +690,8 @@ Feature selection within the study is another application area to address. It wa
 
 Finally, it is worth discussing that this technique is not limited only to problems in the health and medical domains. Consumer product safety in general could benefit from monitoring public forums in this fashion in order to identify products posing significant safety hazards. Thousands of consumer products for child safety - such as car seats and life jackets - are available for purchase by the general public. Regulatory agencies such as the National Highway Traffic Safety Administration (NHTSA) must evaluate products and post recall notifications, but despite best efforts unsafe products will still make it to market. Constructing similar monitoring systems for these agencies using public forums could help identify products in the market with previously unrecognized defects.
 
-
-
-
-
-\section{Paper Criteria (Grading)}
-The critique should include a summary of the research reported, a discussion of the major contributions
-claimed, and an assessment of the significance of those contributions and of the research itself. The
-critique should also include a brief literature review of the topic related to the thesis, discussion of relevant
-algorithms, and application areas for the research reported.
-
-Where appropriate, the critique should
-include a comparison with other issues discussed in class. Students are encouraged to select a
-dissertation that is related to their course projects.
-The evaluation criteria for the critique are as follows:
-• Overview of the research reported (20%)
-• Review of the related literature (15%)
-• Major contributions of the thesis (20%)
-• Understanding of techniques and algorithms (20%)
-• Application areas (15%)
-• Proper construction and readability of paper (10%)
-
-
-
-
 \newpage
+\bibliography
 
 
 

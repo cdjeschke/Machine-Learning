@@ -12,7 +12,7 @@
 \BOOKMARK [3][-]{subsubsection.1.4.5}{Feature Selection, Training and Test Data Size}{subsection.1.4}% 12
 \BOOKMARK [3][-]{subsubsection.1.4.6}{Classifier and Lexicon Selection}{subsection.1.4}% 13
 \BOOKMARK [3][-]{subsubsection.1.4.7}{Evaluating the BNS Lexicon}{subsection.1.4}% 14
-\BOOKMARK [3][-]{subsubsection.1.4.8}{Prediction Watchlist Drugs}{subsection.1.4}% 15
+\BOOKMARK [3][-]{subsubsection.1.4.8}{Predicting Watchlist Drugs}{subsection.1.4}% 15
 \BOOKMARK [1][-]{section.2}{Discussion of Contributions}{}% 16
 \BOOKMARK [2][-]{subsection.2.1}{Exploration and Annotation of Health Forum Data}{section.2}% 17
 \BOOKMARK [2][-]{subsection.2.2}{Techniques for Differentiating Language}{section.2}% 18
@@ -29,5 +29,4 @@
 \BOOKMARK [3][-]{subsubsection.4.0.2}{Text processing}{subsubsection.4.0.1}% 29
 \BOOKMARK [3][-]{subsubsection.4.0.3}{Technical Literature}{subsubsection.4.0.1}% 30
 \BOOKMARK [1][-]{section.5}{Application Areas}{}% 31
-\BOOKMARK [1][-]{section.6}{Paper Criteria \(Grading\)}{}% 32
-\BOOKMARK [2][-]{subsection.6.1}{Citations}{section.6}% 33
+\BOOKMARK [2][-]{subsection.5.1}{Citations}{section.5}% 32

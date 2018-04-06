@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex dissertation_critique"] 1523043648 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1523044128
+["bibtex dissertation_critique"] 1523048305 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1523048308
   "/usr/local/texlive/2017/texmf-dist/bibtex/bib/gloss/sample.bib" 1480098433 2721 b88105703bd616b4f9867992219afb8a ""
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "dissertation_critique.aux" 1523044127 5361 e3925ee96284e0411452cbcbbaf1e540 ""
+  "dissertation_critique.aux" 1523048308 5302 f0509ebd3b724f25aa9b16daee396c36 ""
   (generated)
   "dissertation_critique.blg"
   "dissertation_critique.bbl"
-["pdflatex"] 1523044126 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1523044128
+["pdflatex"] 1523048305 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1523048308
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -87,10 +87,10 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "dissertation_critique.aux" 1523044127 5361 e3925ee96284e0411452cbcbbaf1e540 ""
-  "dissertation_critique.bbl" 1523043648 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
-  "dissertation_critique.out" 1523044127 2653 bb5eabd91e847843edbd5184ea84fe53 ""
-  "dissertation_critique.tex" 1523044126 73281 e3e6e03c2261115c17a1ff8b2c76aadc ""
+  "dissertation_critique.aux" 1523048308 5302 f0509ebd3b724f25aa9b16daee396c36 ""
+  "dissertation_critique.bbl" 1523048305 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
+  "dissertation_critique.out" 1523048308 2591 faabbf03f9f86c592e1d0deb24764dcd ""
+  "dissertation_critique.tex" 1523048303 71189 8e6d61ff14d99b3cbce0819338e5f03f ""
   "images/Figure-1-Zipfian.png" 1522112915 34478 2e70d49923e6eb7c3015748ff911a022 ""
   "images/Figure-2-AERS_Drugs.png" 1522113346 20077 9249bf2fd0e259c8c54a84202d325eab ""
   "images/Figure-3-Tysabri.png" 1522159697 36146 db164f0d0d1e5bb14fe41ca879a19a91 ""
@@ -99,7 +99,7 @@
   "images/SVM.png" 1522852134 15830 e23cdffc58bd4dda0263d76f162e0f69 ""
   "jmlr2e.sty" 1520971958 14082 a1e3bcbdd00aafb7fae9367e056973d1 ""
   (generated)
-  "dissertation_critique.aux"
   "dissertation_critique.out"
-  "dissertation_critique.pdf"
+  "dissertation_critique.aux"
   "dissertation_critique.log"
+  "dissertation_critique.pdf"
