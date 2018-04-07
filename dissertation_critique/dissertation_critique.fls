@@ -65,6 +65,14 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg
 INPUT dissertation_critique.aux
 INPUT dissertation_critique.aux
 OUTPUT dissertation_critique.aux
@@ -139,8 +147,6 @@ INPUT ./images/Figure-3-Tysabri.png
 INPUT images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
-INPUT dissertation_critique.bbl
-INPUT dissertation_critique.bbl
 INPUT dissertation_critique.aux
 INPUT ./dissertation_critique.out
 INPUT ./dissertation_critique.out

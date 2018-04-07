@@ -1,12 +1,5 @@
 # Fdb version 3
-["bibtex dissertation_critique"] 1523118523 "dissertation_critique.aux" "dissertation_critique.bbl" "dissertation_critique" 1523119114
-  "/usr/local/texlive/2017/texmf-dist/bibtex/bib/gloss/sample.bib" 1480098433 2721 b88105703bd616b4f9867992219afb8a ""
-  "/usr/local/texlive/2017/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1480098435 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "dissertation_critique.aux" 1523119112 4785 bdc45a58bbbe9ce4ddee004e437d78ae ""
-  (generated)
-  "dissertation_critique.blg"
-  "dissertation_critique.bbl"
-["pdflatex"] 1523119111 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1523119114
+["pdflatex"] 1523127802 "dissertation_critique.tex" "dissertation_critique.pdf" "dissertation_critique" 1523127810
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -62,6 +55,10 @@
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty" 1480098821 5159 a08c9bbd48fc492f15b22e458bef961f ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd" 1480098821 2256 80ce1168fb4ce6a85583a9cf8972c013 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/base/size11.clo" 1480098821 8308 f91506bb4df6d8527331f7bbeaf0e63c ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg" 1480098826 7068 06f8d141725d114847527a66439066b6 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def" 1489276865 18416 6389fc6e84e23e8e8c6f07d1ddf49e1e ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty" 1489276865 61418 35a400aa0504b876883759f43a70d6f3 ""
+  "/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1483484472 42324 d951db30d0cb2b811f084fa3f92aec16 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def" 1485129666 58250 3792a9d2d1d664ee8c742498e295b051 ""
   "/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/epsfig.sty" 1480098830 3388 93cb6d9fa64f9566276657fd15254187 ""
@@ -87,17 +84,16 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "dissertation_critique.aux" 1523119112 4785 bdc45a58bbbe9ce4ddee004e437d78ae ""
-  "dissertation_critique.bbl" 1523118525 275 de5ffaf5b665b622658d80bed97ba2a5 "bibtex dissertation_critique"
-  "dissertation_critique.out" 1523119112 2461 f2db09ccd47321addd80ebb9010a5075 ""
-  "dissertation_critique.tex" 1523119111 53609 f83969b2fa0ad62664e492cf2e1535be ""
+  "dissertation_critique.aux" 1523127809 4592 60174bc06569b092713800923427ed30 ""
+  "dissertation_critique.out" 1523127809 2402 bc805172dfbb34a7852b3de74b42cf40 ""
+  "dissertation_critique.tex" 1523127796 50031 5e3c3b7f84fa9a603ddf7f8a8225bb37 ""
   "images/Figure-1-Zipfian.png" 1522112915 34478 2e70d49923e6eb7c3015748ff911a022 ""
   "images/Figure-2-AERS_Drugs.png" 1522113346 20077 9249bf2fd0e259c8c54a84202d325eab ""
   "images/Figure-3-Tysabri.png" 1522159697 36146 db164f0d0d1e5bb14fe41ca879a19a91 ""
   "images/Figure-4-Vioxx.png" 1522159896 35626 3221fef734084667e0cf5c757dc3b363 ""
   "jmlr2e.sty" 1520971958 14082 a1e3bcbdd00aafb7fae9367e056973d1 ""
   (generated)
-  "dissertation_critique.log"
-  "dissertation_critique.aux"
   "dissertation_critique.out"
+  "dissertation_critique.aux"
   "dissertation_critique.pdf"
+  "dissertation_critique.log"
