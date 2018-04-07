@@ -1,8 +1,86 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Che()]{Chee}
+PhD thesis.
+
+\bibitem[Bo~Pang(2008)]{Pang}
+Lillian~Lee Bo~Pang.
+\newblock Opinion mining and sentiment analysis.
+\newblock \emph{Foundations and Treneds in Information Retrieval}, 2\penalty0
+  (1-2):\penalty0 1 -- 135, 2008.
+
+\bibitem[Corinna~Cortes(1995)]{Vapnik}
+Vladimir~Vapnik Corinna~Cortes.
+\newblock Support-vector networks.
+\newblock \emph{Machine Learning}, 20:\penalty0 273 -- 297, 1995.
+
+\bibitem[Dunning(1994)]{Dunning}
+Ted Dunning.
+\newblock Statistical identification of language.
+\newblock \notype, Computing Research Laboratory - New Mexico State University,
+  March 1994.
+
+\bibitem[Food and Administration()]{FAERS}
+U.S. Food and Drug Administration.
+\newblock {FDA Adverse Event Reporting System}.
+\newblock
+  \url{https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/}.
+\newblock Online; accessed 5-April-2018.
+
+\bibitem[Forman(2003)]{Forman}
+George Forman.
+\newblock An extensive empirical study of feature selection metrics for text
+  classification.
+\newblock \emph{Journal of Machine Learning Research}, 3:\penalty0 1289 --
+  1305, 2003.
+
+\bibitem[Joachims(1998)]{Joachims}
+Thorsten Joachims.
+\newblock Text categorization with support vector machines: Learning with many
+  relevant features.
+\newblock In C{\'e}line~Rouveirol Claire~N{\'e}dellec, editor, \emph{Machine
+  Learning: EMCL-98}, pages 137 -- 142, Berlin, Heidelberg, 1998. Springer
+  Berlin Heidelberg.
+\newblock ISBN 978-3-540-69781-7.
+
+\bibitem[Mehran~Sahami()]{Sahami}
+David Heckerman Eric~Horvitz Mehran~Sahami, Susan~Dumais.
+\newblock A bayesian approach to filtering junk e-mail.
+
+\bibitem[n/a()]{Metamap}
+n/a.
+\newblock {MetaMap: A Tool For Recognizing UMLS Concepts in Text}.
+\newblock \url{https://metamap.nlm.nih.gov/}.
+\newblock Online; accessed 6-April-2018.
+
+\bibitem[Oren~Etzioni(2005)]{Etzioni}
+Doug Downey Anna-Maria Poescu Tal Shaked Stephen Soderland Daniel S. Weld
+  Alexander~Yates Oren~Etzioni, Michael~Cafarella.
+\newblock Unsupervised named-entity extraction from the web: An experimental
+  study.
+\newblock \notype, Department of Computer Science and Engineering - University
+  of Washington, Feburary 2005.
+
+\bibitem[Organization(1972)]{WHO}
+World~Health Organization.
+\newblock International drug monitoring: The role of national centres.
+\newblock Technical Report 498, World Health Organization, 1972.
+
+\bibitem[Stephanie S.~Rude(2004)]{Rude}
+James W.~Pennebaker Stephanie S.~Rude, Eva-Maria~Gortner.
+\newblock Language use of depressed and depression-vulnerable college students.
+\newblock \emph{Emotion and Cognition}, 18\penalty0 (8):\penalty0 1121 -- 1133,
+  2004.
+
+\bibitem[Thomas C.~Rindflesch(2000)]{Rindflesch}
+John N. Weinstein Lawrence~Hunter Thomas C.~Rindflesch, Lorraine~Tanabe.
+\newblock Edgar: Extraction of drugs, genes and relations from the biomedical
+  literature.
+\newblock In \emph{Pacific Symposium on Biocomputing}, pages 517--528, 2000.
 
 \end{thebibliography}

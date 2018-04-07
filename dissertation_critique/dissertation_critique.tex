@@ -334,7 +334,7 @@ Bi-Normal Seperation (BNS) is introduced as a word feature selection technique f
 where $F^{-1}$ is the inverse of the normal cummulative distribution function, $tpr$ and $fpr$ are true and false positive rates for that term in text classes. Special exception is given to $F^{-1}(0)$ by defaulting to 0.0005 to avoid undefined values when a term is not present in one class.
 
 \subsection{Support Vector Machines}
-Support Vector Machines (SVM) \citep{Cortes, Vapnik} are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space. The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
+Support Vector Machines (SVM) \citep{Vapnik} are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space. The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
 \[
   y_{i}(w \cdot x_{i} + b) \gte 1,  i = 1, ...., l
 \]
@@ -362,22 +362,22 @@ $\hat{y}$ is assigned the class label based on the $k$ chosen per the maximizati
 \section{Literature Review}
 
 \subsubsection{Health & Safety Literature}
-Adverse reactions have long held the attention of health regulatory bodies such as the WHO and FDA. In 1967, the WHO initiated a research project to collect case reports from 10 countries to evaluate an international system for monitoring adverse drug effects \citep(WHO,1971), prompting the WHO Drug Monitoring Centre - now the Uppsala Monitoring Centre - to establish the first international pharmacovigilance program.
+Adverse reactions have long held the attention of health regulatory bodies such as the WHO and FDA. In 1967, the WHO initiated a research project to collect case reports from 10 countries to evaluate an international system for monitoring adverse drug effects \citep{WHO}, prompting the WHO Drug Monitoring Centre - now the Uppsala Monitoring Centre - to establish the first international pharmacovigilance program.
 
 \subsubsection{Text processing}
-Rude, Gortner and Pennebaker conducted a study of easy writing by currently depressed, formerly depressed and never depressed college students, with the hypothesis that terms indicating self-preoccupation such as "I" will be more prevalent in depressed individuals, as well as emotional terms with negative valence \citep(Rude, 2004). Their study did confirm the hypothesis, in that "I" specifically was used more frequently by currently-depressed students, though other pronouns referencing the self were not. The study leveraged the Linguistic Inquiry and Word Count (LWIC) textual analysis program used by Chee in constructing a sentiment lexicon.
+Rude, Gortner and Pennebaker conducted a study of easy writing by currently depressed, formerly depressed and never depressed college students, with the hypothesis that terms indicating self-preoccupation such as "I" will be more prevalent in depressed individuals, as well as emotional terms with negative valence \citep{Rude}. Their study did confirm the hypothesis, in that "I" specifically was used more frequently by currently-depressed students, though other pronouns referencing the self were not. The study leveraged the Linguistic Inquiry and Word Count (LWIC) textual analysis program used by Chee in constructing a sentiment lexicon.
 
-Pang and Lee \citep(Pang, 2008) discuss the implications of treating online opinions as a first class object - something we actively mine for and take value in. They conduct an extensive survey of approaches for opinion-oriented search geared towards freeform text in blogs and forums, where opinion and sentiment must be deduced directly from message content, without the assistance of meta-data such as rankings (e.g.  1 to 5). Pang and Lee are able to characterize sentiment as a regression problem, as we can characterize a degree of positive and negative sentiment. Extraction of textual features is discussed, comparing the value of term \textit{frequency} verus \textit{presence}, the former usually being term-frequency inverse document frequency (tf-idf) and the later a binary indicator that a word is present or not. Previous studies by Pang indicate the later shows better performance in sentiment classification, differentiating sentiment modeling from topic modeling, likely influencing Chee's approach to sentiment feature modeling.
+Pang and Lee \citep{Pang} discuss the implications of treating online opinions as a first class object - something we actively mine for and take value in. They conduct an extensive survey of approaches for opinion-oriented search geared towards freeform text in blogs and forums, where opinion and sentiment must be deduced directly from message content, without the assistance of meta-data such as rankings (e.g.  1 to 5). Pang and Lee are able to characterize sentiment as a regression problem, as we can characterize a degree of positive and negative sentiment. Extraction of textual features is discussed, comparing the value of term \textit{frequency} verus \textit{presence}, the former usually being term-frequency inverse document frequency (tf-idf) and the later a binary indicator that a word is present or not. Previous studies by Pang indicate the later shows better performance in sentiment classification, differentiating sentiment modeling from topic modeling, likely influencing Chee's approach to sentiment feature modeling.
 
 Named entity recognition (NER) is an area of particular relevance to this work. Extracting drug names, diseases and medical terminology from biomedical text
-is addressed by \citep{Rindsfleich et. all, 2009} through the development of EDGAR, a natural language processing system for discovering drug & gene relationships pertaining to cancer as documented in biomedical literature. EDGAR benefits heavily from using the Unified Medical Language System (UMLS) and MetaMap \citep{Metamap} - an already existing tool for identifying medical language in text. EDGAR leverages contextual elements and consistency in phrase structure to identify gene, cell and drug names, then construct relationship predicates between them (e.g. is\_resistant(gene, cell, drug)). However, this approach heavily leverages the grammatical consistency of these texts, making it less applicable for recognizing named medical entities in web data.
+is addressed by \citep{Rindflesch} through the development of EDGAR, a natural language processing system for discovering drug & gene relationships pertaining to cancer as documented in biomedical literature. EDGAR benefits heavily from using the Unified Medical Language System (UMLS) and MetaMap \citep{Metamap} - an already existing tool for identifying medical language in text. EDGAR leverages contextual elements and consistency in phrase structure to identify gene, cell and drug names, then construct relationship predicates between them (e.g. is\_resistant(gene, cell, drug)). However, this approach heavily leverages the grammatical consistency of these texts, making it less applicable for recognizing named medical entities in web data.
 
-General entity recognition in web data is examined in \citep{Etzioni, 2005}, where the KnowItAll system is developed and discussed - an unsupervised, domain-independent system for information extraction from the Web. The system uses generalized extraction patterns to generate candidate facts - such as city names - which are then tested for truth using assistance from search engines queries to compute a pointwise mutual information statistic for the fact. Chee emulates some of these techniques through phrase queries to validate drug names found in the Yahoo! corpus.
+General entity recognition in web data is examined in \citep{Etzioni}, where the KnowItAll system is developed and discussed - an unsupervised, domain-independent system for information extraction from the Web. The system uses generalized extraction patterns to generate candidate facts - such as city names - which are then tested for truth using assistance from search engines queries to compute a pointwise mutual information statistic for the fact. Chee emulates some of these techniques through phrase queries to validate drug names found in the Yahoo! corpus.
 
 \subsubsection{Technical Literature}
-Forman's paper on feature selection metrics for text classification \citep{Forman, 2003} introduces the BNS techinque, comparing it to several other metrics:  Chi-Squared, Information Gain, Odds Ratio,  Log Probability Ratio, and Document Frequency. Forman's experimental method uses a data set of computer science paper abstracts categorized into classes intermingled with another text classification data set, producing a variety of test data sets having a skew ranging from 1:1 to 1:100+ (more than 100 negative instances). Classification experiments using SVMs are run with the features selected. BNS shows a consistently superior F1 measure and accuracy in the tests, with exception given to IG when the number of features selected is restricted to between 20 and 50 and the class skew is low. Incidentally, Forman's analysis uses SVM only, citing the works of \citep(Yan & Liu, 1999), \citep(Joachims, 1998) and \citep(Dumais, et. al) as confirming that SVM is an "outstanding" method for text classification.
+Forman's paper on feature selection metrics for text classification \citep{Forman} introduces the BNS techinque, comparing it to several other metrics:  Chi-Squared, Information Gain, Odds Ratio,  Log Probability Ratio, and Document Frequency. Forman's experimental method uses a data set of computer science paper abstracts categorized into classes intermingled with another text classification data set, producing a variety of test data sets having a skew ranging from 1:1 to 1:100+ (more than 100 negative instances). Classification experiments using SVMs are run with the features selected. BNS shows a consistently superior F1 measure and accuracy in the tests, with exception given to IG when the number of features selected is restricted to between 20 and 50 and the class skew is low. Incidentally, Forman's analysis uses SVM only, citing the work of \citep{Joachims} as confirming that SVM is an ``outstanding'' method for text classification.
 \par SVMs are introduced by \citep{Vapnik}, introducing fundamental concepts, and hard and soft margin classifiers. Joachim's paper on text categorization with SVMs \citep{Joachim} explains why SVMs are expected to work well for text categorization, highlighting their ability to handle a large feature space of several thousand relevant words where training sample vectors may be sparse. Joachim compares SVM text classification using polynomial and RBF kernels against Na\"ive Bayes, k-NN, C4.5 and the Rocchio algorithm, showing consistently higher precision/recall break even points for the SVMs across two popular test corpus.
-\par Na\"ive Bayes classification is explored in the context of SPAM classification by \citep{Sahami, ??}, who evaluates Naive Bayes classifiers trained on combinations of message word features, message word features plus specific phrases, and word features with phrases and domain specific features (non-word) features thought to indicate spam. Classification results in the binary SPAM/no-SPAM setting showing 100\% precision when using the final combination tested on a corpus of 1789 labeled messages. Like other studies, Sahami employs feature selection techniques to manage the feature space, ignoring words that appear less than three times and selecting only the top 500 remaining words based on their mutual information scores relavent to the class labels.
+\par Na\"ive Bayes classification is explored in the context of SPAM classification by \citep{Sahami}, who evaluates Naive Bayes classifiers trained on combinations of message word features, message word features plus specific phrases, and word features with phrases and domain specific features (non-word) features thought to indicate spam. Classification results in the binary SPAM/no-SPAM setting showing 100\% precision when using the final combination tested on a corpus of 1789 labeled messages. Like other studies, Sahami employs feature selection techniques to manage the feature space, ignoring words that appear less than three times and selecting only the top 500 remaining words based on their mutual information scores relavent to the class labels.
 
 \section{Application Areas}
 Chee's techniques seem reasonably applicable as an augmentation to current Pharmacovigilance programs that use structured reporting systems. The opportunity to leverage public health forum data in safety signal detection could help in the earlier identification of watch-list candidate drugs for these programs to pay special attention to when monitoring existing safety systems. A system of monitoring public forums in this fashion could leverage what is a far greater volume of data, and the tendency for people to disclose medical issues and sentiments more readily within peer groups. Public health forum data is not necessarily the only data set where this technique could be applied either. The techniques developed within this dissertation could be applicable to clinical notes in electronic health records, health surveys or similar unstructured data sources, and are potentially extensible to any medical product where adverse reactions could be associated: devices, biologicals (a separate classification of drug), procedures, or named treatment regimens.
@@ -388,75 +388,6 @@ Feature selection within the study is another application area to address. It wa
 
 Finally, it is worth discussing that this technique is not limited only to problems in the health and medical domains. Consumer product safety in general could benefit from monitoring public forums in this fashion in order to identify products posing significant safety hazards. Thousands of consumer products for child safety - such as car seats and life jackets - are available for purchase by the general public. Regulatory agencies such as the National Highway Traffic Safety Administration must evaluate products and post recall notifications, but despite best efforts unsafe products will still make it to market. Constructing similar monitoring systems for these agencies using public forums could help identify products in the market with previously unrecognized defects.
 
-\bibliography
-
-https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/
-
-
-Cortes, C. and Vapnik, V. (1995) Support-vector network. Machine Learning, 20, 273-297.
-
-
-
-
-Ingle, Norman. (1976). A language identification table.
-The Incorporated Linguist, 15(4):98:101.
-
-Dunning, T. (1994). Statistical identification of language. Technical report, Computing
-Research Lab - New Mexico State University.
-
-
-Dunning, T. (1994). Statistical Identification of Language. Computing Research Laboratory,
-New Mexico State University.
-
-HTML language specification: https://www.w3.org/TR/html4/
-
-MedDRA heirarchy:  https://www.meddra.org/how-to-use/basics/hierarchy
-
-FAERS: https://www.fda.gov/drugs/guidancecomplianceregulatoryinformation/surveillance/adversedrugeffects/ucm2007060.htm
-
-BNS:
-G. Forman. An extensive empirical study of feature selection
-metrics for text classification. J. Mach. Learn. Res., 3:1289–
-1305, 2003
-
-
-Rindfleich, T.C., Tanabe, L., and Weinstein, J.N. (2002). EDGAR: Extraction of drugs, genes and relations from the biomedical literature.  In Proc. Pacific Symposium on Biocomputing.
-
-
-WHO, 1972
-World Health Organization (1972). International drug monitoring: The role of national centres. Report of a WHO meeting, World Health  Organ. Tech. Rep. Ser. 498, 1-25.
-
-Rude, 2004
-Rude, S.S., Gortner, E.-M. and Pennebaker, J.W. (2004). Language use of depressed and depression-vulnerable college students. Cognition and Function, 18(8), 1121-1133.
-
-Pang, 2008
-Pang, B. and Lee, L. (2008). Opinion Mining and sentiment analysis.  Foundations and Trends in Information Retrieval, (1-2),1-135.
-
-Etzioni, O., Cafarella, M., Downey, D., Popescu, A. -M., Shaked, T., Soderland, S., Weld, D.S. and Yates, A. (2005). Unsupervised named-entity extraction from the web: An experimental study.  Artificial Intelligence 165: 91-134, Essex: Elsevier Science Publishers.
-
-%joachims
-@InProceedings{10.1007/BFb0026683,
-author="Joachims, Thorsten",
-editor="N{\'e}dellec, Claire
-and Rouveirol, C{\'e}line",
-title="Text categorization with Support Vector Machines: Learning with many relevant features",
-booktitle="Machine Learning: ECML-98",
-year="1998",
-publisher="Springer Berlin Heidelberg",
-address="Berlin, Heidelberg",
-pages="137--142",
-abstract="This paper explores the use of Support Vector Machines (SVMs) for learning text classifiers from examples. It analyzes the particular properties of learning with text data and identifies why SVMs are appropriate for this task. Empirical results support the theoretical findings. SVMs achieve substantial improvements over the currently best performing methods and behave robustly over a variety of different learning tasks. Furthermore they are fully automatic, eliminating the need for manual parameter tuning.",
-isbn="978-3-540-69781-7"
-}
-
-
-%Sahami
-Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998). A Bayesian approach to filtering junk e-mail.   AAAI'98 Workshop on Learning for Text categorization
-
-
-Metamap:
-https://metamap.nlm.nih.gov/
-
+\bibliography{dissertation_critique}
 \vskip 0.2in
-
 \end{document}

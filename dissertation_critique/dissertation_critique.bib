@@ -44,20 +44,42 @@ metrics for text classification. J. Mach. Learn. Res., 3:1289–
   number={1-2},
   pages={1 - 135}
 }
-
-
-
 % Etzioni, O., Cafarella, M., Downey, D., Popescu, A. -M., Shaked, T., Soderland, S., Weld, D.S. and Yates, A. (2005). Unsupervised named-entity extraction from the web: An experimental study.  Artificial Intelligence 165: 91-134, Essex: Elsevier Science Publishers.
-
-
-
+@techreport{Etzioni,
+  author={Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates},
+  title={Unsupervised Named-Entity Extraction from the Web: An Experimental Study},
+  year={2005},
+  month={Feburary},
+  day={28},
+  institution={Department of Computer Science and Engineering - University of Washington},
+  type={\notype}
+}
+%MetaMap
+@misc{MetaMap,
+  author={n/a},
+  title={{MetaMap: A Tool For Recognizing UMLS Concepts in Text}},
+  howpublished={\url{https://metamap.nlm.nih.gov/}},
+  note={Online; accessed 6-April-2018}
+}
+%FAERS
+@misc{FAERS,
+  author={U.S. Food and Drug Administration},
+  title={{FDA Adverse Event Reporting System}},
+  howpublished={\url{https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/}},
+  note={Online; accessed 5-April-2018}
+}
 
 %Sahami
 Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998). A Bayesian approach to filtering junk e-mail.   AAAI'98 Workshop on Learning for Text categorization
-
-
-
-
+@proceedings{AAAI98,
+  title={Workshop on Learning for Text Categorization},
+  year={1998}
+}
+@InProceedings{Sahami,
+  crossref={AAI98},
+  author={Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz},
+  title={A Bayesian Approach to Filtering Junk E-Mail},
+}
 
 
 % Dunning, T. (1994). Statistical identification of language. Technical report, Computing Research Lab - New Mexico State University.
@@ -66,17 +88,27 @@ Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998). A Bayesian approa
   title={Statistical Identification of Language},
   year={1994},
   month={March},
-  day={10}
-  institution={Computing Research Laboratory},
+  day={10},
+  institution={Computing Research Laboratory - New Mexico State University},
   type={\notype}
 }
+%World Health Organization (1972). International drug monitoring: The role of national centres. Report of a WHO meeting, World Health  Organ. Tech. Rep. Ser. 498, 1-25.
+@techreport{WHO,
+  author={World Health Organization},
+  title={International drug monitoring: The role of national centres},
+  year={1972},
+  institution={World Health Organization},
+  type={Technical Report},
+  number={498}
+}
 %Rindflesch, T.C., Tanabe, L., and Weinstein, J.N. (2002). EDGAR: Extraction of drugs, genes and relations from the biomedical literature.  In Proc. Pacific Symposium on Biocomputing.
-
-% Rude, S.S., Gortner, E.-M. and Pennebaker, J.W. (2004). Language use of depressed and depression-vulnerable college students. Cognition and Function, 18(8), 1121-1133.
-
-
-
-
+@InProceedings{Rindflesch,
+  author={Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter},
+  title={EDGAR: Extraction of Drugs, Genes and Relations from the Biomedical Literature},
+  booktitle={Pacific Symposium on Biocomputing},
+  year={2000},
+  pages={517-528},
+}
 %joachims
 @InProceedings{Joachims,
   author={Thorsten Joachims},
@@ -88,86 +120,4 @@ Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998). A Bayesian approa
   address={Berlin, Heidelberg},
   pages={137 - 142},
   isbn="978-3-540-69781-7"
-}
-
-% Examples
-@book{WHO,
-  author = {WHO},
-  title = {The Importance of Pharmacovigilance - Safety Monitoring of Medicinal
-  Products.},
-  year = {2002},
-  address = {Geneva},
-  isbn = {92 4 1590157}
-}
-@misc{FAERS,
-  author = {Food and Drug Administration},
-  title = {Questions and Answers on FDA's Adverse Event Reporting System (FAERS)},
-  year = {2018},
-  month = {February},
-  url = {https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/}
-}
-@misc{ADEReports,
-  author = {Food and Drug Administration},
-  title = {FDA Adverse Event Reporting System (FAERS): Latest Quarterly Data Files},
-  year = {2018},
-  month = {February},
-  url = {https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ucm082193.htm}
-}
-@misc{FDASafetySignal,
-  author = {Food and Drug Administration},
-  title = {Potential Signals of Serious Risks/New Safety Information Identified from
-    the FDA Adverse Event Reporting System},
-  year = {2018},
-  month = {February},
-  url = {https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ucm082196.htm}
-}
-@misc{FDADisproportionality,
-  author = {Food and Drug Administration},
-  title = {Disproportionality Methods},
-  year = {2015},
-  month = {November},
-  url = {https://www.fda.gov/ScienceResearch/DataMiningatFDA/ucm446239.htm#disproportionality}
-}
-@misc{PhViD,
-  author = {Ismail Ahmed & Antoine Poncet},
-  title = {PharmacoVigilance Signal Detection},
-  year = {2016},
-  month = {November},
-  url = {https://cran.r-project.org/web/packages/PhViD/index.html}
-}
-@misc{Empirica,
-  author = {Oracle},
-  title = {Early Automation of Data Mining at the FDA using Oracle Health sciences
-    Empirica Signal and Study},
-  url = {http://www.oracle.com/us/industries/health-sciences/hs-data-mining-fda-br-3079153.pdf}
-}
-@article{Bate,
-  author = {A. Bate, M. Lindquist, I. R. Edwards, S. Olsson, R. Orre, A. Lansner, R. M. De Freitas},
-  title = {A Bayesian neural network method for adverse drug reaction signal generation},
-  journal = {Eur J Clin Pharmacol},
-  year = {1998},
-  month = {June},
-  volume = {54},
-  issue = {4},
-  pages = {315-21}
-}
-@article{NovelDataMining,
-  author = {Rave Harpaz, William DuMouchel, Nigam H. Shah, David Madigan, Patrick Ryan and Carol Friedman},
-  title = {Novel Data Mining Methodologies for Adverse Drug Event Discovery and Analysis},
-  journal = {Clinical Pharmacology and Therapeutics},
-  year = {2012},
-  month = {June},
-  volume = {91},
-  issue = {6},
-  pages = {1010-1012}
-}
-@article{Noren,
-  author = {G. Niklas Noren, Andrew Bate, Roland Orre, I. Ralph Edwards},
-  title = {Extending the methods used to screen the WHO drug safety database towards
-    analysis of complex associations and improved accuracy for rare events.},
-  journal = {Statistics in Medicine},
-  year = {2000},
-  month = {September},
-  day = {18},
-  pages = {1-18}
 }

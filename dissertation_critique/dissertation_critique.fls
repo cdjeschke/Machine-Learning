@@ -147,6 +147,8 @@ INPUT ./images/Figure-3-Tysabri.png
 INPUT images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
 INPUT ./images/Figure-4-Vioxx.png
+INPUT dissertation_critique.bbl
+INPUT dissertation_critique.bbl
 INPUT dissertation_critique.aux
 INPUT ./dissertation_critique.out
 INPUT ./dissertation_critique.out
