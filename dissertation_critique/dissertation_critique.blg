@@ -2,19 +2,15 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation_critique.aux
 The style file: plainnat.bst
-White space in argument---line 41 of file dissertation_critique.aux
+White space in argument---line 39 of file dissertation_critique.aux
  : \citation{UTF_8
  :                 article on Wikipedia}
 I'm skipping whatever remains of this command
-White space in argument---line 45 of file dissertation_critique.aux
+White space in argument---line 43 of file dissertation_critique.aux
  : \citation{Wikipedia
  :                     page for english}
 I'm skipping whatever remains of this command
-White space in argument---line 52 of file dissertation_critique.aux
- : \citation{FDA
- :               Aers}
-I'm skipping whatever remains of this command
-White space in argument---line 64 of file dissertation_critique.aux
+White space in argument---line 62 of file dissertation_critique.aux
  : \citation{Rindsfleich
  :                       et. all,2009}
 I'm skipping whatever remains of this command
@@ -22,7 +18,6 @@ Database file #1: sample.bib
 Warning--I didn't find a database entry for "FDA"
 Warning--I didn't find a database entry for "Chee"
 Warning--I didn't find a database entry for "Fletcher"
-Warning--I didn't find a database entry for "Leamon"
 Warning--I didn't find a database entry for "OpenOffice"
 Warning--I didn't find a database entry for "Ingle"
 Warning--I didn't find a database entry for "1976"
@@ -42,7 +37,7 @@ Warning--I didn't find a database entry for "Joachim"
 Warning--I didn't find a database entry for "??"
 You've used 0 entries,
             2773 wiz_defined-function locations,
-            627 strings with 5064 characters,
+            625 strings with 5052 characters,
 and the built_in function-call counts, 33 in all, are:
 = -- 0
 > -- 0
@@ -81,4 +76,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 7
-(There were 4 error messages)
+(There were 3 error messages)

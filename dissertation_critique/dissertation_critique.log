@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 APR 2018 23:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 APR 2018 12:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -255,39 +255,37 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+
+
+Package natbib Warning: Citation `FDA' on page 1 undefined on input line 78.
+
+
+Package natbib Warning: Citation `Chee' on page 1 undefined on input line 78.
+
+
+Package natbib Warning: Citation `Fletcher' on page 1 undefined on input line 79.
+
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
-Package natbib Warning: Citation `FDA' on page 2 undefined on input line 78.
-
-
-Package natbib Warning: Citation `Chee' on page 2 undefined on input line 78.
-
-
-Package natbib Warning: Citation `Fletcher' on page 2 undefined on input line 79.
-
-
-Package natbib Warning: Citation `Leamon' on page 2 undefined on input line 79.
-
-
 Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 85.
 
 
-Underfull \vbox (badness 1168) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2] [3]
-./dissertation_critique.tex:122: Misplaced alignment tab character &.
-l.122 ...of experiments using various classifier &
+ [2]
+./dissertation_critique.tex:121: Misplaced alignment tab character &.
+l.121 ...of experiments using various classifier &
                                                    lexicon combinations and ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -296,184 +294,169 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
+[3]
 
-./dissertation_critique.tex:136: LaTeX Error: \begin{center} on input line 126 ended by \end{tabular}.
+./dissertation_critique.tex:135: LaTeX Error: \begin{center} on input line 125 ended by \end{tabular}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136   \end{tabular}
+l.135   \end{tabular}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (2.19511pt too wide) in paragraph at lines 128--153
+Overfull \hbox (2.19511pt too wide) in paragraph at lines 127--152
 [][]  [] 
  []
 
 
-./dissertation_critique.tex:153: LaTeX Error: \begin{document} ended by \end{center}.
+./dissertation_critique.tex:152: LaTeX Error: \begin{document} ended by \end{center}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 \end{center}
+l.152 \end{center}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./dissertation_critique.tex:153: Extra \endgroup.
+./dissertation_critique.tex:152: Extra \endgroup.
 <recently read> \endgroup 
                           
-l.153 \end{center}
+l.152 \end{center}
                   
 Things are pretty mixed up, but I think the worst is over.
-
-./dissertation_critique.tex:154: Misplaced alignment tab character &.
-l.154 Clearly watchlist &
-                          nonwatchlist diverge, and show a different degree ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
 <images/Figure-1-Zipfian.png, id=154, 431.6125pt x 327.2225pt>
 File: images/Figure-1-Zipfian.png Graphic file (type png)
  <use images/Figure-1-Zipfian.png>
-Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 159.
+Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 158.
 (pdftex.def)             Requested size: 199.16982pt x 142.26074pt.
  <images/Figure-2-AERS_Drugs.png, id=156, 418.56375pt x 264.99pt>
 File: images/Figure-2-AERS_Drugs.png Graphic file (type png)
  <use images/Figure-2-AERS_Drugs.png>
-Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 160.
+Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 159.
 (pdftex.def)             Requested size: 199.16472pt x 142.26357pt.
-
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
- [4] <images/Figure-3-Tysabri.png, id=161, 503.8825pt x 303.1325pt>
+ [4 <./images/Figure-1-Zipfian.png> <./images/Figure-2-AERS_Drugs.png>] <images/Figure-3-Tysabri.png, id=163, 503.8825pt x 303.1325pt>
 File: images/Figure-3-Tysabri.png Graphic file (type png)
  <use images/Figure-3-Tysabri.png>
-Package pdftex.def Info: images/Figure-3-Tysabri.png used on input line 167.
+Package pdftex.def Info: images/Figure-3-Tysabri.png used on input line 166.
 (pdftex.def)             Requested size: 199.16595pt x 142.26414pt.
- <images/Figure-4-Vioxx.png, id=162, 462.72874pt x 288.07625pt>
+ <images/Figure-4-Vioxx.png, id=164, 462.72874pt x 288.07625pt>
 File: images/Figure-4-Vioxx.png Graphic file (type png)
  <use images/Figure-4-Vioxx.png>
-Package pdftex.def Info: images/Figure-4-Vioxx.png used on input line 168.
+Package pdftex.def Info: images/Figure-4-Vioxx.png used on input line 167.
 (pdftex.def)             Requested size: 199.16718pt x 142.2663pt.
- [5 <./images/Figure-1-Zipfian.png> <./images/Figure-2-AERS_Drugs.png> <./images/Figure-3-Tysabri.png> <./images/Figure-4-Vioxx.png>] [6] [7]
-./dissertation_critique.tex:263: You can't use `macro parameter character #' in restricted horizontal mode.
+ [5 <./images/Figure-3-Tysabri.png> <./images/Figure-4-Vioxx.png>] [6]
+./dissertation_critique.tex:243: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.263     Drug & #
+l.243     Drug & #
                    Positives & # Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:263: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:243: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.263     Drug & # Positives & #
+l.243     Drug & # Positives & #
                                  Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:263: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:243: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.263     Drug & # Positives & # Occurrences & #
+l.243     Drug & # Positives & # Occurrences & #
                                                  Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:292: You can't use `macro parameter character #' in restricted horizontal mode.
+[7]
+./dissertation_critique.tex:270: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.292     Drug & #
+l.270     Drug & #
                    Positives & # Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:292: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:270: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.292     Drug & # Positives & #
+l.270     Drug & # Positives & #
                                  Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:292: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:270: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.292     Drug & # Positives & # Occurrences & #
+l.270     Drug & # Positives & # Occurrences & #
                                                  Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[8] [9]
+[8]
 
-Package natbib Warning: Citation `UTF_8 article on Wikipedia' on page 10 undefined on input line 335.
-
-
-Package natbib Warning: Citation `Ingle' on page 10 undefined on input line 338.
+Package natbib Warning: Citation `UTF_8 article on Wikipedia' on page 9 undefined on input line 311.
 
 
-Package natbib Warning: Citation `1976' on page 10 undefined on input line 338.
+Package natbib Warning: Citation `Ingle' on page 9 undefined on input line 313.
 
 
-Package natbib Warning: Citation `Dunning' on page 10 undefined on input line 339.
+Package natbib Warning: Citation `1976' on page 9 undefined on input line 313.
 
 
-Package natbib Warning: Citation `Dunning' on page 10 undefined on input line 343.
+Package natbib Warning: Citation `Dunning' on page 9 undefined on input line 314.
 
 
-Package natbib Warning: Citation `Wikipedia page for english' on page 10 undefined on input line 347.
+Package natbib Warning: Citation `Dunning' on page 9 undefined on input line 318.
 
-[10]
 
-Package natbib Warning: Citation `FAERS' on page 11 undefined on input line 355.
+Package natbib Warning: Citation `Wikipedia page for english' on page 9 undefined on input line 320.
 
-[11]
+[9]
 
-Package natbib Warning: Citation `Forman' on page 12 undefined on input line 376.
+Package natbib Warning: Citation `FAERS' on page 10 undefined on input line 323.
 
-[12]
 
-Package natbib Warning: Citation `FDA Aers' on page 13 undefined on input line 405.
+Package natbib Warning: Citation `Forman' on page 10 undefined on input line 327.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [10] [11]
 
-Package natbib Warning: Citation `Forman' on page 14 undefined on input line 419.
-
-
-Package natbib Warning: Citation `Cortes' on page 14 undefined on input line 427.
+Package natbib Warning: Citation `Forman' on page 12 undefined on input line 356.
 
 
-Package natbib Warning: Citation `Vapnik' on page 14 undefined on input line 427.
+Package natbib Warning: Citation `Cortes' on page 12 undefined on input line 364.
 
-./dissertation_critique.tex:430: Undefined control sequence.
-l.430   y_{i}(w \cdot x_{i} + b) \gte
+
+Package natbib Warning: Citation `Vapnik' on page 12 undefined on input line 364.
+
+[12]
+./dissertation_critique.tex:367: Undefined control sequence.
+l.367   y_{i}(w \cdot x_{i} + b) \gte
                                       1,  i = 1, ...., l
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -481,15 +464,18 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[14]
 
-Package natbib Warning: Citation `Sahami' on page 15 undefined on input line 452.
+Package natbib Warning: Citation `Sahami' on page 13 undefined on input line 387.
 
 
-Package natbib Warning: Citation `1998' on page 15 undefined on input line 452.
+Package natbib Warning: Citation `1998' on page 13 undefined on input line 387.
 
-./dissertation_critique.tex:469: Undefined control sequence.
-l.469   \hat{y} = argmax_{k \element
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
+./dissertation_critique.tex:397: Undefined control sequence.
+l.397   \hat{y} = argmax_{k \element
                                      {wl, nwl}} p(C_{k}) \prod_{i=1}^{n}p(x_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -497,14 +483,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-./dissertation_critique.tex:476: Misplaced alignment tab character &.
+./dissertation_critique.tex:403: Misplaced alignment tab character &.
 <argument> Health &
                     Safety Literature
-l.476 \subsubsection{Health & Safety Literature}
+l.403 \subsubsection{Health & Safety Literature}
                                                 
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -515,29 +497,29 @@ might try typing `S' now just to see what is salvageable.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 476.
+(hyperref)                than one, level fixed on input line 403.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `alignment tab' on input line 476.
+(hyperref)                removing `alignment tab' on input line 403.
 
 
-Package natbib Warning: Citation `(' on page 16 undefined on input line 477.
+Package natbib Warning: Citation `(' on page 14 undefined on input line 404.
 
 
-Package natbib Warning: Citation `(' on page 16 undefined on input line 480.
+Package natbib Warning: Citation `(' on page 14 undefined on input line 407.
 
 
-Package natbib Warning: Citation `(' on page 16 undefined on input line 482.
+Package natbib Warning: Citation `(' on page 14 undefined on input line 409.
 
 
-Package natbib Warning: Citation `Rindsfleich et. all' on page 16 undefined on input line 485.
+Package natbib Warning: Citation `Rindsfleich et. all' on page 14 undefined on input line 412.
 
 
-Package natbib Warning: Citation `2009' on page 16 undefined on input line 485.
+Package natbib Warning: Citation `2009' on page 14 undefined on input line 412.
 
-./dissertation_critique.tex:485: Misplaced alignment tab character &.
-l.485 ... processing system for discovering drug &
+./dissertation_critique.tex:412: Misplaced alignment tab character &.
+l.412 ... processing system for discovering drug &
                                                    gene relationships pertai...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -547,26 +529,26 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Package natbib Warning: Citation `Metamap' on page 16 undefined on input line 485.
+Package natbib Warning: Citation `Metamap' on page 14 undefined on input line 412.
 
-[16]
+[14]
 
-Package natbib Warning: Citation `Etzioni' on page 17 undefined on input line 487.
-
-
-Package natbib Warning: Citation `2005' on page 17 undefined on input line 487.
+Package natbib Warning: Citation `Etzioni' on page 15 undefined on input line 414.
 
 
-Package natbib Warning: Citation `Forman' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `2005' on page 15 undefined on input line 414.
 
 
-Package natbib Warning: Citation `2003' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `Forman' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `(' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `2003' on page 15 undefined on input line 417.
 
-./dissertation_critique.tex:490: Misplaced alignment tab character &.
-l.490 ...VM only, citing the works of \citep(Yan &
+
+Package natbib Warning: Citation `(' on page 15 undefined on input line 417.
+
+./dissertation_critique.tex:417: Misplaced alignment tab character &.
+l.417 ...VM only, citing the works of \citep(Yan &
                                                    Liu, 1999), \citep(Joachi...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -576,48 +558,48 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Package natbib Warning: Citation `(' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `(' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `(' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `(' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `Vapnik' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `Vapnik' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `Joachim' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `Joachim' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `Sahami' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `Sahami' on page 15 undefined on input line 417.
 
 
-Package natbib Warning: Citation `??' on page 17 undefined on input line 490.
+Package natbib Warning: Citation `??' on page 15 undefined on input line 417.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1881) has occurred while \output is active []
 
- [17]
+ [15]
 
-Package natbib Warning: Citation `Forman' on page 18 undefined on input line 498.
+Package natbib Warning: Citation `Forman' on page 16 undefined on input line 425.
 
-[18]
+[16]
 Runaway argument?
-./dissertation_critique.tex:504: Paragraph ended before \bibliography was complete.
+./dissertation_critique.tex:430: Paragraph ended before \bibliography was complete.
 <to be read again> 
                    \par 
-l.504 
+l.430 
       
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Overfull \hbox (84.27005pt too wide) in paragraph at lines 508--509
+Overfull \hbox (84.27005pt too wide) in paragraph at lines 433--434
 \OT1/cmr/m/n/10.95 https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ 
  []
 
 
-Overfull \hbox (200.5958pt too wide) in paragraph at lines 530--531
+Overfull \hbox (200.5958pt too wide) in paragraph at lines 455--456
 []\OT1/cmr/m/n/10.95 FAERS: https://www.fda.gov/drugs/guidancecomplianceregulatoryinformation/surveillance/adversedrugeffects/ucm2007060.htm 
  []
 
@@ -625,11 +607,11 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
 
-Overfull \hbox (23.63438pt too wide) in paragraph at lines 553--566
+Overfull \hbox (23.63438pt too wide) in paragraph at lines 478--491
 \OT1/cmr/m/n/10.95 Learn-ing with many rel-e-vant fea-tures", book-ti-tle="Machine Learn-ing: ECML-98", year="1998",
  []
 
-(./dissertation_critique.bbl
+[17] (./dissertation_critique.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
@@ -637,30 +619,30 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 581.
-[19] [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 581.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 506.
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 506.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 581.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 581.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 506.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 506.
 Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
 (rerunfilecheck)             Checksum: F2DB09CCD47321ADDD80EBB9010A5075;2461.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 581.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 506.
  ) 
 Here is how much of TeX's memory you used:
- 6150 strings out of 492995
- 89395 string characters out of 6132704
- 181617 words of memory out of 5000000
- 9580 multiletter control sequences out of 15000+600000
+ 6146 strings out of 492995
+ 89363 string characters out of 6132704
+ 180617 words of memory out of 5000000
+ 9578 multiletter control sequences out of 15000+600000
  12389 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,31p,2520b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,31p,2520b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmtt8.pfb>
-Output written on dissertation_critique.pdf (20 pages, 331126 bytes).
+Output written on dissertation_critique.pdf (18 pages, 325595 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 249 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 242 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  269 words of extra memory for PDF output out of 10000 (max. 10000000)
 
