@@ -2,23 +2,19 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation_critique.aux
 The style file: plainnat.bst
-White space in argument---line 32 of file dissertation_critique.aux
- : \citation{Rehurek
- :                   and Kolkus}
+White space in argument---line 41 of file dissertation_critique.aux
+ : \citation{UTF_8
+ :                 article on Wikipedia}
 I'm skipping whatever remains of this command
-White space in argument---line 49 of file dissertation_critique.aux
- : \citation{UTF-8
- :                 article on wikipedia}
-I'm skipping whatever remains of this command
-White space in argument---line 54 of file dissertation_critique.aux
+White space in argument---line 46 of file dissertation_critique.aux
  : \citation{Wikipedia
  :                     page for english}
 I'm skipping whatever remains of this command
-White space in argument---line 59 of file dissertation_critique.aux
+White space in argument---line 51 of file dissertation_critique.aux
  : \citation{FDA
  :               Aers}
 I'm skipping whatever remains of this command
-White space in argument---line 75 of file dissertation_critique.aux
+White space in argument---line 64 of file dissertation_critique.aux
  : \citation{Rindsfleich
  :                       et. all,2009}
 I'm skipping whatever remains of this command
@@ -28,12 +24,9 @@ Warning--I didn't find a database entry for "Chee"
 Warning--I didn't find a database entry for "Fletcher"
 Warning--I didn't find a database entry for "Leamon"
 Warning--I didn't find a database entry for "OpenOffice"
-Warning--I didn't find a database entry for "Luhn"
-Warning--I didn't find a database entry for "1957"
-Warning--I didn't find a database entry for "Dunning"
-Warning--I didn't find a database entry for "1994"
 Warning--I didn't find a database entry for "Ingle"
 Warning--I didn't find a database entry for "1976"
+Warning--I didn't find a database entry for "Dunning"
 Warning--I didn't find a database entry for "FAERS"
 Warning--I didn't find a database entry for "Forman"
 Warning--I didn't find a database entry for "Cortes"
@@ -49,7 +42,7 @@ Warning--I didn't find a database entry for "Joachim"
 Warning--I didn't find a database entry for "??"
 You've used 0 entries,
             2773 wiz_defined-function locations,
-            631 strings with 5080 characters,
+            627 strings with 5064 characters,
 and the built_in function-call counts, 33 in all, are:
 = -- 0
 > -- 0
@@ -88,4 +81,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 7
-(There were 5 error messages)
+(There were 4 error messages)

@@ -75,20 +75,16 @@ Yahoo! public health forums. Chee develops NLP techniques to define and distill 
 Support Vector Machine classifiers for detecting watchlist drugs. Drugs detected are evaluated against watchlist drugs found via the FDA Adverse Event Reporting System (FAERS) to determine the utility of the approach and its applicability in Pharmacovigilance. %GOOD
 
 \subsection{Background: Pharmacovigilance, AERS and Social Media}
-The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market" \citep{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and Drug Administration (FDA). The FDA Adverse Event Reporting system (AERS) is discussed and comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by patients, physicians and other healthcare providers. Reports are evaluated by the Center for Drug Evaluation and Research (CDER) and Center for Biologics Evaluation and Research (CBER) within the FDA for drug safety signals. If a signal is found, these departments determine next steps, up to and including the removal of a drug from the market.  %GOOD
-
-Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. This deficiency is presented as motivation for Chee's work exploring social media as a data source. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, which in turn prompt rich social interactions where patient disclose their opinions and observations about their current drug regimen effectiveness and perceived adverse effects. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task. %GOOD
+The dissertation begins with an extensive background discussion on adverse drug reactions and current surveillance techniques. Adverse drug reactions are defined by the FDA and World Health Organization (WHO) as "A response to a drug which is noxious and unintended and which occurs at doses normally used in man for prophylaxis, diagnosis, or therapy of disease or for modification of physiological function."\cite{FDA}. Chee continues by introducing Pharmacovigilance as "the study of drugs once released to market" \citep{Chee}, and the important regulatory agencies practicing it are mentioned - the World Health Organization (WHO) and United States Food and Drug Administration (FDA). The FDA Adverse Event Reporting system (AERS) is discussed and comparison with it is central to the work. AERS was constructed to house mandatory drug safety reports from drug manufacturers, distributors and health care facilities, as well as voluntary reports submitted by patients, physicians and other healthcare providers.
+Chee identifies a major limitation in AERS and other \textit{spontaneous reporting systems} in that they are known to have high underreporting rates \citep{Fletcher}, due to the likelihood of a patient reporting an event only if they feel their healthcare provider has not paid attention to the adverse drug reaction observed \citep{Leamon}. Social media provides a venue for patients to share their health information in anonymous setting as patients are not always transparent nor truthful with their physicians. Online health forums create an environment where patients can find those having similar backgrounds, conditions and challenges, prompting rich social interactions where patient disclose their opinions and observations about their current drug regimen effectiveness and perceived adverse effects. Chee feels these forums represent an untapped means to crowdsource data for the pharmacovigilance task. %Reviewed
 
 \subsection{Experimental Data}
-The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques should be applied to better prepare it for experimentation.
+The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques will be applied for feature extraction. %Reviewed
 
 \subsubsection{Tokenization Study of Data}
-Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, stripping them of html tags, numerical and punctuation only tokens (\$, \%, :), :(, etc), then tokenizing them on white spaces with trailing punctuation. The tokens are then evaluated in several rounds of classifiction using lexicons obtained or constructed by Chee to aid in understanding message composition. Lexicons for English and foreign language were drawn from the OpenOffice project \citep{OpenOffice}. Drug names were taken from the Drugs@FDA website. A medical and disease terminology lexicon was constructed from terms on MedicineNet, Wikiepedia, and the MedDRA lexicon from FDA AERS. The names lexicon was constructed using names extracted from email addresses in message headers in the corpus, popular baby names from the United States (US) Social Security Administration, and popular common names from the US 1990 Census.
-
-The classification process was iterative. If a token did not initially classify as English, web (a lexicon of web slang), medical, or drug name it was manually inspected and classified into \textit{error types}:  Foreign Language, Names (augmenting name lexicon), Spelling Errors, Compound Words, Slang, Abbreviations, Web, Unknown Words, Numbers and Garbage. Chee's analysis produced some interesting average metrics for the messages:
-
+Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, stripping them of html tags, numerical and punctuation only tokens (\$, \%, :), :(, etc), then tokenizing them on white spaces with trailing punctuation. The tokens are evaluated in several rounds of classifiction using lexicons constructed by Chee to aid in understanding message composition. Lexicons for English and foreign language were drawn from the OpenOffice project \citep{OpenOffice}, drug names from the Drugs@FDA website, medical and disease terminology from terms on MedicineNet and Wikiepedia, and a MedDRA lexicon from FDA AERS. A names lexicon was constructed using person names harvested from various sources. The classification process was iterative. If a token did not initially classify via a lexicon, it was manually classified into \textit{error types}. Average metrics were as follows:
 \begin{center}
-  \begin{tabular}{|c|c|}
+  \begin{tabular}{||c|c||}
     \hline
     \verb|Average # of Tokens per Messsage:| & 172.21\\
     \hline
@@ -96,21 +92,16 @@ The classification process was iterative. If a token did not initially classify 
     \hline
     \verb|Average # of Error Type Tokens:| & 7.09\\
     \hline
-    \verb|Average # of Name Toknes:| & 5.34\\
+    \verb|Average # of Name Tokens:| & 5.34\\
     \hline
     \verb|Average # of Medical Tokens:| & .81\\
     \hline
   \end{tabular}
 \end{center}
-
-Of the error tokens, over 54\% of them were found to be foreign language tokens - primarily Indonesian and Spanish - motivating Chee to incorporate Foreign Language lexicons from OpenOffice to speed up classification. A primary concern for Chee was the presence of spelling errors, but the classification results show only a $.8\%$ error rate, which Chee uses to rationalize sticking with dictionary based approaches for word classification for their high precision. Finally, it is acknowledged that Named Entity Recognition (NER) is challenging in this context. FDA approved drugs represent a closed class of nominals, but foreign drugs, herbs and other chemicals are not available in a comprehensive list. Dictionary approaches to classifying drug outcomes are challenged by the use of slang terms.
+Of the error tokens, over 54\% of them were found to be foreign language tokens - primarily Indonesian and Spanish - motivating subsequent experimentation to classify messages as English before incorporating them into later studies. Spelling errors were also a concern, but the classification results show only a $.8\%$ error rate. %Reviewed.
 
 \subsubsection{A Vocabulary for Experimentation}
-Chee describes performance concerns training SVMs for classification using all the words in the message, given the $O(kn)$ training time for $n$ training instances using $k$ features (words). Additionally, multiple words together in order can convey a different meaning than separate single words, such as "vitamin a" compared to "vitamin" and "a".
-
-These constraints motivate the use of word-grams - unigrams, bigrams and trigrams specifically - as a way to capture more accurate meaning. Chee references \citep{Luhn, 1957}'s work proposing the most informative words in a message would be the mid-frequently occuring ones, electing to take the top $k - n$ most frequently occuring terms in a message as the most important terms, where $k$ is the top number of terms, minus $n$ accounting for simple function words like \textit{a}, \textit{or} and \textit{the}.
-
-Specialized lexicons are developed as a means to ensure the classifiers that will be trained do not overfit to only those drugs in the drug lexicon, preventing the identification of previously unseen (unlabeled) watchlist drugs. The lexicons selected to use in the classification are:
+Chee cites performance concerns training classifiers using all the words in the message as this would expand the feature space. Additionally, multiple words together in order can convey a different meaning than separate single words, such as "vitamin a" compared to "vitamin" and "a". These constraints motivate the use of word-grams - unigrams, bigrams and trigrams specifically - as a way to capture more accurate meaning. Specialized lexicons are developed to ensure the classifiers do not overfit to drug names and generalize to considering drug effects, sentiment and other terminology. The lexicons are:
 \begin{itemize}
   \item drugs - a drug list from drugs.com
   \item medical - medical terminology extracted from MedicineNet
@@ -118,306 +109,141 @@ Specialized lexicons are developed as a means to ensure the classifiers that wil
   \item medra - the MedDRA terms for drug adverse events/outcomes from FDA AERS
   \item disease - a disease list from Wikipedia
 \end{itemize}
-
-These five lexicons allow for twentynine different datasets of features to be constructed from the Yahoo! corpus messages for the watchlist drug classification experiments. The feature vector used in classification is then the intersection of those terms found in \textit{all} of the lexicons used in that particular test. For example, if the sentinment and drug lexicons are used together, the feature vector has only those terms that occur in both lexicons.
-
+These five lexicons allow for twentynine different datasets of features to be constructed from the Yahoo! corpus messages for the watchlist drug classification experiments. %Reviewed
 
 \subsection{Language Identification for Messages}
-The previous study identified a significant number of foreign language messages in the corpus. While these text processing techniques are language agnostic, removing the foreign language messages will reduce the feature vector length for training, as well as acknowledge the audience for this study is English speaking.
-
-Messages containing non-romanized text are removed first using Unicode language detection. Since non-English languages in romanized text are harder to discern, Chee compares and contrasts character n-gram approaches by \citep{Dunning, 1994} with dictionary approaches from \citep{Rehurek and Kolkus} for foreign language classification. Dictionaries are opted for given the simple, binary nature of the problem: Is a message English or not? Dictionaries for foreign language words are taken from the OpenOffice project and used in conjunction with the medical, drug, disease and name lexicons mentioned earlier are used to evaluate a linear inequality for each message to determine if it will be kept or not.
-
-First the messages are stripped of tokens containing web addresses, punctuation only (emoticons), as well as short words, email addresses or tokens that are already on an ignore list. Remaining tokens in each message are counted up using the following algorithm:
-\begin{algorithmic}
-  \IF{(word in ignore) OR (word length < 2) OR (word contains @)}
-    \STATE ++ignore
-  \ELSIF{word in english}
-    \STATE ++english
-  \ELSIF{word in drug}
-    \STATE ++drug
-  \ELSIF{word in medical}
-    \STATE ++medical
-  \ELSIF{word in name}
-    \STATE ++name
-  \ELSIF{word in foreign}
-    \STATE ++foreign
-  \ELSE
-    \STATE ++unknown
-  \ENDIF
-\end{algorithmic}
-Once the counts are obtained, the following linear inequality is evaluated:
+The tokenization study identified a significant number of foreign language messages in the corpus which Chee aims to eliminate to reduce the feature space. Messages containing non-romanized text are removed first using Unicode language detection. Messages in non-English languages in romanized text are harder to discern. Dictionaries for English and foreign languages are taken from the OpenOffice project and used in conjunction with the medical, drug, disease and name lexicons mentioned earlier in an algorithm to obtain token counts. Once the counts are obtained, the following linear inequality is evaluated per message:
 \[
   4 * foreign + unknown + ignore > english + drugs + medical
 \]
-The weighting of the foreign words is selected to ensure messages contain less than 25\% foreign words to be considered english. Foreign messages are removed and English messages retained.  This resulted in a reduction from 12,520,438 messages to 10,178,710 messages, and a reduction in the number of unique terms per message from 2.5 to 2.
+The weighting of the foreign words is selected to ensure messages contain less than 25\% foreign words to be considered English. Only the English messages are retained, reducing the corpus to 10,178,710 messages and the number of unique terms per message from 2.5 to 2. %Reviewed
 
 \subsection{Experimentation and Results}
-The goal of the dissertation is to develop a classification system for drugs based on how people are talking about them in online message forums. Processed forum messages are first organized by drug, divided into test and training sets, converted into feature vectors, and then run through Support Vector Machine and Naive Bayes classification algorithms. Chee conducts a multitude of these experiments using two versions of the feature vector structure, multiple combinations of the lexicons described earlier, usage of top $n-k$ terms and BNS for term selection to feed feature identification using the lexicons, as well as cost-weighted and unweighted variants of Naive Bayes and SVMs.
+The goal of the dissertation is to develop a classification system for drugs based on how people are talking about them in online message forums. Processed forum messages are first organized by drug, divided into test and training sets, converted into feature vectors, and then run through Support Vector Machine and Na\"ive Bayes classification algorithms. Chee conducts a multitude of these experiments using two versions of the feature vector structure, multiple combinations of the lexicons described earlier, the optional use of Bi-Nomial Separation to choose word n-grams, and optional cost-weighting and normalization within the classifiers.
 
 \subsubsection{Class Separability Confirmed via Kullback-Leibler Divergence}
-Chee begins with an initial experiment to determine how separable conversations regarding watchlist and non-watchlist drugs will be in order to validate the classification approach. Kullback-Leibler divergence (KL divergence) is used to measure the difference in word frequency distribution between messages in each category, with a smoothing technique applied to make sure each term is represented - albiet with very low frequency - in each distribution to prevent infinite divergence. A series of comparisons are done between between the watchlist and non-watchlist frequencies, as well as term frequencies in the Google Web 1T 5-gram corpus and Reuters Corpus to provide perspective.
-
-% Divergence between watchlist and non-watchlist
-\begin{table}
-  \caption{}
-  \label{}
-\end{table}
-\begin{itemize}
-  \item $D_{jk}(Watchlist || Non) = .1684$
-  \item $D_{jk}(Non || Watchlist) = .1778$
-  \item $D_{jk}(Watchlist || Google) = 1.4178$
-  \item $D_{jk}(Watchlist || Reuters) = 1.3279$
-  \item $D_{jk}(Non || Google) = 1.1804$
-  \item $D_{jk}(Non || Reuters) = 1.0815$
-\end{itemize}
-Clearly Watchlist & Nonwatchlist diverge, and show a different degree of divergence from the Google and Reuters corpi, indicating some separability.
-
-% intersting term frequency differences
-\begin{table}
-  \caption{}
-  \label{}
-
-\end{table}
-Interesting term frequency differences:
-\begin{itemize}
-  \item i $D_{kl}(Watchlist || Non) = .007875$
-  \item my $D_{kl}(Watchlist || Non) = .003018$
-  \item me $D_{kl}(Watchlist || Non) = .0002256$
-  \item you $D_{kl}(Watchlist || Non) = .001712$
-  \item i'm $D_{kl}(Watchlist || Non) = 9.64E-04$
-\end{itemize}
-
-The above terms are overexpressed in the watchlist messages compared to non-watchlist, and are consider indicative of emotional writing - just the kind of writing that might occur when discussing a drug with an adverse effect.  Chee concludes these results support separability of the two classes of message based on their word features.
+Chee begins with an initial experiment to determine how separable messages about watchlist and non-watchlist drugs will be in order to validate the classification approach. Kullback-Leibler divergence (KL divergence) is used to measure the difference in word frequency distribution between messages in each category. A smoothing technique is applied to make sure each term is represented in each distribution to avoid infinite divergence when terms are missing from one class. KL-Divergence between watchlist and non-watchlist word frequencies is calculated, and divergence from Google and Reuters corpi to provide perspective. The terms overexpressed in the watchlist messages are also examined:
+\begin{center}
+  % KL Divergence Metrics
+  \tabular{||c|c|c|c|c||}
+    \hline
+    Classification & Watchlist & Non-Watchlist & Google & Reuters \\
+    \hline\hline
+    Watchlist & n/a & .1684 & 1.4178 & 1.3279 \\
+    \hline
+    Non-Watchlist & .1778 & n/a & 1.1804 & 1.0815 \\
+    \hline
+  \end{tabular}
+  \quad
+  \begin{tabular}{||c|c||}
+    \hline
+    Term & Divergence \\
+    \hline\hline
+    i & .007875 \\
+    \hline
+    my & .003018 \\
+    \hline
+    me & .0002256 \\
+    \hline
+    you & .001712 \\
+    \hline
+    i'm & .000964 \\
+    \hline
+  \end{tabular}
+\end{center}
+Clearly watchlist & nonwatchlist diverge, and show a different degree of divergence from the Google and Reuters corpi, indicating some separability. The overexpressed terms are interesting, as they seem indicative of emotional writing - just the kind that might occur when discussing a drug with an adverse effect.
 
 \subsubsection{Named Entity Recognition in Messages}
-Another challenge presented by Chee is how to identify the drug(s) and adverse event(s) themselves within a message - a problem of Named Entity Recognition (NER). A dictionary based approach using a drug lexicon compiled from FDA and Drugs.com, and adverse event lexicon using the Medical Dictionary for Regulatory Activities (MedDRA) is used to query a Lucene index built atop the processed Yahoo! corpus messages. The index construction applied a lowercase filter with stemming, presenting a problem with common words that are also part of drug names. For example, the drug name \textit{Commit} is indistinguishable from the verb \textit{commit}. This was addressed by replacing drug names with common words by their generic (chemical) name in the lexicon to favor precision of query results over recall.
-
-A series of phrase searches were issued against the index to determine prevalence of MedDRA terms (adverse events) and drug names. Two important conclusions are drawn thanks to the resultant plots:
+Another challenge presented by Chee is how to identify the drugs and adverse events in a message - a problem of Named Entity Recognition (NER). A Lucene index is built atop the processed Yahoo! corpus, against which query phrases built from the drug and reactions lexicons are issued to determine term prevalence. A lower case filter with stemming is used, requiring that drugs containing common words (e.g. "commit" for the drug Commit) are replaced with their generic chemical names in the lexicon. Plots are produced showing term distributions:
 
 \includegraphics[width=7cm, height=5cm]{Figure-1-Zipfian.png}
 \includegraphics[width=7cm, height=5cm]{Figure-2-AERS_Drugs.png}
 
-
-The first plot demonstrates a zipfian distribution for drug name mentions in the messags, with more than 96\% of messages mentioning at most 5 drugs, adding confidence to the hypothesis that messages can be associated with at most a handful of drugs. Chee elects to eliminate messages having more than 5 unique drugs as these frequently constitute lists of drugs posted or SPAM messages. The second plot shows that adverse events are mentioned far more often than drug names, suggesting that a preceeding post containing a drug name eliminates referencing it in subsequent posts - much like replies on a forum. Investigating this is an area for future research. Note that the numbers on the X-axis for the 2nd plot refer to the number of terms (1, 2, ...) that comprise the drug name or adverse event - a fact not really relevant for this analysis.
-
-\subsubsection{Handling Multiple Drug Names}
-If multiple drugs are mentioned in a single message, it becomes difficult to discern which drug the message should apply to. Another study is conducted to evaluate the typical distance (number of characters) between the top 25 co-occuring drugs in messages to determine if the messages could be segmented into relevant portions for each drug. The analysis shows a Zipfian distribution in the character separation, indicating that most drugs are talked about together within a single sentence, or in adjacent sentences, leading Chee to conclude separation is not possible and that any adverse events mentioned in a message should just be attributed to all drugs mentioned within the message.
+The first plot demonstrates a Zipfian distribution for drug name mentions in the messags, with more than 96\% of messages mentioning at most 5 drugs, prompting the elimination of messages having more than 5 unique drugs as these tend to be lists or SPAM. The second plot shows that adverse events are mentioned far more often than drug names. It is suggested that a preceeding post containing a drug name eliminates referencing it in subsequent posts that are replies, but this is an area for future research. If multiple drugs are mentioned in a single message it becomes difficult to discern which drug the message should apply to, so another study is done to evaluate the distance (number of characters) between the top 25 co-occuring drugs. A Zipfian distribution is observed for character separation, suggesting drugs are talked about within the same or across adjacent sentences, making separation difficult. Therefore, messages are attributed to all drugs mentioned. %Reviewed
 
 \subsubsection{Sentiment Feature}
-A final experiment preceeding the main classification work is done to validate how message sentiment will be determined. Chee hypothesizes that the positive or negative valence in a message represents drug satisfaction, making it an interesting feature to incorporate into the classification experiments. A lexicon using the positive emotion, negative emotion, anxiety, anger and sadness terms from LIWC is constructed, augmented to include several emoticons (:), :(, ..) and acronyms (LOl, ROFL, ..). Two case studies are then executed using messages sampled from specific groups in the corpus, and the change in drug sentiment is analyzed over the drug's pre-recall, recall, and post-recall timesframes. This sentiment is compared with a \textif{control} sentiment derived from those messages in the samples not containing the drug to look for a statistically significant difference.
+ Chee hypothesizes that the positive or negative valence in a message represents drug satisfaction, making it an interesting feature to incorporate into the classification experiments. A lexicon using positive emotion, negative emotion, anxiety, anger and sadness terms from LIWC is constructed, augmented with several emoticons (:), :(, ..) and acronyms (LOl, ROFL, ..). Two case studies are then executed using messages sampled from specific groups in the corpus, and the change in drug sentiment is analyzed over the drug's pre-recall, recall, and post-recall timesframes against a control sentiment derived from messages not containing the drug.
 
 \includegraphics[width=7cm, height=5cm]{Figure-3-Tysabri.png}
 \includegraphics[width=7cm, height=5cm]{Figure-4-Vioxx.png}
 
-The left-most plot shows the sentiment change for Tysabri pre-recall, recall (withdrawal) and post-recall (resume) over the control. It shows a reasonably intuitive change in negative valence to Tysabri having been introduced (more positive), withdrawn (negative), reintroduced (hopeful therefore positive), then stabalizing. The right plot shows sentiment change for a pair of commonly used pain relievers - Vioxx and Celebrex - over the course of several public anouncements and a withdrawal of Viox (sections 1 through 3), then Celebrex (4 and 5). ANOVA is applied to both case studies to determine statistical significance for each drug in each segment against the control. Both were found to be statistically significant with p \< .001.
-
+The left-most plot shows the sentiment change for Tysabri pre-recall, recall and post-recall over the control. It shows a reasonably intuitive change in negative valence when Tysabri is introduced (more positive), withdrawn (negative), reintroduced (hopeful therefore positive), finally stabalizing. The right plot shows sentiment change for a pair of commonly used pain relievers - Vioxx and Celebrex - over the course of several public anouncements. First a withdrawal of Viox (sections 1 through 3), then Celebrex (4 and 5). ANOVA is applied, determining statistical significance against the control with p < .001.
 
 \subsubsection{Feature Selection, Training and Test Data Size}
 The introduction to the main body of classification experiments is preceeded by a brief discussion on the features vectors used, as well as how training, test and validation sets are constructed to support the use of 10-fold Cross Validation for classifier evaluation.
-
-Two types of feature vector are decided upon and then leveraged in the  experiments. The first feature vector type is generated over general vocabulary terms in the messages, selected based on frequency cutoffs. This vector is then augmented with counts from the various specialized lexicons mentioned earlier: medical, diseases, drugs, sentiment and reactions (MedRA). The second feature vector uses only the specialized lexicon.
-
-The richness of the training data is of foremost concern to Chee. There are only 435 drugs having 500 or more unique messages, and only 575 drugs having more than 250 messages, with 63 and 77 watchlist drugs mentioned in each respectively. Therefore approximately 90\% of message instances reference non-watchlist drugs, creating a data scarcity problem when attempting to classify watchlist drugs. Chee decides upon a minimum cutoff of 250 messages per drug for that drug's messages to be included in training and testing. An  experiment is constructed to evaluate techniques to address the scarcity, including scaling features, selecting different ratios of negative to positive training examples such as 1 to 1 and 2 to 1, and experimenting with different split ratios in cross-validation - 90/10 and 80/20. These experiments are dubbed inconclusive and not elaborated on further in the dissertation.
+Two types of feature vector are decided upon and then leveraged in the  experiments. The first is generated over general vocabulary terms in the messages selected based on frequency cutoffs. The vector is augmented with counts from the specialized lexicons: medical, diseases, drugs, sentiment and reactions (MedRA). The second feature vector uses only the specialized lexicons to identify the word features.
+The richness of the training data is of foremost concern, as there are only 435 drugs having 500 or more unique messages, and only 575 drugs having more than 250 messages, with 63 and 77 watchlist drugs mentioned in each respectively. Approximately 90\% of message instances reference non-watchlist drugs, creating a data scarcity problem when attempting to classify watchlist drugs. Chee decides upon a minimum cutoff of 250 messages per drug. An experiment is constructed to evaluate techniques to address the scarcity, including scaling features, selecting different ratios of negative to positive training examples, and experimenting with different split ratios in cross-validation - 90/10 and 80/20. These experiments are deamed inconclusive and not elaborated on further.
 
 \subsubsection{Classifier and Lexicon Selection}
 The next goal of the dissertation's experimentation is to discover the best performing combinations of classifier, lexicons and feature selection as a means to inform the construction of a \textit{meta classifier} to be used in watchlist drug prediction. The inconclusive nature of the data set sizing experiments prompts settling on the following methodology for classifier
 training and evaluation:
-\begin{itemize}
-  \item test and training sets are sampled with the same distribution as the original data. No use of 1 to 1, 2 to 1 or similar negative to positive sample ratios.
-  \item Data is divided into a 90/10 split, where 90\% of the samples are used to train and 10\% used to validate
-  \item The splits themselves are sampled per the original distribution.
-\end{itemize}
-
-The classifier evaluation experiments evaluate combinations of classifier type (Support Vector Machines or Naive Bayes), the optional use of normalization and cost-weighting, and various combinations of the lexicons described earlier. Cost-weighting applies a greater penalty to incorrectly classifying a positive example then a negative one during training, as a means to offset the low prevalence (~13\%) of watchinglist drugs in the training data. The experimental results and analysis make heavy use of acronyms to understand the combinations evaluated:
-
+%\begin{itemize}
+%  \item Test and training sets are sampled with the same distribution as the original data. No use of 1:1, 2:1 or similar negative to positive ratios.
+%  \item Data is divided into a 90/10 split, where 90\% of the samples are used to train and 10\% used to validate.
+%  \item The splits themselves are sampled per the original distribution.
+%\end{itemize}
+The classifier evaluation experiments evaluate combinations of classifier type, the optional use of normalization and cost-weighting, and various combinations of lexicons. The experimental results and analysis make heavy use of acronyms to understand the combinations evaluated. For example, \textit{drugs\_dis\_sent\_react\_NSVMC} would equate to an experiment using a Normalized SVM with Cost Weighting (NSVMC) incorporating the drugs(drugs), disease(dis), sentiment(sent) and reaction(react) lexicons. A series of 240 experiments were run using the combinations above to ascertain the best combination of lexicons when evaluating accuracy, F1 score, and area under the ROC curve (AUC).The top 3 classifier configurations for accuracy are presented below with their upper and lower bounds:
 \begin{center}
-  \begin{tabular}{|c|c|}
+  \begin{tabular}{||c c c c||}
     \hline
-    Acronym & Description\\
+    Configuration & Accuracy & Lower & Upper \\
     \hline\hline
-    UNB & Un-normalized Naive Bayes\\
+    \verb|dis_react_NSVM| & 0.9032 & 0.7932 & 0.9578 \\
     \hline
-    UNBC & Un-normalized Naive Bayes with Cost Weighting\\
+    \verb|drugs_dis_sent_react_NSVM| & 0.9013 & 0.7908 & 0.9566 \\
     \hline
-    NNB & Normalized Naive Bayes\\
-    \hline
-    NNBC & Normalized Naive Bayes with Cost Weighting\\
-    \hline
-    SVM & Un-normalized SVM\\
-    \hline
-    SVMC & Un-normalized SMV with Cost Weighting\\
-    \hline
-    NSVM & Normalized SVM\\
-    \hline
-    dis & disease lexicon\\
-    \hline
-    react & reactions lexicon\\
-    \hline
-    drugs & drugs lexicon\\
-    \hline
-    sent & sentiment lexicon\\
-    \hline
-    med & medications lexicon\\
+    \verb|drugs_sent_react_NSVM| & 0.9013 & 0.7908 & 0.9566 \\
     \hline
   \end{tabular}
 \end{center}
-For example, \textit{drugs\_dis\_sent\_react\_NSVMC} would equate to an experiment using the Normalized SVM with Cost Weighting, incorporating the drugs, disease, sentiment and reaction lexicons.
-
-A series of 240 experiments were run using the combinations above to ascertain the best combination of lexicons to use when evaluated according to accuracy, F1 score, and area under the ROC curve (AUC). Accuracy is reviewed by Chee first, and the top 3 classifier configurations for each accuracy test are presented for context:
-
+The accuracy of a naive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, when considering the lower bound there is uncertainty that any classifier is more accurate than the naive baseline. F1 and area under the ROC curve (AUC) scores are evaluated next:
 \begin{center}
-  \begin{tabular}{||c c c c c||}
+  \begin{tabular}{||c c||}
     \hline
-    Experiment Type & Configuration & Accuracy & Lower Bound & Upper Bound \\
+    Configuration & F1 Score\\
     \hline\hline
-    CV & \verb|dis_react_NSVM| & 0.903288201 & 0.793206235 & 0.957882075 \\
+    \verb|drugs_dis_react_NSVM| & 0.4761 \\
     \hline
-    CV & \verb|drugs_dis_sent_react_NSVM| & 0.901353965 & 0.790801818 & 0.956684149 \\
+    \verb|drugs_dis_react_UNB| & 0.4725 \\
     \hline
-    CV & \verb|drugs_sent_react_NSVM| & 0.901353965 & 0.790801818 & 0.956684149 \\
-    \hline
-    Test & \verb|drugs_dis_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
-    \hline
-    Test & \verb|drugs_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
-    \hline
-    Test & \verb|dis_sent_react_UNB| & 0.879310345 & 0.771204077 & 0.940291098 \\
-    \hline
-    Test(CW) & \verb|drugs_dis_NSVMC| & 0.879310345 & 0.771204077 & 0.940291098 \\
-    \hline
-    Test(CW) & \verb|drugs_sent_SVMC| & 0.862068966 & 0.750738501 & 0.928415984 \\
-    \hline
-    Test(CW) & \verb|drugs_sent_NSVMC| & 0.862068966 & 0.750738501 & 0.928415984 \\
-    \hline
-  \end{tabular}
-\end{center}
-
-The accuracy of a naive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, when considering 95\% confidence interval defined by the lower and upper bounds there is uncertainty that any classifier is more accurate than the naive baseline. The cost weighting shows no accuracy benefits either.
-
-Discussed next are the F1 and area under the ROC curve (AUC) scores. Analysis of the F1 score also prompts inspection regarding the recall and pecision tradoffs therein, as the F1 score represents a harmonic mean of the two:
-\begin{center}
-  \begin{tabular}{||c c c||}
-    \hline
-    Experiment Type & Configuration & F1 Score\\
-    \hline\hline
-    CV & \verb|drugs_dis_react_NSVM| & 0.476190476 \\
-    \hline
-    CV & \verb|drugs_dis_react_UNB| & 0.472527473 \\
-    \hline
-    CV & \verb|drugs_UNB| & 0.4698795518 \\
-    \hline
-    Test & \verb|drugs_UNB| & 0.470588235 \\
-    \hline
-    Test & \verb|drugs_dis_UNB| & 0.444444444 \\
-    \hline
-    Test & \verb|drugs_dis_sent_react_UNB| & 0.363636364 \\
-    \hline
-    Test(CW) & \verb|drugs_dis_SVMC| & 0.444444444 \\
-    \hline
-    Test(CW) & \verb|drugs_UNBC| & 0.444444444 \\
-    \hline
-    Test(CW) & \verb|drugs_react_SVMC| & 0.384615385 \\
-    \hline
-  \end{tabular}
-\end{center}
-\begin{center}
-  \begin{tabular}{||c c c||}
-    \hline Experiment Type & Configuration & AUC \\
-    \hline\hline
-    CV & \verb|drugs_UNB| & 0.7592 \\
-    \hline
-    CV & \verb|drugs_dis_UNB| & 0.7564 \\
-    \hline
-    CV & \verb|med_drugs_NNB| & 0.7545 \\
-    \hline
-    Test & \verb|dis_UNB| & 0.7514 \\
-    \hline
-    Test & \verb|drugs_dis_UNB| & 0.6850 \\
-    \hline
-    Test & \verb|dis_sent_react_UNB| & 0.6675 \\
-    \hline
-    Test (CW) & \verb|drugs_UNBC| & 0.7825 \\
-    \hline
-    Test (CW) & \verb|drugs_dis_UNBC| & 0.7075 \\
-    \hline
-    Test (CW) & \verb|drugs_dis_SVMC| & 0.6900 \\
-    \hline
-  \end{tabular}
-\end{center}
-
-\includegraphics[width=7cm, height=5cm]{Figure-5-F1.png}
-The F1 scores are lower where cost-weighting is applied, comparable to accuracy. The image above shows how recall (Y axis) and precision (X) access vary across classifier configurations in the test instance, and a comparable image was seen with cost-weighting: low numbers of high recall or precision outliers, and most of the mass concentrated at low recall and precision. AUC does contain higher scores for cost weighted classifers compared to those non-weighted.
-
-As the goal of this experiment was to identify the value of the lexicons, their prevelance in the top 10 best performing weighted and non-weighted classifiers for each metric is reviewed:
-%two tables side by side
-\begin{center}
-  % caption for non-weighted classifiers
-  \begin{tabular}{c c}
-    \hline
-    Drugs & 33\\
-    \hline
-    Disease & 32\\
-    \hline
-    Sentiment & 28\\
-    \hline
-    Reactions & 27\\
-    \hline
-    Medical & 7\\
+    \verb|drugs_UNB| & 0.4698 \\
     \hline
   \end{tabular}
   \quad
-  % caption for weighted classifiers
-  \begin{tabular}{c c}
-    \caption{Weighted Classifers}
+  \begin{tabular}{||c c||}
+    \hline Configuration & AUC \\
+    \hline\hline
+    \verb|drugs_UNB| & 0.7592 \\
     \hline
-    Drugs & 20\\
+    \verb|drugs_dis_UNB| & 0.7564 \\
     \hline
-    Disease & 18\\
-    \hline
-    Sentiment & 15\\
-    \hline
-    Reactions & 10\\
-    \hline
-    Medical & 5\\
+    \verb|med_drugs_NNB| & 0.7545 \\
     \hline
   \end{tabular}
 \end{center}
-
-The ranking favors the drugs, disease and sentiment lexicons, which are then selected for use in the prediction problem. Unfortunately this leads to overfitting concerns because a classifier will learn on the drug names and diseases associated with watchlist drugs. Chee notes disappointment that the reactions lexicon does not rank higher, indicating it may not really capture how people speak about adverse events.
+Neither the F1 nor AUC scores are particularly impressive, though the experimental results do show lower F1 scores with cost weighting. The F1 scores were decomposed into their precision and recall components, then scatter plotted. The general observation was most scores had a mass concentration of low recall and precision, with the occassional high recall or high precision outlier - though never both.
+As the goal of this experiment was to identify the value of the lexicons, their prevelance in the top 10 best performing weighted and non-weighted classifiers for each metric is examined:
+\begin{center}
+  \begin{tabular}{||c c c||}
+    \hline
+    Lexicon & Non-Weighted Classifiers & Weighted Classifiers \\
+    \hline\hline
+    Drugs & 33 & 20 \\
+    \hline
+    Disease & 32 & 18 \\
+    \hline
+    Sentiment & 28 & 15 \\
+    \hline
+    Reactions & 27 & 10 \\
+    \hline
+    Medical & 7 & 5 \\
+    \hline
+  \end{tabular}
+\end{center}
+The ranking favors the drugs, disease and sentiment lexicons, which are then selected for use in the prediction problem. This does raise overfitting concerns as the classifier will learn on drug names and diseases associated with watchlist drugs. It is disappointing that reactions doesn't rank higher, but it may not capture how people speak about adverse events.
 
 \subsubsection{Evaluating the BNS Lexicon}
-Another area of experimental exploration is how the initial word n-gram features are selected to populate the feature vectors. As previously discussed, the top $n-k$ technique is preferred to prompt selection of those word n-grams that are not necessarily the most frequent, but in theory the most informative.
-
-Bi-Normal Separation (BNS) is an alternative technique explored by Chee for discovering those word n-grams. BNS identifies those n-grams that are differentially expressed between two classes: watchlist and non-watchlist messages. BNS lexicons are constructed using the test subset of data for the top 15,000, 10,000 and 5,000 word n-grams, then used in combination with the drugs, diseases and sentiment lexicons, as well as a set of "special features" consisting of numerical counts of:
-\begin{itemize}
-  \item disease mentions
-  \item drug mentions
-  \item medical terminology
-  \item sentiment containing terms
-  \item AERS terminology
-\end{itemize}
-
-Experiments were run again using Naive Bayes and SVM classifiers, with optional normalization, optional cost-weighting, and the optional inclusion of the numerical features. The top classifier configuration for each combination of BNS n-grams and numerical features is shown below with its accuracy and confidence bounds:
-\begin{center}
-  \begin{tabular}{||c c c c c c||}
-    \hline
-    Configuration & Numericals & BSN & Accuracy & Lower Bound & Upper Bound \\
-    \hline\hline
-    \verb|bns_drug_dis_sent_NNB| & Yes & All(5k,10k,15k) & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-    \verb|bns_drugs_dis_sent_NNB| & No & All & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-    \verb|bns_drugs_dis_sent_NNB| & Yes & (10k, 15k) & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-    \verb|bns_drugs_dis_sent_NNB| & No & (10k, 15k) & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-    \verb|bns_drugs_dis_sent_NNB| & Yes & 15k & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-    \verb|bns_drugs_dis_sent_NNB| & No & 15k & 0.8762 & 0.7602 & 0.9405\\
-    \hline
-  \end{tabular}
-\end{center}
-
-There was no clear advantage to a specific number of BNS features, nor the inclusion of the additional numerical features.  Furthermore, the F1 and AUC scores for this test showed no advantage to a specific BNS or numerical feature combination, though un-normalized Naive Bayes did perform better in F1 and AUC than normalized Naive Bayes as seen above. Regardless, none of the tests showed better accuracy, F1 or AUC than the previous tests using specialized lexicons only. Chee hypothesizes this is in part due to the limited number of messages in the test set BNS could select n-grams from.
+Another area of experimental exploration is how the initial word n-gram features are selected to populate the feature vectors. Bi-Normal Separation (BNS) is an alternative technique explored by Chee for discovering the word n-grams. BNS identifies those n-grams that are differentially expressed between two classes, in this case the watchlist and non-watchlist messages. BNS lexicons are constructed using the test subset of data for the top 15,000, 10,000 and 5,000 word n-grams, then tested in combination with the drugs, disease and sentiment lexicons, as well as additional "numerical features" containg counts for mentions of diseases, drugs, medical terms, sentiment and AERS terminology. Unfortunately the best BNS classifier underperformed the previous tests with an accuracy of only .8762 and lower bound of .7602. There was no clear advantage to BNS features nor the additional numerical features. The F1 and AUC scores for this test showed no improvement either, though un-normalized Na\"ive Bayes did have a higher F1 and AUC than normalized Na\"ive Bayes as seen above.
 
 \subsubsection{Predicting Watchlist Drugs}
 The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores. The following were selected:
@@ -486,19 +312,14 @@ The second experiment entails removing the withdrawn drugs entirely from trainin
     \textit{temazepam} & 8 & 28 & 1 & 2.286\\
     \hline
     \textit{cerivastatin} (Baycol) & 2 & 100 & 1 & 0.04\\
+    \hline
   \end{tabular}
 \end{center}
 Interestingly sibutramine does score significantly higher in this experiment, as do several of the withdrawn drugs (hydromorphone, rofecoxib, trovafloxacin), though Baycol scores much lower. Additionally, physiciatric drugs (Ritalin) and opiates (morphine) show up near the top in both experiments, presumably because they are more dangerous and more often associated with adverse reactions.
 
 
 \section{Discussion of Contributions}
-The major contribution of the dissertation is a collection of techniques for leveraging public health forum data for pharmacovigilance. Techniques in natural language processing and classification are developed and applied to identify drugs widthdrawn from the market by the FDA by using only the textual features of the messages themselves. The end result was an ensemble classification technique capable of identifying current watchlist drugs - and therefore \textit{future} watchlist drugs.  In the interest of discussion, we can distill this work to X major areas to discuss and critique from the work as its primary contributions:
-\begin{itemize}
-  \item Exploration and Annotation of Health Forum Data
-  \item Techniques for Differentiating Language and Spelling Mistakes
-  \item Feature Generation using Speciality Lexicons
-  \item Quality of WatchList Predictions
-\end{itemize}
+The major contribution of the dissertation is a collection of techniques for leveraging public health forum data for pharmacovigilance. Techniques in natural language processing and classification are developed and applied to identify drugs widthdrawn from the market by the FDA by using only the textual features of the messages themselves. The end result was an ensemble classification technique capable of identifying current watchlist drugs - and therefore \textit{future} watchlist drugs. In the interest of discussion, we can distill this work into several specific contributions worth individual discussion.
 
 \subsection{Exploration and Annotation of Health Forum Data}
 Chee's initial exploration of the Yahoo! corpus is informative in its own right, as it exposes the challenges in annotating messages from the general public for use in a scientific study. Scientific documentation - such as medical literature - is usually grammatically correct and highly precise in its use of scientific terminology such as drug names, diseases, side effects. Chee must confront a number of problems, including:
@@ -510,24 +331,20 @@ Chee's initial exploration of the Yahoo! corpus is informative in its own right,
 
 The majority of message tokens contributing to these problems were placed in a general category of \textit{error}, accounting for 4.1\% of each message's tokens on average. This prompts a more in depth exploration into the nature of the errors, discovering that foreign languages appeared to be the largest contributor. However, the methods here did not go much further than identifying that problem tokens were present and attempting to classify them. If the nature of the problem token was known enough to classify them manually, why not replace them with a proper (grammatically correct) token of equivalent meaning, thereby preserving the value of the message? Mondern word processors frequently correcty for mispellings, and slang terminology such as "sux" could easily be replaced by a real world equivalent. Furthermore, these token type statistics were generated against only a 500 message sample of the corpus. It seems this kind of automated analysis could have been extended to encompas all messages in the corpus in order to confirm or deny these patterns.
 
-
-
 \subsection{Techniques for Differentiating Language}
-Chee had to conduct an in depth analysis of the composition of health forum data to inform his selection of NLP techniques for feature generation. The initial analysis identified a high prevalance of foreign language terms in the messages. This is concerning, as these terms can inflate the word n-gram feature vector size going into the two classification techniques. It is therefore a worthwhile goal to reduce the classification feature space through the elimination of messages written largely in foreign languages. Chee's approach to eliminating languages that do not use roman (latin) text through Unicode language detection takes immediate advantage of common website text representations in UTF-8, which account for 91.2\% of all websites \citep{UTF-8 article on wikipedia}. As each latin script character is represented by a unique unicode code point (bits - appearing as hexadecimal in text), it is easy to distinguish characters falling outside the range of latin script.
-
-Chee opts for the use of simple, dictionary based methods using lexicons drawn from OpenOffice to classify the individual tokens in a message as english or not for use in an inequality used to score and retain predominantly english messages. Cited is an inability to use other techniques for various reasons:
+Chee's in depth analysis of the composition of health forum data identifies a high prevalance of foreign language terms in the messages. This is concerning, as these terms can inflate the word n-gram feature vector size going into the classifiers, motivating work to better classify messages as English or not. Chee starts by using Unicode language detection to take advantage of the most common website text representation: UTF-8 \citep{UTF_8 article on Wikipedia}. Characters not falling in the latin script code point range are eliminated.
+Next, simple dictionary based methods using lexicons drawn from OpenOffice are used to classify tokens in a message as English or not for use later in message scoring. Other techniques are mentioned, but avoided for the following reasons:
 \begin{itemize}
-  \item the common words approach by \citep{Ingle, 1976} is mentioned, but given little attention
-  \item n-gram based techniques by Dunning \citep{Dunning} require training data, which he does not have (why not make it?)
-  \item n-gram based techniques can skew to repitious words and phrases presents in online forums (e.g. "In Reply to")
-  \item Character n-grams can't different between similar languages: Slovenian, Czech, Polish
+  \item The common words approach by \citep{Ingle, 1976} is mentioned, but given little attention.
+  \item N-gram based techniques by Dunning \citep{Dunning} require training data, which he does not have. Furthermore, they can skew to repetitious words and phrases in online forums (e.g. "In Reply to")
+  \item Character n-grams can't different between similar languages: Slovenian, Czech, Polish.
 \end{itemize}
 
 Dunning \citep{Dunning} does give some attention to the common words technique, stating these techniques are suitable when enough text is present to be classified as the common words are often \textit{closed class} words, with examples such as: and, or, this, that. These words often serve a function, such as joining other words and phrases thereby providing structure to the text. Sufficient amounts of text allow this structure to be identified and leveraged in classification. Dunning uses counter examples that are 20-characters long and 3-4 tokens to highlight the limitation, but considering the average 172 token length of the Yahoo! corpus it might have been more informative had Chee explored this technique further.
 
 We could also advocate that Dunning's n-gram language classification technique would have been worth applying to develop a binary english-non-english classifier. Dunning develops his classification technique by modeling languages as a Markov Decision Process, wherein the probability of a particular word or phrase is dependent upon those preceeding it and their probabilities assuming a specific language. Dunning successfully differentiates between english and spanish texts of small length: 10, 20, 50, 100 and 200 bytes, having used relatively small training texts between 1000 and 50000 bytes. It seems reasonable that small sampling of longer, english only messages could have been identified as a training set to leverage this technique.
 
-Additionally, recall the inequality $(4 * foreign) + unknown + ignore > english + drugs + medical$ used in message classification. Little beyond the initial token counts by type indicating foreign language prevalance and the resulting ~18.7\% reduction in message count thanks to the technique is provided as evidence of effectiveness. Chee himself noted that tokens can be part of multiple languages, yet the algorithm for counting tokens always favored english, likely skewing the counts. The vocabulary of the english language has been highly influenced by french and germanic languages \citep{Wikipedia page for english}, accounting for more than 55\%. This approach seems vulnerable to misclassification.
+Additionally, recall the inequality $(4 * foreign) + unknown + ignore > english + drugs + medical$ used in message classification. Little beyond the initial token counts by type indicating foreign language prevalance and the resulting ~18.7\% reduction in message count thanks to the technique is provided as evidence of effectiveness. Chee himself noted that tokens can be part of multiple languages, yet the algorithm for counting tokens always favored English, likely skewing the counts. The vocabulary of the english language has been highly influenced by french and germanic languages \citep{Wikipedia page for english}, accounting for more than 55\%. This approach seems vulnerable to misclassification.
 
 Finally, one would expect meta-data in the Yahoo! corpus messages might help discern the locality of the writer. Consider properties such as the name of the forum a message is under being english or not, or an IP address associated with a user being geo-resolvable to a US location.
 
@@ -589,7 +406,7 @@ The technique in this dissertation is not perfect by any means, but the approach
 
 
 \section{Techniques and Algorithms}
-
+Summarized herein are the technical details regarding the techniques and algorithms Chee used in his study, particularly as they pertain to feature selection and classification.
 
 \subsection{KL Divergence}
 Kullback-Leibler (KL) divergence quantifies the difference between two probability distributions. Given two distributions P and Q, it is expressed as:
@@ -597,7 +414,6 @@ Kullback-Leibler (KL) divergence quantifies the difference between two probabili
   D_{KL}(P||Q) = \sum_{i}P(i)log\frac{P(i)}{Q(i)}
 \]
 Where $P$ and $Q$ are probability distributions for two classes, $i$ is a value within each class, and $P(i)$ and $Q(i)$ are the probability of $i$ in each distribution respectively. Care must be taken that if $i$ is not present in $Q$, infinite divergence would occur, and so a low, default probability for $Q(i)$ may be used.
-
 
 \subsection{Bi-Normal Separation}
 Bi-Normal Seperation (BNS) is introduced as a word feature selection technique for use text classification. An empiral study by \citep{Forman} showed considerable performance advantages when using BNS with SVMs for text classification, as opposed to other selection metrics such as Information Gain (IG), Document Frequency (DFreq) and Odds Ratio (Odds). Testing with BNS had higher F1, precision and recall despite dealing with significant class skew in the training data on the order of 1:31 - 1 positive to 31 negative class examples. BNS is defined as:
@@ -608,11 +424,8 @@ where $F^{-1}$ is the inverse of the normal cummulative distribution function, $
 
 
 \subsection{Support Vector Machines}
-Support Vector Machines (SVM) \citep{Cortes, Vapnik} are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space. The boundary lines of this hyperplane are identified as the \textit{support vectors}, being the vectors representing the training samples producing the best class separation.
-
-\includegraphics[width=7cm, height=5cm]{SVM.png}
-
-The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
+Support Vector Machines (SVM) \citep{Cortes, Vapnik} are well established for their utility in classification problems. An SVM functions by discovering a hyperplane that maximizes the margin of seperation between two classes given their feature space. The boundary lines of this hyperplane are identified as the \textit{support vectors}, being the vectors representing the training samples producing the best class separation. The simplest SVM finds the optimal hyperplane (w,b) satisfying the inequality:
+%\includegraphics[width=7cm, height=5cm]{SVM.png}
 \[
   y_{i}(w \cdot x_{i} + b) \gte 1,  i = 1, ...., l
 \]
@@ -674,11 +487,7 @@ is addressed by \citep{Rindsfleich et. all, 2009} through the development of EDG
 General entity recognition in web data is examined in \citep{Etzioni, 2005}, where the KnowItAll system is developed and discussed - an unsupervised, domain-independent system for information extraction from the Web. The system uses generalized extraction patterns to generate candidate facts - such as city names - which are then tested for truth using assistance from search engines queries to compute a pointwise mutual information statistic for the fact. Chee emulates some of these techniques through phrase queries to validate drug names found in the Yahoo! corpus.
 
 \subsubsection{Technical Literature}
-Forman's paper on feature selection metrics for text classification \citep{Forman, 2003} introduces the BNS techinque, comparing it to several other metrics:  Chi-Squared, Information Gain, Odds Ratio,  Log Probability Ratio, and Document Frequency. Forman's experimental method uses a data set of computer science paper abstracts categorized into classes intermingled with another text classification data set, producing a variety of test data sets having a skew ranging from 1:1 (1 positive class and 1 negative) to 1:100+ (more than 100 negative instances). Classification experiments using SVMs are run with features selected via the identified metrics. BNS shows a consistently superior F1 measure and accuracy in the tests, with exception given to IG when the number of features selected is restricted to between 20 and 50 and the class skew is low. Incidentally, Forman's analysis uses SVM only, citing the works of \citep(Yan & Liu, 1999), \citep(Joachims, 1998) and \citep(Dumais, et. al) as confirming that SVM is an "outstanding" method for text classification.
-
-SVMs are introduced by \citep{Vapnik}, introducing the fundamental concepts, and hard and soft margin classifiers. Joachim's paper on text categorization with SVMs \citep{Joachim} explains why SVMs are expected to work well for text categorization, highlighting their ability to handle a large feature space of several thousand relevant words where training sample vectors may be sparse. Joachim comparse SVM text classification using polynomial and RBF kernels against Naive Bayes, k-NN, C4.5 and the Rocchio algorithm, showing consistently higher precision/recall break even points for the SVMs across two popular test corpus.
-
-Naive Bayes classification is explored in the context of SPAM classification by \citep{Sahami, ??}, who evaluates Naive Bayes classifiers trained on combinations of message word features, message word features plus specific phrases, and word features with phrases and domain specific features (non-word) features thought to indicate spam. Classification results in the binary SPAM/no-SPAM setting showing 100\% precision when using the final combination tested on a corpus of 1789 labeled messages. Like other studies, Sahami employs feature selection techniques to manage the feature space, ignoring words that appear less than three times and selecting only the top 500 remaining words based on their mutual information scores relavent to the class labels.
+Forman's paper on feature selection metrics for text classification \citep{Forman, 2003} introduces the BNS techinque, comparing it to several other metrics:  Chi-Squared, Information Gain, Odds Ratio,  Log Probability Ratio, and Document Frequency. Forman's experimental method uses a data set of computer science paper abstracts categorized into classes intermingled with another text classification data set, producing a variety of test data sets having a skew ranging from 1:1 (1 positive class and 1 negative) to 1:100+ (more than 100 negative instances). Classification experiments using SVMs are run with features selected via the identified metrics. BNS shows a consistently superior F1 measure and accuracy in the tests, with exception given to IG when the number of features selected is restricted to between 20 and 50 and the class skew is low. Incidentally, Forman's analysis uses SVM only, citing the works of \citep(Yan & Liu, 1999), \citep(Joachims, 1998) and \citep(Dumais, et. al) as confirming that SVM is an "outstanding" method for text classification. \par SVMs are introduced by \citep{Vapnik}, introducing the fundamental concepts, and hard and soft margin classifiers. Joachim's paper on text categorization with SVMs \citep{Joachim} explains why SVMs are expected to work well for text categorization, highlighting their ability to handle a large feature space of several thousand relevant words where training sample vectors may be sparse. Joachim comparse SVM text classification using polynomial and RBF kernels against Na\"ive Bayes, k-NN, C4.5 and the Rocchio algorithm, showing consistently higher precision/recall break even points for the SVMs across two popular test corpus.\par Na\"ive Bayes classification is explored in the context of SPAM classification by \citep{Sahami, ??}, who evaluates Naive Bayes classifiers trained on combinations of message word features, message word features plus specific phrases, and word features with phrases and domain specific features (non-word) features thought to indicate spam. Classification results in the binary SPAM/no-SPAM setting showing 100\% precision when using the final combination tested on a corpus of 1789 labeled messages. Like other studies, Sahami employs feature selection techniques to manage the feature space, ignoring words that appear less than three times and selecting only the top 500 remaining words based on their mutual information scores relavent to the class labels.
 
 
 \section{Application Areas}
