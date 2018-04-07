@@ -101,7 +101,7 @@ Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 m
 Of the error tokens, over 54\% of them were found to be foreign language tokens - primarily Indonesian and Spanish - motivating subsequent experimentation to classify messages as English before incorporating them into later studies. Spelling errors were also a concern, but the classification results show only a $.8\%$ error rate. %Reviewed.
 
 \subsubsection{A Vocabulary for Experimentation}
-Chee cites performance concerns training classifiers using all the words in the message as this would expand the feature space. Additionally, multiple words together in order can convey a different meaning than separate single words, such as "vitamin a" compared to "vitamin" and "a". These constraints motivate the use of word-grams - unigrams, bigrams and trigrams specifically - as a way to capture more accurate meaning. Specialized lexicons are developed to ensure the classifiers do not overfit to drug names and generalize to considering drug effects, sentiment and other terminology. The lexicons are:
+Chee cites performance concerns training classifiers using all the words in the message as this would expand the feature space. Additionally, multiple words together in order can convey a different meaning than separate single words motivating the use of word-grams - unigrams, bigrams and trigrams - to capture meaning. Therefore, specialized lexicons are developed to ensure the classifiers do not overfit to drug names and generalize to considering drug effects, sentiment and other terminology. The lexicons are:
 \begin{itemize}
   \item drugs - a drug list from drugs.com
   \item medical - medical terminology extracted from MedicineNet
@@ -109,7 +109,7 @@ Chee cites performance concerns training classifiers using all the words in the 
   \item medra - the MedDRA terms for drug adverse events/outcomes from FDA AERS
   \item disease - a disease list from Wikipedia
 \end{itemize}
-These five lexicons allow for twentynine different datasets of features to be constructed from the Yahoo! corpus messages for the watchlist drug classification experiments. %Reviewed
+These five lexicons are used in various combinations throughout the experimentation on the corpus.
 
 \subsection{Language Identification for Messages}
 The tokenization study identified a significant number of foreign language messages in the corpus which Chee aims to eliminate to reduce the feature space. Messages containing non-romanized text are removed first using Unicode language detection. Messages in non-English languages in romanized text are harder to discern. Dictionaries for English and foreign languages are taken from the OpenOffice project and used in conjunction with the medical, drug, disease and name lexicons mentioned earlier in an algorithm to obtain token counts. Once the counts are obtained, the following linear inequality is evaluated per message:
@@ -119,10 +119,10 @@ The tokenization study identified a significant number of foreign language messa
 The weighting of the foreign words is selected to ensure messages contain less than 25\% foreign words to be considered English. Only the English messages are retained, reducing the corpus to 10,178,710 messages and the number of unique terms per message from 2.5 to 2. %Reviewed
 
 \subsection{Experimentation and Results}
-The goal of the dissertation is to develop a classification system for drugs based on how people are talking about them in online message forums. Processed forum messages are first organized by drug, divided into test and training sets, converted into feature vectors, and then run through Support Vector Machine and Na\"ive Bayes classification algorithms. Chee conducts a multitude of these experiments using two versions of the feature vector structure, multiple combinations of the lexicons described earlier, the optional use of Bi-Nomial Separation to choose word n-grams, and optional cost-weighting and normalization within the classifiers.
+The goal of the dissertation is to develop a classification system for drugs based on how people are talking about them in online message forums. Processed forum messages are first organized by drug, divided into test and training sets, then converted into feature vectors. Chee then constructs a multitude of experiments using various classifier & lexicon combinations and other options to deduce the best classifier configuration(s) for use in the final system.
 
-\subsubsection{Class Separability Confirmed via Kullback-Leibler Divergence}
-Chee begins with an initial experiment to determine how separable messages about watchlist and non-watchlist drugs will be in order to validate the classification approach. Kullback-Leibler divergence (KL divergence) is used to measure the difference in word frequency distribution between messages in each category. A smoothing technique is applied to make sure each term is represented in each distribution to avoid infinite divergence when terms are missing from one class. KL-Divergence between watchlist and non-watchlist word frequencies is calculated, and divergence from Google and Reuters corpi to provide perspective. The terms overexpressed in the watchlist messages are also examined:
+\subsubsection{Class Separability}
+Chee begins with an initial experiment to determine how separable messages about watchlist and non-watchlist drugs are in order to validate the classification approach. Kullback-Leibler divergence (KL divergence) is used to measure the difference in word frequency distribution between messages in each category, with a smoothing technique applied to make sure each term is represented in each distribution, avoiding infinite divergence when terms are missing from one class. The KL-Divergence between watchlist and non-watchlist word frequencies is calculated, and divergence from Google and Reuters corpi to provide perspective. The terms overexpressed in the watchlist messages are also examined:
 \begin{center}
   % KL Divergence Metrics
   \tabular{||c|c|c|c|c||}
@@ -246,13 +246,13 @@ The ranking favors the drugs, disease and sentiment lexicons, which are then sel
 Another area of experimental exploration is how the initial word n-gram features are selected to populate the feature vectors. Bi-Normal Separation (BNS) is an alternative technique explored by Chee for discovering the word n-grams. BNS identifies those n-grams that are differentially expressed between two classes, in this case the watchlist and non-watchlist messages. BNS lexicons are constructed using the test subset of data for the top 15,000, 10,000 and 5,000 word n-grams, then tested in combination with the drugs, disease and sentiment lexicons, as well as additional "numerical features" containg counts for mentions of diseases, drugs, medical terms, sentiment and AERS terminology. Unfortunately the best BNS classifier underperformed the previous tests with an accuracy of only .8762 and lower bound of .7602. There was no clear advantage to BNS features nor the additional numerical features. The F1 and AUC scores for this test showed no improvement either, though un-normalized Na\"ive Bayes did have a higher F1 and AUC than normalized Na\"ive Bayes as seen above.
 
 \subsubsection{Predicting Watchlist Drugs}
-The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores. The following were selected:
+The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores:
 \begin{itemize}
   \item Normalized SVM using disease, reaction (AERS) lexicons with a 90.33\% Accuracy
   \item Normalized SVM using drugs, disease and reaction lexicons with an F1 score of 0.4762
   \item Un-Normalized Na\"ive Bayes with an AUC score of 0.7592
 \end{itemize}
-Two meta-classification experiments are constructed to examine the False Positives produced as an indicator for a possible \textit{future} watchlist drugs if used in an applied setting. The first experiment uses the classifier configurations stated above, but the training data is modified to denote drugs \textit{withdrawn} from the market as non-watchlist. It is important to distinguish that a withdrawn drug would have at one point been a watchlist drug, as drugs are placed on the watchlist - even if briefly - before being removed from the market. By looking for these withdrawn drugs marked non-watchlist in the set of False Positives from the training results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination:
+Two meta-classification experiments are constructed to examine the False Positives produced as an indicator for a possible \textit{future} watchlist drugs. The first experiment uses training data modified to denote drugs \textit{withdrawn} from the market as non-watchlist, as withdrawn drugs represent a subclass of watchlist drugs. By looking for these non-watchlist, withdrawn drugs in the set of False Positives from the results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination:
 \[
   \frac{\#\ of\ False\ Positives}{\#\ of\ Occurrences} * (\#\ of\ False\ Positives) * (\#\ of\ Classifer\ Types)
 \]

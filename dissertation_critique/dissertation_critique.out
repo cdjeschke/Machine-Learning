@@ -5,7 +5,7 @@
 \BOOKMARK [3][-]{subsubsection.1.2.2}{A Vocabulary for Experimentation}{subsection.1.2}% 5
 \BOOKMARK [2][-]{subsection.1.3}{Language Identification for Messages}{section.1}% 6
 \BOOKMARK [2][-]{subsection.1.4}{Experimentation and Results}{section.1}% 7
-\BOOKMARK [3][-]{subsubsection.1.4.1}{Class Separability Confirmed via Kullback-Leibler Divergence}{subsection.1.4}% 8
+\BOOKMARK [3][-]{subsubsection.1.4.1}{Class Separability}{subsection.1.4}% 8
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Named Entity Recognition in Messages}{subsection.1.4}% 9
 \BOOKMARK [3][-]{subsubsection.1.4.3}{Sentiment Feature}{subsection.1.4}% 10
 \BOOKMARK [3][-]{subsubsection.1.4.4}{Feature Selection, Training and Test Data Size}{subsection.1.4}% 11
