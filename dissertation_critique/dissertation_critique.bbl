@@ -1,18 +1,15 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Che()]{Chee}
-PhD thesis.
-
-\bibitem[Bo~Pang(2008)]{Pang}
-Lillian~Lee Bo~Pang.
-\newblock Opinion mining and sentiment analysis.
-\newblock \emph{Foundations and Treneds in Information Retrieval}, 2\penalty0
-  (1-2):\penalty0 1 -- 135, 2008.
+\bibitem[Chee(2011)]{Chee}
+Brant Wah~Kwong Chee.
+\newblock \emph{Exploring Machine Learning Techniques Using Patient
+  Interactions in Online Health Forums to Classify Drug Safety}.
+\newblock Phd dissertation, University of Illinois at Urbana-Champaign, 2011.
 
 \bibitem[Corinna~Cortes(1995)]{Vapnik}
 Vladimir~Vapnik Corinna~Cortes.
@@ -39,6 +36,12 @@ George Forman.
 \newblock \emph{Journal of Machine Learning Research}, 3:\penalty0 1289 --
   1305, 2003.
 
+\bibitem[Foundation()]{English}
+Wikipedia Foundation.
+\newblock {English Language}.
+\newblock \url{https://en.wikipedia.org/wiki/English_language}.
+\newblock Online; accessed 2-April-2018.
+
 \bibitem[Joachims(1998)]{Joachims}
 Thorsten Joachims.
 \newblock Text categorization with support vector machines: Learning with many
@@ -52,8 +55,8 @@ Thorsten Joachims.
 David Heckerman Eric~Horvitz Mehran~Sahami, Susan~Dumais.
 \newblock A bayesian approach to filtering junk e-mail.
 
-\bibitem[n/a()]{Metamap}
-n/a.
+\bibitem[of~Health()]{Metamap}
+National~Institute of~Health.
 \newblock {MetaMap: A Tool For Recognizing UMLS Concepts in Text}.
 \newblock \url{https://metamap.nlm.nih.gov/}.
 \newblock Online; accessed 6-April-2018.
@@ -70,6 +73,12 @@ Doug Downey Anna-Maria Poescu Tal Shaked Stephen Soderland Daniel S. Weld
 World~Health Organization.
 \newblock International drug monitoring: The role of national centres.
 \newblock Technical Report 498, World Health Organization, 1972.
+
+\bibitem[Pang and Lee(2008)]{Pang}
+B.~Pang and L.~Lee.
+\newblock Opinion mining and sentiment analysis.
+\newblock \emph{Foundations and Treneds in Information Retrieval}, 2\penalty0
+  (1-2):\penalty0 1 -- 135, 2008.
 
 \bibitem[Stephanie S.~Rude(2004)]{Rude}
 James W.~Pennebaker Stephanie S.~Rude, Eva-Maria~Gortner.

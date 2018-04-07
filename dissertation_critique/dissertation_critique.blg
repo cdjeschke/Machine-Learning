@@ -2,24 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation_critique.aux
 The style file: plainnat.bst
-White space in argument---line 41 of file dissertation_critique.aux
- : \citation{Wikipedia
- :                     page for english}
-I'm skipping whatever remains of this command
 Database file #1: dissertation_critique.bib
-I was expecting a `,' or a `}'---line 2 of file dissertation_critique.bib
- :   
- :   title = {Exploring Machine Learning Techniques Using Patient Interactions in Online Health Forums to Classify Drug Safety},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 A bad cross reference---entry "Sahami"
 refers to entry "AAI98", which doesn't exist
-Warning--I didn't find a database entry for "FDA"
-Warning--I didn't find a database entry for "Fletcher"
 Warning--I didn't find a database entry for "OpenOffice"
 Warning--I didn't find a database entry for "Joachim"
 Warning--I didn't find a database entry for "AAI98"
-Warning--to sort, need author or key in Chee
 Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
 while executing---line 1347 of file plainnat.bst
 Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
@@ -48,12 +36,8 @@ Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric
 while executing---line 1347 of file plainnat.bst
 Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
 while executing---line 1347 of file plainnat.bst
-Warning--empty author in Chee
-Warning--empty title in Chee
-Warning--empty school in Chee
-Warning--empty year in Chee
-Warning--empty year in Chee
 Warning--empty year in FAERS
+Warning--empty year in English
 Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
 while executing---line 1429 of file plainnat.bst
 Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
@@ -86,45 +70,45 @@ Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Wei
 while executing---line 1429 of file plainnat.bst
 Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
 while executing---line 1429 of file plainnat.bst
-You've used 13 entries,
+You've used 14 entries,
             2773 wiz_defined-function locations,
-            689 strings with 6944 characters,
-and the built_in function-call counts, 4770 in all, are:
-= -- 443
-> -- 135
-< -- 15
-+ -- 53
-- -- 40
-* -- 305
-:= -- 714
-add.period$ -- 40
-call.type$ -- 13
-change.case$ -- 53
-chr.to.int$ -- 13
-cite$ -- 38
-duplicate$ -- 260
-empty$ -- 473
-format.name$ -- 54
-if$ -- 1028
+            696 strings with 7275 characters,
+and the built_in function-call counts, 5190 in all, are:
+= -- 482
+> -- 166
+< -- 17
++ -- 63
+- -- 49
+* -- 316
+:= -- 799
+add.period$ -- 46
+call.type$ -- 14
+change.case$ -- 60
+chr.to.int$ -- 14
+cite$ -- 34
+duplicate$ -- 275
+empty$ -- 502
+format.name$ -- 67
+if$ -- 1115
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 7
-newline$ -- 73
-num.names$ -- 50
-pop$ -- 133
+newline$ -- 81
+num.names$ -- 58
+pop$ -- 143
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 44
 quote$ -- 0
-skip$ -- 178
+skip$ -- 191
 stack$ -- 0
-substring$ -- 205
-swap$ -- 33
+substring$ -- 206
+swap$ -- 35
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
-warning$ -- 11
-while$ -- 45
+type$ -- 154
+warning$ -- 6
+while$ -- 51
 width$ -- 0
-write$ -- 170
-(There were 31 error messages)
+write$ -- 189
+(There were 29 error messages)
