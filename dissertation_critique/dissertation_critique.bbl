@@ -6,15 +6,10 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[Chee(2011)]{Chee}
-Brant Wah~Kwong Chee.
+B.~Chee.
 \newblock \emph{Exploring Machine Learning Techniques Using Patient
   Interactions in Online Health Forums to Classify Drug Safety}.
 \newblock Phd dissertation, University of Illinois at Urbana-Champaign, 2011.
-
-\bibitem[Corinna~Cortes(1995)]{Vapnik}
-Vladimir~Vapnik Corinna~Cortes.
-\newblock Support-vector networks.
-\newblock \emph{Machine Learning}, 20:\penalty0 273 -- 297, 1995.
 
 \bibitem[Dunning(1994)]{Dunning}
 Ted Dunning.
@@ -30,9 +25,8 @@ U.S. Food and Drug Administration.
 \newblock Online; accessed 5-April-2018.
 
 \bibitem[Forman(2003)]{Forman}
-George Forman.
-\newblock An extensive empirical study of feature selection metrics for text
-  classification.
+G.~Forman.
+\newblock An extensive empirical study of feature selection metrics for text.
 \newblock \emph{Journal of Machine Learning Research}, 3:\penalty0 1289 --
   1305, 2003.
 
@@ -80,8 +74,8 @@ B.~Pang and L.~Lee.
 \newblock \emph{Foundations and Treneds in Information Retrieval}, 2\penalty0
   (1-2):\penalty0 1 -- 135, 2008.
 
-\bibitem[Stephanie S.~Rude(2004)]{Rude}
-James W.~Pennebaker Stephanie S.~Rude, Eva-Maria~Gortner.
+\bibitem[Rude et~al.(2004)Rude, Gortner, and Pennebaker]{Rude}
+S.~Rude, E.~Gortner, and J.~Pennebaker.
 \newblock Language use of depressed and depression-vulnerable college students.
 \newblock \emph{Emotion and Cognition}, 18\penalty0 (8):\penalty0 1121 -- 1133,
   2004.
@@ -91,5 +85,10 @@ John N. Weinstein Lawrence~Hunter Thomas C.~Rindflesch, Lorraine~Tanabe.
 \newblock Edgar: Extraction of drugs, genes and relations from the biomedical
   literature.
 \newblock In \emph{Pacific Symposium on Biocomputing}, pages 517--528, 2000.
+
+\bibitem[Vapnik and Cortes(1995)]{Vapnik}
+V.~Vapnik and C.~Cortes.
+\newblock Support-vector networks.
+\newblock \emph{Machine Learning}, 20:\penalty0 273 -- 297, 1995.
 
 \end{thebibliography}

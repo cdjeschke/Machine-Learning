@@ -24,8 +24,9 @@
 % algorithms
 \usepackage{algorithmic}
 
-% Proper double quote formatting
-\usepackage{csquotes}
+% Citations
+\usepackage{natbib}
+\bibliographystyle{humannat}
 
 % Definitions of handy macros can go here
 \newcommand{\dataset}{{\cal D}}
@@ -171,22 +172,36 @@ Clearly watchlist and nonwatchlist diverge, and show a different degree of diver
 \subsubsection{Named Entity Recognition in Messages}
 Another challenge presented is how to identify the drugs and adverse events in a message - a problem of Named Entity Recognition (NER). A Lucene index is built atop the messages, against which query phrases built from the drug and reactions lexicons are issued to determine term prevalence. A lower case filter with stemming is used, requiring that drugs containing common words (e.g. ``commit'' for the drug Commit) be replaced with their generic chemical names in the lexicon. Plots are produced showing term distributions:
 
-\includegraphics[width=7cm, height=5cm]{Figure-1-Zipfian.png}
-\includegraphics[width=7cm, height=5cm]{Figure-2-AERS_Drugs.png}
+\hspace{-1cm}\begin{minipage}{.5\textwidth}
+  \centering
+  \begin{figure}[H]
+    \caption{Drug Mentions in Messages}
+    \label{fig:zipfian}
+    \includegraphics[width=7.5cm, height=6cm]{Figure-1-Zipfian.png}
+  \end{figure}
+\end{minipage}%
+\hspace{.25cm}\begin{minipage}{.5\textwidth}
+  \centering
+  \begin{figure}[H]
+    \caption{Drug and Adverse Event Mentions}
+    \label{fig:mentions}
+    \includegraphics[width=7.5cm, height=6cm]{Figure-2-AERS_Drugs.png}
+  \end{figure}
+\end{minipage}
 
-The first plot demonstrates a Zipfian distribution for drug name mentions in the messages, with more than 96\% of messages mentioning at most 5 drugs, prompting the elimination of messages with more than 5 unique drugs. The second plot shows adverse events are mentioned far more often than drug names, a cause for data scarcity concern. If multiple drugs are mentioned in a single message it becomes difficult to discern which drug the message should apply to, so another study is done to evaluate the number of characters between the top 25 co-occurring drugs. A Zipfian distribution is observed again, suggesting drugs are talked about within the same or adjacent sentences, making separation difficult. Chee defaults to attributing each message to all drugs mentioned.
+Figure \ref{fig:zipfian} shows a Zipfian distribution for drug name mentions in the messages, with more than 96\% of messages mentioning at most 5 drugs, prompting the elimination of messages with more than 5 unique drugs. Figure \ref{fig:mentions} shows adverse events are mentioned far more often than drug names, a cause for data scarcity concern. If multiple drugs are mentioned in a single message it becomes difficult to discern which drug the message should apply to, so another study is done to evaluate the number of characters between the top 25 co-occurring drugs. A Zipfian distribution is observed again, suggesting drugs are talked about within the same or adjacent sentences, making separation difficult. Chee defaults to attributing each message to all drugs mentioned.
 
 \subsubsection{Sentiment Feature}
  Chee hypothesizes the degree of negative valence in a message represents drug satisfaction, making it an interesting feature to incorporate into classification. A lexicon using terms from Linguistic Inquiry and Word Count (LIWC) is constructed, augmented with emoticons and acronyms. Two case studies are executed using messages sampled from specific groups in the corpus. The change in drug sentiment is analyzed over the drug's pre-recall, recall, and post-recall timeframes against a control sentiment derived from messages not containing the drug.
 
-\begin{minipage}{.5\textwidth}
+\hspace{-1cm}\begin{minipage}{.5\textwidth}
   \begin{figure}[H]
     \caption{Tysabri}
     \label{fig:tysabri}
     \includegraphics[width=7.5cm, height=6cm]{Figure-3-Tysabri.png}
   \end{figure}
 \end{minipage}%
-\begin{minipage}{.5\textwidth}
+\hspace{.25cm}\begin{minipage}{.5\textwidth}
   \begin{figure}[H]
     \caption{Vioxx}
     \label{fig:vioxx}
@@ -219,10 +234,9 @@ The experimental results and analysis make heavy use of acronyms to understand t
     \hline
   \end{tabular}
 \end{table}
-The accuracy of a na\"ive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, the lower bound introduces uncertainty that any classifier is more accurate than the baseline. The F1 and AUC scores are in tables \ref{table5} and \ref{table6} respectively.
+The accuracy of a na\"ive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, the lower bound introduces uncertainty that any classifier is more accurate than the baseline. The F1 and AUC scores are in Tables \ref{table5} and \ref{table6} respectively.
 
 \begin{minipage}{.6\textwidth}
-  \centering
   \begin{table}[H]
     \caption{F1 Scores}
     \label{table5}
@@ -240,7 +254,6 @@ The accuracy of a na\"ive baseline classifier that labels all instances as negat
   \end{table}
 \end{minipage}
 \begin{minipage}{.4\textwidth}
-  \centering
   \begin{table}[H]
     \caption{AUC}
     \label{table6}
@@ -439,6 +452,8 @@ Feature selection within the study is another application area to address. It wa
 
 Finally, it is worth discussing that this technique is not limited only to problems in the health and medical domains. Consumer product safety in general could benefit from monitoring public forums in this fashion in order to identify products posing significant safety hazards. Thousands of consumer products for child safety - such as car seats and life jackets - are available for purchase by the general public. Regulatory agencies such as the National Highway Traffic Safety Administration must evaluate products and post recall notifications, but despite best efforts unsafe products will still make it to market. Constructing similar monitoring systems for these agencies using public forums could help identify products in the market with previously unrecognized defects.
 
+% Bibliography
 \bibliography{dissertation_critique}
-\vskip 0.2in
+
+
 \end{document}
