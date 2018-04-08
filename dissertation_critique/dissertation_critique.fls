@@ -61,6 +61,14 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty

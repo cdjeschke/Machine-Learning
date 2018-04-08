@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 APR 2018 18:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 APR 2018 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -180,30 +180,78 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 \c@theorem=\count100
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen111
+\captionmargin@=\dimen112
+\captionwidth=\dimen113
+\caption@tempdima=\dimen114
+\caption@indent=\dimen115
+\caption@parindent=\dimen116
+\caption@hangindent=\dimen117
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \vskip 10pt \setbox \@tempboxa \hbox {#1: #2} \ifdim \wd \@tempboxa >\hsize \begin {list}{#1:}{ \settowidth {\labelwidth }{#1:} \setlength {\leftmargin }{\labelwidth } \addtolength {\leftmargin }{\labelsep } }\item #2 \end {list}\par \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } \fi .
+\c@ContinuedFloat=\count102
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+
+./dissertation_critique.tex:17: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 \captionsetup{skip=0pt}{j
+                              ustification=centering}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count103
+\c@subtable=\count104
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count101
-\c@ALC@line=\count102
-\c@ALC@rem=\count103
-\c@ALC@depth=\count104
+\c@ALC@unique=\count105
+\c@ALC@line=\count106
+\c@ALC@rem=\count107
+\c@ALC@depth=\count108
 \ALC@tlm=\skip50
 \algorithmicindent=\skip51
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
  (/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count105
+\etb@tempcnta=\count109
 )
-\csq@reset=\count106
-\csq@gtype=\count107
-\csq@glevel=\count108
-\csq@qlevel=\count109
-\csq@maxlvl=\count110
-\csq@tshold=\count111
-\csq@ltx@everypar=\toks16
+\csq@reset=\count110
+\csq@gtype=\count111
+\csq@glevel=\count112
+\csq@qlevel=\count113
+\csq@maxlvl=\count114
+\csq@tshold=\count115
+\csq@ltx@everypar=\toks18
  (/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2017/03/11 v5.2b csquotes generic definitions (JAW)
 )
@@ -214,36 +262,40 @@ File: csquotes.cfg
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./dissertation_critique.aux)
+ (./dissertation_critique.aux
+
+LaTeX Warning: Label `table7' multiply defined.
+
+)
 \openout1 = `dissertation_critique.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
  (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count112
-\scratchdimen=\dimen111
-\scratchbox=\box26
-\nofMPsegments=\count113
-\nofMParguments=\count114
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count115
-\MPscratchDim=\dimen112
-\MPnumerator=\count116
-\makeMPintoPDFobject=\count117
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count116
+\scratchdimen=\dimen118
+\scratchbox=\box28
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen119
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
+\everyMPtoPDFconversion=\toks20
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -256,47 +308,49 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 32.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 38.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count118
+\c@section@level=\count122
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 38.
+LaTeX Info: Redefining \pageref on input line 38.
+LaTeX Info: Redefining \nameref on input line 38.
  (./dissertation_critique.out) (./dissertation_critique.out)
 \@outlinefile=\write3
 \openout3 = `dissertation_critique.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 65.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 71.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
+
+Overfull \vbox (366.84671pt too high) has occurred while \output is active []
+
  [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
-Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 82.
+Package natbib Warning: Citation `OpenOffice' on page 2 undefined on input line 88.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 84.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 84.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-./dissertation_critique.tex:118: Misplaced alignment tab character &.
-l.118 ...of experiments using various classifier &
+) [2]
+./dissertation_critique.tex:127: Misplaced alignment tab character &.
+l.127 ...of experiments using various classifier &
                                                    lexicon combinations and ...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -305,136 +359,123 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[3]
 
-./dissertation_critique.tex:132: LaTeX Error: \begin{center} on input line 122 ended by \end{tabular}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.132   \end{tabular}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (2.19511pt too wide) in paragraph at lines 124--149
-[][]  [] 
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 130--168
+[]$ $[]$ 
  []
 
 
-./dissertation_critique.tex:149: LaTeX Error: \begin{document} ended by \end{center}.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.149 \end{center}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./dissertation_critique.tex:149: Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.149 \end{center}
-                  
-Things are pretty mixed up, but I think the worst is over.
-
-<images/Figure-1-Zipfian.png, id=151, 431.6125pt x 327.2225pt>
+ [3] <images/Figure-1-Zipfian.png, id=157, 431.6125pt x 327.2225pt>
 File: images/Figure-1-Zipfian.png Graphic file (type png)
  <use images/Figure-1-Zipfian.png>
-Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 155.
+Package pdftex.def Info: images/Figure-1-Zipfian.png used on input line 174.
 (pdftex.def)             Requested size: 199.16982pt x 142.26074pt.
- <images/Figure-2-AERS_Drugs.png, id=153, 418.56375pt x 264.99pt>
+ <images/Figure-2-AERS_Drugs.png, id=159, 418.56375pt x 264.99pt>
 File: images/Figure-2-AERS_Drugs.png Graphic file (type png)
  <use images/Figure-2-AERS_Drugs.png>
-Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 156.
+Package pdftex.def Info: images/Figure-2-AERS_Drugs.png used on input line 175.
 (pdftex.def)             Requested size: 199.16472pt x 142.26357pt.
- [4 <./images/Figure-1-Zipfian.png> <./images/Figure-2-AERS_Drugs.png>] <images/Figure-3-Tysabri.png, id=160, 503.8825pt x 303.1325pt>
+ <images/Figure-3-Tysabri.png, id=160, 501.875pt x 281.05pt>
 File: images/Figure-3-Tysabri.png Graphic file (type png)
  <use images/Figure-3-Tysabri.png>
-Package pdftex.def Info: images/Figure-3-Tysabri.png used on input line 163.
-(pdftex.def)             Requested size: 199.16595pt x 142.26414pt.
- <images/Figure-4-Vioxx.png, id=161, 462.72874pt x 288.07625pt>
+Package pdftex.def Info: images/Figure-3-Tysabri.png used on input line 186.
+(pdftex.def)             Requested size: 213.39743pt x 170.71548pt.
+ <images/Figure-4-Vioxx.png, id=161, 461.725pt x 274.02374pt>
 File: images/Figure-4-Vioxx.png Graphic file (type png)
  <use images/Figure-4-Vioxx.png>
-Package pdftex.def Info: images/Figure-4-Vioxx.png used on input line 164.
-(pdftex.def)             Requested size: 199.16718pt x 142.2663pt.
- [5 <./images/Figure-3-Tysabri.png> <./images/Figure-4-Vioxx.png>] [6]
-./dissertation_critique.tex:224: You can't use `macro parameter character #' in restricted horizontal mode.
+Package pdftex.def Info: images/Figure-4-Vioxx.png used on input line 193.
+(pdftex.def)             Requested size: 213.39651pt x 170.72086pt.
+
+Overfull \hbox (17.0pt too wide) in paragraph at lines 182--196
+[]$[]$$[]$ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./images/Figure-1-Zipfian.png> <./images/Figure-2-AERS_Drugs.png>] [5 <./images/Figure-3-Tysabri.png> <./images/Figure-4-Vioxx.png>]
+Overfull \hbox (19.43332pt too wide) in paragraph at lines 224--260
+[]$[]$ $[]$ 
+ []
+
+./dissertation_critique.tex:276: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.224     Drug & #
+l.276     Drug & #
                    Positives & # Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:224: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:276: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.224     Drug & # Positives & #
+l.276     Drug & # Positives & #
                                  Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:224: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:276: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.224     Drug & # Positives & # Occurrences & #
+l.276     Drug & # Positives & # Occurrences & #
                                                  Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[7]
-./dissertation_critique.tex:251: You can't use `macro parameter character #' in restricted horizontal mode.
+[6]
+./dissertation_critique.tex:306: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.251     Drug & #
+l.306     Drug & #
                    Positives & # Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:251: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:306: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.251     Drug & # Positives & #
+l.306     Drug & # Positives & #
                                  Occurrences & # Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-./dissertation_critique.tex:251: You can't use `macro parameter character #' in restricted horizontal mode.
+./dissertation_critique.tex:306: You can't use `macro parameter character #' in restricted horizontal mode.
 <recently read> ##
                   
-l.251     Drug & # Positives & # Occurrences & #
+l.306     Drug & # Positives & # Occurrences & #
                                                  Classifiers & Score \\
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
 If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
-[8] [9]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [8] [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-./dissertation_critique.tex:335: Undefined control sequence.
-l.335   y_{i}(w \cdot x_{i} + b) \gte
+./dissertation_critique.tex:390: Undefined control sequence.
+l.390   y_{i}(w \cdot x_{i} + b) \gte
                                       1,  i = 1, ...., l
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -442,8 +483,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./dissertation_critique.tex:344: Too many }'s.
-l.344 ...t a given document D belongs to class C?}
+./dissertation_critique.tex:399: Too many }'s.
+l.399 ...t a given document D belongs to class C?}
                                                   '', expressed as the \text...
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
@@ -452,8 +493,8 @@ Such booboos are generally harmless, so keep going.
 Underfull \vbox (badness 2717) has occurred while \output is active []
 
  [12]
-./dissertation_critique.tex:354: Undefined control sequence.
-l.354   \hat{y} = argmax_{k \element
+./dissertation_critique.tex:409: Undefined control sequence.
+l.409   \hat{y} = argmax_{k \element
                                      {wl, nwl}} p(C_{k}) \prod_{i=1}^{n}p(x_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -461,10 +502,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./dissertation_critique.tex:360: Misplaced alignment tab character &.
+./dissertation_critique.tex:415: Misplaced alignment tab character &.
 <argument> Health &
                     Safety Literature
-l.360 \subsubsection{Health & Safety Literature}
+l.415 \subsubsection{Health & Safety Literature}
                                                 
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -475,15 +516,15 @@ might try typing `S' now just to see what is salvageable.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 360.
+(hyperref)                than one, level fixed on input line 415.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `alignment tab' on input line 360.
+(hyperref)                removing `alignment tab' on input line 415.
 
 [13]
-./dissertation_critique.tex:369: Misplaced alignment tab character &.
-l.369 ... processing system for discovering drug &
+./dissertation_critique.tex:424: Misplaced alignment tab character &.
+l.424 ... processing system for discovering drug &
                                                    gene relationships pertai...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -493,13 +534,13 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Package natbib Warning: Citation `Joachim' on page 14 undefined on input line 375.
+Package natbib Warning: Citation `Joachim' on page 14 undefined on input line 430.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-Overfull \hbox (5.38014pt too wide) in paragraph at lines 376--377
+Overfull \hbox (5.38014pt too wide) in paragraph at lines 431--432
 []\OT1/cmr/m/n/10.95 Na^^?^^Pve Bayes clas-si-fi-ca-tion is ex-plored in the con-text of SPAM clas-si-fi-ca-tion by ([]Mehran Sa-
  []
 
@@ -536,29 +577,33 @@ and I'll forget about whatever was undefined.
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
 [17]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
  (./dissertation_critique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `dissertation_critique.out' has not changed.
 (rerunfilecheck)             Checksum: C9242A5C888F1F6D4C0745CDA8C4FD59;2401.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  ) 
 Here is how much of TeX's memory you used:
- 7001 strings out of 492995
- 101854 string characters out of 6132704
- 201881 words of memory out of 5000000
- 10412 multiletter control sequences out of 15000+600000
+ 8154 strings out of 492995
+ 122479 string characters out of 6132704
+ 231497 words of memory out of 5000000
+ 11543 multiletter control sequences out of 15000+600000
  11576 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,31p,1094b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,39p,1094b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on dissertation_critique.pdf (17 pages, 313263 bytes).
+Output written on dissertation_critique.pdf (17 pages, 314925 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 350 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
  261 words of extra memory for PDF output out of 10000 (max. 10000000)
 

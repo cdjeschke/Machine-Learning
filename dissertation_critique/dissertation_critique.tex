@@ -11,6 +11,12 @@
 \usepackage{jmlr2e}
 \usepackage{setspace}
 
+% Figures (tables)
+\usepackage{float}
+\usepackage{caption}
+\captionsetup{skip=0pt}{justification=centering}
+\usepackage{subcaption}
+
 % Graphics
 \usepackage{graphicx}
 \graphicspath{{images/}}
@@ -79,8 +85,11 @@ Chee identifies a major limitation in AERS and other \textit{spontaneous reporti
 The data selected for the dissertation's experimentation is a Yahoo! corpus containing 12.5 million messages from various Yahoo Health group forums. As the data is a raw export containing a combination of message metadata, raw text and HTML, it must first be studied to better understand its composition and what NLP techniques will be applied for feature extraction. %Reviewed
 
 \subsubsection{Tokenization Study of Data}
-Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, stripping them of html tags, numerical and punctuation only tokens (\$, \%, :), :(, et.), then tokenizing them on white spaces with trailing punctuation. The tokens are evaluated in several rounds of classification using lexicons constructed by Chee. Lexicons for English and foreign language were drawn from the OpenOffice project \citep{OpenOffice}, drug names from the Drugs@FDA website, medical and disease terminology from terms on MedicineNet and Wikipedia, and a reactions lexicon from the MedDRA terminology in AERS. A names lexicon was constructed using person names harvested from various sources. The classification process was iterative. If a token did not initially classify via a lexicon, it was manually classified into \textit{error types}. Average metrics were as follows:
-\begin{center}
+Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 messages, stripping them of html tags, numerical and punctuation only tokens (\$, \%, :), :(, et.), then tokenizing them on white spaces with trailing punctuation. The tokens are evaluated in several rounds of classification using lexicons constructed by Chee. Lexicons for English and foreign language were drawn from the OpenOffice project \citep{OpenOffice}, drug names from the Drugs@FDA website, medical and disease terminology from terms on MedicineNet and Wikipedia, and a reactions lexicon from the MedDRA terminology in AERS. A names lexicon was constructed using person names harvested from various sources. The classification process was iterative. If a token did not initially classify via a lexicon, it was manually classified into \textit{error types}. Table \ref{table1} shows average metric counts across the sampled messages:
+\begin{table}[H]
+  \centering
+  \caption{Average Token Counts}
+  \label{table1}
   \begin{tabular}{||c|c||}
     \hline
     \verb|Average # of Tokens per Message:| & 172.21\\
@@ -94,7 +103,7 @@ Chee conducts an initial study of the Yahoo! corpus by selecting at random 500 m
     \verb|Average # of Medical Tokens:| & .81\\
     \hline
   \end{tabular}
-\end{center}
+\end{table}
 Of the error tokens, over 54\% of them were found to be foreign language tokens, motivating experimentation to classify messages as English before incorporating them into later studies. Spelling errors were also a concern, but the classification results show only a $.8\%$ error rate. %Reviewed.
 
 \subsubsection{A Vocabulary for Experimentation}
@@ -118,35 +127,45 @@ The weighting of the foreign words is selected to ensure messages contain less t
 The goal of the dissertation is to develop a classification system for drugs based on how people are talking about them in online message forums. Chee constructs a multitude of experiments using various classifier & lexicon combinations and other options to deduce the best classifier configuration(s) for use in the final system.
 
 \subsubsection{Class Separability}
-Chee begins with an experiment to determine how separable messages about watchlist and non-watchlist drugs are. Kullback-Leibler divergence (KL Divergence) is used to measure the difference in word frequency distribution between messages in each class. The KL-Divergence between watchlist and non-watchlist word frequencies is calculated, and divergence from Google and Reuters corpi to provide perspective. Terms overexpressed in the watchlist messages are also examined:
-\begin{center}
-  % KL Divergence Metrics
-  \tabular{||c|c|c|c|c||}
-    \hline
-    Classification & Watchlist & Non-Watchlist & Google & Reuters \\
-    \hline\hline
-    Watchlist & n/a & .1684 & 1.4178 & 1.3279 \\
-    \hline
-    Non-Watchlist & .1778 & n/a & 1.1804 & 1.0815 \\
-    \hline
-  \end{tabular}
-  \quad
-  \begin{tabular}{||c|c||}
-    \hline
-    Term & Divergence \\
-    \hline\hline
-    i & .007875 \\
-    \hline
-    my & .003018 \\
-    \hline
-    me & .0002256 \\
-    \hline
-    you & .001712 \\
-    \hline
-    i'm & .000964 \\
-    \hline
-  \end{tabular}
-\end{center}
+Chee begins with an experiment to determine how separable messages about watchlist and non-watchlist drugs are. Kullback-Leibler divergence (KL Divergence) is used to measure the difference in word frequency distribution between messages in each class. Table \ref{table2} shows the divergence between classes, as well as divergence from Google and Reuters corpi to provide perspective. Terms overexpressed in watchlist messages are in Table \ref{table3}:
+% Two tables side by side
+\begin{minipage}{0.75\textwidth}
+  \begin{table}[H]
+    \caption{Class Divergence}
+    \label{table2}
+    \begin{tabular}{||c|c|c|c|c||}
+      \hline
+      Class & Watchlist & Non-Watchlist & Google & Reuters \\
+      \hline\hline
+      Watchlist & n/a & .1684 & 1.4178 & 1.3279 \\
+      \hline
+      Non-Watchlist & .1778 & n/a & 1.1804 & 1.0815 \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{minipage}
+\begin{minipage}{0.25\textwidth}
+  \begin{table}[H]
+    \caption{Terms}
+    \label{table3}
+    \begin{tabular}{||c|c||}
+      \hline
+      Term & Divergence \\
+      \hline\hline
+      i & .007875 \\
+      \hline
+      my & .003018 \\
+      \hline
+      me & .0002256 \\
+      \hline
+      you & .001712 \\
+      \hline
+      i'm & .000964 \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{minipage}
+
 Clearly watchlist and nonwatchlist diverge, and show a different degree of divergence from the Google and Reuters corpi. The overexpressed terms are interesting, as they seem indicative of emotional writing - just the kind that might occur when discussing a drug with an adverse effect.
 
 \subsubsection{Named Entity Recognition in Messages}
@@ -160,10 +179,22 @@ The first plot demonstrates a Zipfian distribution for drug name mentions in the
 \subsubsection{Sentiment Feature}
  Chee hypothesizes the degree of negative valence in a message represents drug satisfaction, making it an interesting feature to incorporate into classification. A lexicon using terms from Linguistic Inquiry and Word Count (LIWC) is constructed, augmented with emoticons and acronyms. Two case studies are executed using messages sampled from specific groups in the corpus. The change in drug sentiment is analyzed over the drug's pre-recall, recall, and post-recall timeframes against a control sentiment derived from messages not containing the drug.
 
-\includegraphics[width=7cm, height=5cm]{Figure-3-Tysabri.png}
-\includegraphics[width=7cm, height=5cm]{Figure-4-Vioxx.png}
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \caption{Tysabri}
+    \label{fig:tysabri}
+    \includegraphics[width=7.5cm, height=6cm]{Figure-3-Tysabri.png}
+  \end{figure}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \begin{figure}[H]
+    \caption{Vioxx}
+    \label{fig:vioxx}
+    \includegraphics[width=7.5cm, height=6cm]{Figure-4-Vioxx.png}
+  \end{figure}
+\end{minipage}
 
-The left-most plot shows a reasonably intuitive change in negative valence for Tysabri when it is introduced (more positive), withdrawn (negative), reintroduced (hopeful therefore positive), finally stabilizing. The right plot shows sentiment change for a pair of commonly used pain relievers - Vioxx and Celebrex - over the course of several public anouncements. First a withdrawal of Viox (sections 1 through 3), then Celebrex (4 and 5). ANOVA is applied, determining statistical significance against the control with \verb|p < .001|.
+Figure \ref{fig:tysabri} shows a reasonably intuitive change in negative valence for Tysabri when it is introduced (more positive), withdrawn (negative), reintroduced (hopeful therefore positive), finally stabilizing. Figure \ref{fig:vioxx} shows sentiment change for a pair of commonly used pain relievers - Vioxx and Celebrex - over the course of several public anouncements. First a withdrawal of Viox (sections 1 through 3), then Celebrex (4 and 5). ANOVA is applied, determining statistical significance against the control with \verb|p < .001|.
 
 \subsubsection{Feature Selection, Training and Test Data Size}
 The introduction to the main body of classification experiments is preceded by a brief discussion on the features vectors used, as well as how cross-validation training is setup. Two types of feature vector are decided upon. The first is generated over general vocabulary terms in the messages selected based on frequency, then augmented with counts from the specialized lexicons. The second feature vector uses only the specialized lexicons to identify the word features.
@@ -171,9 +202,12 @@ Training data is of foremost concern, as there are only 435 drugs having 500 or 
 
 \subsubsection{Classifier and Lexicon Selection}
 The next goal of the dissertation is to discover the best performing combinations of classifier, lexicons and feature selection as a means to inform the construction of a \textit{Meta classifier} used in watchlist drug prediction. A training methodology is devised where test and training sets are sampled with the same distribution as the original data, divided into a 90/10 split with 90\% of the samples for training and 10\% for validation. The splits themselves mirror follow the original distribution.
-The experimental results and analysis make heavy use of acronyms to understand the combinations evaluated. For example, \textit{drugs\_dis\_sent\_react\_NSVMC} would equate to using a Normalized SVM with Cost Weighting (NSVMC) incorporating the drugs(drugs), disease(dis), sentiment(sent) and reaction(react) lexicons. A series of 240 experiments were run using various combinations to ascertain the best configurations for accuracy, F1 score, and area under the ROC curve (AUC).The top 3 classifier configurations for accuracy are presented below with their upper and lower bounds:
-\begin{center}
-  \begin{tabular}{||c c c c||}
+The experimental results and analysis make heavy use of acronyms to understand the combinations evaluated. For example, \textit{drugs\_dis\_sent\_react\_NSVMC} would equate to using a Normalized SVM with Cost Weighting (NSVMC) incorporating the drugs(drugs), disease(dis), sentiment(sent) and reaction(react) lexicons. A series of 240 experiments were run using various combinations to ascertain the best configurations for accuracy, F1 score, and area under the ROC curve (AUC). Table \ref{table4} shows the top 3 classifier configurations by accuracy with upper and lower bounds for the 95\% confidence interval:
+\begin{table}[H]
+  \centering
+  \caption{Accuracy}
+  \label{table4}
+  \begin{tabular}{||c|c|c|c||}
     \hline
     Configuration & Accuracy & Lower & Upper \\
     \hline\hline
@@ -184,32 +218,47 @@ The experimental results and analysis make heavy use of acronyms to understand t
     \verb|drugs_sent_react_NSVM| & 0.9013 & 0.7908 & 0.9566 \\
     \hline
   \end{tabular}
-\end{center}
-The accuracy of a na\"ive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, the lower bound introduces uncertainty that any classifier is more accurate than the baseline. F1 and area under the ROC curve (AUC) scores are evaluated next:
-\begin{center}
-  \begin{tabular}{||c c||}
-    \hline
-    Configuration & F1 Score\\
-    \hline\hline
-    \verb|drugs_dis_react_NSVM| & 0.4761 \\
-    \hline
-    \verb|drugs_dis_react_UNB| & 0.4725 \\
-    \hline
-    \verb|drugs_UNB| & 0.4698 \\
-    \hline
-  \end{tabular}
-  \quad
-  \begin{tabular}{||c c||}
-    \hline Configuration & AUC \\
-    \hline\hline
-    \verb|drugs_UNB| & 0.7592 \\
-    \hline
-    \verb|drugs_dis_UNB| & 0.7564 \\
-    \hline
-    \verb|med_drugs_NNB| & 0.7545 \\
-    \hline
-  \end{tabular}
-\end{center}
+\end{table}
+The accuracy of a na\"ive baseline classifier that labels all instances as negative would be 86.7\% per concentrations of non-watchlist and watchlist drugs in the training data. While several configurations exceed this, the lower bound introduces uncertainty that any classifier is more accurate than the baseline. The F1 and AUC scores are in tables \ref{table5} and \ref{table6} respectively.
+
+\begin{minipage}{.6\textwidth}
+  \centering
+  \begin{table}[H]
+    \caption{F1 Scores}
+    \label{table5}
+    \begin{tabular}{||c|c||}
+      \hline
+      Configuration & F1 \\
+      \hline\hline
+      \verb|drugs_dis_react_NSVM| & 0.4761 \\
+      \hline
+      \verb|drugs_dis_react_UNB| & 0.4725 \\
+      \hline
+      \verb|drugs_UNB| & 0.4698 \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+  \centering
+  \begin{table}[H]
+    \caption{AUC}
+    \label{table6}
+    \begin{tabular}{||c|c||}
+      \hline
+      Configuration & AUC \\
+      \hline\hline
+      \verb|drugs_UNB| & 0.7592 \\
+      \hline
+      \verb|drugs_dis_UNB| & 0.7564 \\
+      \hline
+      \verb|med_drugs_NNB| & 0.7545 \\
+      \hline
+    \end{tabular}
+  \end{table}
+\end{minipage}
+
+
 Neither the F1 nor AUC scores are particularly impressive. The F1 scores were decomposed into their precision and recall components, and scatter plotted. A general observation was most scores had a mass concentration of low recall and precision, with the occasional high recall or high precision outlier - though never both.
 
 \subsubsection{Evaluating the BNS Lexicon}
@@ -217,9 +266,12 @@ Bi-Normal Separation (BNS) is an alternative technique explored by Chee for disc
 
 \subsubsection{Predicting Watchlist Drugs}
 The previous experiments were used to assemble a meta-classifier using the best classifiers based on accuracy, F1 and AUC scores. A normalized SVM with the disease and reaction lexicons is selected for its 90.33\% accuracy. The normalized SVM with drug, disease and reaction lexicons is selected for its F1 score of 0.4762. Finally, an Un-normalized Na\"ive Bayes with the drugs lexicon is used for its AUC score of 0.7925.
-Two meta-classification experiments are constructed. The first experiment uses training data modified to denote drugs \textit{withdrawn} from the market as non-watchlist, as withdrawn drugs represent a subclass of watchlist drugs. By looking for these non-watchlist, withdrawn drugs in the false positives from the results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination $\frac{fp}{occurrences} * fp * (classifiers)$, where $fp$ is a \textit{false positive}, an occurrence is an instance of a withdrawn drug being classified, and classifiers is a count of the unique classifiers generating a positive classification. The table below shows the top 5 scores by generic drug name, as well as those withdrawn drugs identified as false positives.
-\begin{center}
-  \begin{tabular}{||c c c c c||}
+Two meta-classification experiments are constructed. The first experiment uses training data modified to denote drugs \textit{withdrawn} from the market as non-watchlist, as withdrawn drugs represent a subclass of watchlist drugs. By looking for these non-watchlist, withdrawn drugs in the false positives from the results, we evaluate the ability to discern new watchlist drugs. This experiment was executed via training runs to build 100 classifiers of each configuration. A scoring methodology is applied using the following linear combination $\frac{fp}{occurrences} * fp * (classifiers)$, where $fp$ is a \textit{false positive}, an occurrence is an instance of a withdrawn drug being classified, and classifiers is a count of the unique classifiers generating a positive classification. Table \ref{table7} below shows the top 5 scores by generic drug name, as well as those withdrawn drugs identified as false positives.
+\begin{table}[H]
+  \centering
+  \caption{Withdrawn drugs marked non-watchlist}
+  \label{table7}
+  \begin{tabular}{||c|c|c|c|c||}
     \hline
     Drug & # Positives & # Occurrences & # Classifiers & Score \\
     \hline\hline
@@ -242,11 +294,14 @@ Two meta-classification experiments are constructed. The first experiment uses t
     \textit{cerivastatin} (Baycol) & 1 & 33 & 1 & 0.030 \\
     \hline
   \end{tabular}
-\end{center}
+\end{table}
 The generic Sibutramine (brand name: Meridia) is of particular interest to this study, as it is under review but not yet an official watchlist drug. FDA has issued safety communications as of November of 2009, and the European Union has removed it from the market.
-The second experiment entails removing the withdrawn drugs entirely from training, classifying them after a classifier is built for each fold during cross-validation. This approach is presumed to identify the withdrawn drugs with greater confidence as they are not present in the training data:
-\begin{center}
-  \begin{tabular}{||c c c c c||}
+The second experiment entails removing the withdrawn drugs entirely from training, classifying them after a classifier is built for each fold during cross-validation. This approach is presumed to identify the withdrawn drugs with greater confidence as they are not present in the training data. Table \ref{table7} shows the results.
+\begin{table}[H]
+  \centering
+  \caption{Withdrawn drugs removed}
+  \label{table7}
+  \begin{tabular}{||c|c|c|c|c||}
     \hline
     Drug & # Positives & # Occurrences & # Classifiers & Score \\
     \hline\hline
@@ -273,7 +328,7 @@ The second experiment entails removing the withdrawn drugs entirely from trainin
     \textit{cerivastatin} (Baycol) & 2 & 100 & 1 & 0.04\\
     \hline
   \end{tabular}
-\end{center}
+\end{table}
 Interestingly sibutramine does score significantly higher in this experiment, as do several of the withdrawn drugs (hydromorphone, rofecoxib, trovafloxacin). Psychiatric drugs (Ritalin) and opiates (morphine) show up near the top in both experiments, presumably because they are more dangerous and more often associated with adverse reactions.
 
 \section{Discussion of Contributions}
