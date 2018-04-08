@@ -2,117 +2,53 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation_critique.aux
 The style file: plainnat.bst
-Illegal, another \bibstyle command---line 20 of file dissertation_critique.aux
- : \bibstyle
- :          {humannat}
-I'm skipping whatever remains of this command
 Database file #1: dissertation_critique.bib
 A bad cross reference---entry "Sahami"
 refers to entry "AAI98", which doesn't exist
-Warning--I didn't find a database entry for "OpenOffice"
-Warning--I didn't find a database entry for "Joachim"
 Warning--I didn't find a database entry for "AAI98"
-Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
-while executing---line 1347 of file plainnat.bst
-Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
-while executing---line 1347 of file plainnat.bst
-Warning--empty year in FAERS
 Warning--empty year in English
-Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Mehran Sahami, Susan Dumais, David Heckerman, Eric Horvitz" for entry Sahami
-while executing---line 1429 of file plainnat.bst
-Warning--empty booktitle in Sahami
-Warning--empty year in Sahami
-Warning--empty year in Sahami
+Warning--empty year in FAERS
 Warning--empty year in Metamap
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Oren Etzioni, Michael Cafarella, Doug Downey, Anna-Maria Poescu, Tal Shaked, Stephen Soderland, Daniel S. Weld, Alexander Yates" for entry Etzioni
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
-while executing---line 1429 of file plainnat.bst
-Too many commas in name 1 of "Thomas C. Rindflesch, Lorraine Tanabe, John N. Weinstein, Lawrence Hunter" for entry Rindflesch
-while executing---line 1429 of file plainnat.bst
+Warning--empty booktitle in Sahami
 You've used 14 entries,
             2773 wiz_defined-function locations,
-            696 strings with 7224 characters,
-and the built_in function-call counts, 5370 in all, are:
-= -- 496
-> -- 197
-< -- 16
-+ -- 72
-- -- 58
-* -- 343
-:= -- 826
-add.period$ -- 46
+            689 strings with 7095 characters,
+and the built_in function-call counts, 6080 in all, are:
+= -- 548
+> -- 316
+< -- 13
++ -- 110
+- -- 96
+* -- 437
+:= -- 941
+add.period$ -- 47
 call.type$ -- 14
-change.case$ -- 63
+change.case$ -- 76
 chr.to.int$ -- 14
-cite$ -- 34
-duplicate$ -- 276
-empty$ -- 503
-format.name$ -- 78
-if$ -- 1151
+cite$ -- 32
+duplicate$ -- 281
+empty$ -- 508
+format.name$ -- 116
+if$ -- 1289
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 7
-newline$ -- 81
-num.names$ -- 58
-pop$ -- 147
+newline$ -- 82
+num.names$ -- 56
+pop$ -- 166
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 60
 quote$ -- 0
-skip$ -- 196
+skip$ -- 215
 stack$ -- 0
-substring$ -- 206
-swap$ -- 35
+substring$ -- 214
+swap$ -- 37
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 154
-warning$ -- 6
-while$ -- 51
+warning$ -- 4
+while$ -- 50
 width$ -- 0
-write$ -- 189
-(There were 30 error messages)
+write$ -- 191
+(There was 1 error message)

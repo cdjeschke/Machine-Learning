@@ -12,16 +12,31 @@ B.~Chee.
 \newblock Phd dissertation, University of Illinois at Urbana-Champaign, 2011.
 
 \bibitem[Dunning(1994)]{Dunning}
-Ted Dunning.
+T.~Dunning.
 \newblock Statistical identification of language.
-\newblock \notype, Computing Research Laboratory - New Mexico State University,
-  March 1994.
+\newblock Technical report, Computing Research Laboratory - New Mexico State
+  University, March 1994.
+
+\bibitem[English()]{English}
+English.
+\newblock English language.
+\newblock \url{https://en.wikipedia.org/wiki/English_language}.
+\newblock Online; accessed 2-April-2018.
+
+\bibitem[Etzioni et~al.(2005)Etzioni, Cafarella, Downey, Poescu, Shaked,
+  Soderland, Weld, and Yates]{Etzioni}
+O.~Etzioni, M.~Cafarella, D.~Downey, A.~Poescu, T.~Shaked, S.~Soderland,
+  D.~Weld, and A.~Yates.
+\newblock Unsupervised named-entity extraction from the web: An experimental
+  study.
+\newblock Technical report, Department of Computer Science - University of
+  Washington, February 2005.
 
 \bibitem[Food and Administration()]{FAERS}
 U.S. Food and Drug Administration.
-\newblock {FDA Adverse Event Reporting System}.
+\newblock Fda adverse event reporting system.
 \newblock
-  \url{https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/}.
+  \url{https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects}.
 \newblock Online; accessed 5-April-2018.
 
 \bibitem[Forman(2003)]{Forman}
@@ -30,49 +45,32 @@ G.~Forman.
 \newblock \emph{Journal of Machine Learning Research}, 3:\penalty0 1289 --
   1305, 2003.
 
-\bibitem[Foundation()]{English}
-Wikipedia Foundation.
-\newblock {English Language}.
-\newblock \url{https://en.wikipedia.org/wiki/English_language}.
-\newblock Online; accessed 2-April-2018.
-
 \bibitem[Joachims(1998)]{Joachims}
-Thorsten Joachims.
+T.~Joachims.
 \newblock Text categorization with support vector machines: Learning with many
   relevant features.
-\newblock In C{\'e}line~Rouveirol Claire~N{\'e}dellec, editor, \emph{Machine
-  Learning: EMCL-98}, pages 137 -- 142, Berlin, Heidelberg, 1998. Springer
-  Berlin Heidelberg.
+\newblock In \emph{Machine Learning: EMCL-98}, pages 137 -- 142, Berlin,
+  Heidelberg, 1998. Spring Berlin Heidelberg.
 \newblock ISBN 978-3-540-69781-7.
 
-\bibitem[Mehran~Sahami()]{Sahami}
-David Heckerman Eric~Horvitz Mehran~Sahami, Susan~Dumais.
-\newblock A bayesian approach to filtering junk e-mail.
-
-\bibitem[of~Health()]{Metamap}
-National~Institute of~Health.
-\newblock {MetaMap: A Tool For Recognizing UMLS Concepts in Text}.
-\newblock \url{https://metamap.nlm.nih.gov/}.
+\bibitem[{National Institute of Health}()]{Metamap}
+{National Institute of Health}.
+\newblock Metamap: A tool for recognizing umls concepts in text.
+\newblock \url{https://metamap.nlm.nih.gov}.
 \newblock Online; accessed 6-April-2018.
-
-\bibitem[Oren~Etzioni(2005)]{Etzioni}
-Doug Downey Anna-Maria Poescu Tal Shaked Stephen Soderland Daniel S. Weld
-  Alexander~Yates Oren~Etzioni, Michael~Cafarella.
-\newblock Unsupervised named-entity extraction from the web: An experimental
-  study.
-\newblock \notype, Department of Computer Science and Engineering - University
-  of Washington, Feburary 2005.
-
-\bibitem[Organization(1972)]{WHO}
-World~Health Organization.
-\newblock International drug monitoring: The role of national centres.
-\newblock Technical Report 498, World Health Organization, 1972.
 
 \bibitem[Pang and Lee(2008)]{Pang}
 B.~Pang and L.~Lee.
 \newblock Opinion mining and sentiment analysis.
-\newblock \emph{Foundations and Treneds in Information Retrieval}, 2\penalty0
+\newblock \emph{Foundations and Trends in Information Retrieval}, 2\penalty0
   (1-2):\penalty0 1 -- 135, 2008.
+
+\bibitem[Rindflesch et~al.(2000)Rindflesch, Tanabe, Weinstein, and
+  Hunter]{Rindflesch}
+T.~Rindflesch, L.~Tanabe, J.~Weinstein, and L.~Hunter.
+\newblock Edgar: Extraction of drugs, genes and relations from the biomedical
+  literature.
+\newblock In \emph{Pacific Symposium on Biocomputing}, pages 517 -- 528, 2000.
 
 \bibitem[Rude et~al.(2004)Rude, Gortner, and Pennebaker]{Rude}
 S.~Rude, E.~Gortner, and J.~Pennebaker.
@@ -80,15 +78,19 @@ S.~Rude, E.~Gortner, and J.~Pennebaker.
 \newblock \emph{Emotion and Cognition}, 18\penalty0 (8):\penalty0 1121 -- 1133,
   2004.
 
-\bibitem[Thomas C.~Rindflesch(2000)]{Rindflesch}
-John N. Weinstein Lawrence~Hunter Thomas C.~Rindflesch, Lorraine~Tanabe.
-\newblock Edgar: Extraction of drugs, genes and relations from the biomedical
-  literature.
-\newblock In \emph{Pacific Symposium on Biocomputing}, pages 517--528, 2000.
+\bibitem[Sahami et~al.(1998)Sahami, Dumais, Heckerman, and Horvitz]{Sahami}
+M.~Sahami, S.~Dumais, D.~Heckerman, and E.~Horvitz.
+\newblock A bayesian approach to filtering junk e-mail.
+\newblock 1998.
 
 \bibitem[Vapnik and Cortes(1995)]{Vapnik}
 V.~Vapnik and C.~Cortes.
 \newblock Support-vector networks.
 \newblock \emph{Machine Learning}, 20:\penalty0 273 -- 297, 1995.
+
+\bibitem[{World Health Organization}(1972)]{WHO}
+{World Health Organization}.
+\newblock International drug monitoring: The role of national centres.
+\newblock Technical Report 498, World Health Organization, 1972.
 
 \end{thebibliography}
