@@ -7,48 +7,47 @@ A bad cross reference---entry "Sahami"
 refers to entry "AAI98", which doesn't exist
 Warning--I didn't find a database entry for "AAI98"
 Warning--empty year in English
-Warning--empty year in FAERS
 Warning--empty year in Metamap
 Warning--empty booktitle in Sahami
-You've used 14 entries,
+You've used 13 entries,
             2773 wiz_defined-function locations,
-            689 strings with 7095 characters,
-and the built_in function-call counts, 6080 in all, are:
-= -- 548
-> -- 316
-< -- 13
-+ -- 110
-- -- 96
-* -- 437
-:= -- 941
-add.period$ -- 47
-call.type$ -- 14
-change.case$ -- 76
-chr.to.int$ -- 14
-cite$ -- 32
-duplicate$ -- 281
-empty$ -- 508
-format.name$ -- 116
-if$ -- 1289
+            683 strings with 6886 characters,
+and the built_in function-call counts, 5713 in all, are:
+= -- 515
+> -- 295
+< -- 12
++ -- 103
+- -- 90
+* -- 416
+:= -- 886
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 71
+chr.to.int$ -- 13
+cite$ -- 29
+duplicate$ -- 266
+empty$ -- 476
+format.name$ -- 107
+if$ -- 1210
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 7
-newline$ -- 82
-num.names$ -- 56
-pop$ -- 166
+newline$ -- 76
+num.names$ -- 52
+pop$ -- 149
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 56
 quote$ -- 0
-skip$ -- 215
+skip$ -- 203
 stack$ -- 0
-substring$ -- 214
-swap$ -- 37
+substring$ -- 212
+swap$ -- 36
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 154
-warning$ -- 4
-while$ -- 50
+type$ -- 143
+warning$ -- 3
+while$ -- 47
 width$ -- 0
-write$ -- 191
+write$ -- 178
 (There was 1 error message)
