@@ -1,4 +1,6 @@
+.ipyn*
 .DS_store
 .idea/
 project/data
 project/references
+
