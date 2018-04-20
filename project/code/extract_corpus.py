@@ -5,12 +5,12 @@ import sys
 
 class CorpusExtractor:
     """
-    Extracting the test corpus
+    Extracting the test old_corpus
     """
 
     def __init__(self, english_file, french_file, german_file, spanish_file):
         """
-        Initialize a corpus extractor
+        Initialize a old_corpus extractor
         :param bzipfile:
         """
         self.__english_file = bz2.BZ2File(english_file, "w")
@@ -20,7 +20,7 @@ class CorpusExtractor:
 
     def __append_corpus(self, language, paragraphs):
         """
-        Appends the provided paragraphs to the corpus file for the language
+        Appends the provided paragraphs to the old_corpus file for the language
         :param language: language
         :param paragraphs: paragraphs to append
         :return:
@@ -55,7 +55,7 @@ class CorpusExtractor:
         for p in paragraphs:
             if '\n' in str(p):
                 continue
-            elif len(str(p)) < 1000:
+            elif len(str(p.get_text())) < 1000:
                 continue
             else:
                 parsed.append(p.get_text())
@@ -89,7 +89,7 @@ class CorpusExtractor:
 
     def extract(self, source_file, num_articles=100000):
         """
-        Extract corpus from the given bzipfile
+        Extract old_corpus from the given bzipfile
         :param source_file: the bzip compressed file
         :param num_articles: number of articles to evaluate
         :return:
